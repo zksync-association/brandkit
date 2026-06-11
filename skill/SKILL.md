@@ -38,6 +38,9 @@ When unsure, use **ZK Nation**.
   extralight (200) in navy, section headers weight 400 in Brand-500, titles tracked **−2 to −5%**;
   **every UI label = Avenue Mono, UPPERCASE, +0.04em** (nav, buttons, tags, captions, meta).
   **Inter** is the free fallback for body (and the ZKsync-protocol body font).
+- **Be intentional with type:** kerning + ligatures on, **optical tracking** (the larger the type,
+  the tighter — −0.045em display → 0 body → +0.04em mono caps), `text-wrap: balance` on headings,
+  tabular numerals for data. This craft is what lifts the work — see `references/typography.md`.
 - **Geometry:** outlined boxes, 1px rules, small radii (0–4px), 8px grid.
 - **Mark:** twin opposing arrows (`←→`). Use the original artwork with ≥1× clear space; never
   redraw, recolor, skew, or pixel-ify it.

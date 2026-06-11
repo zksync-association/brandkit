@@ -119,11 +119,17 @@
       linear-gradient(180deg, rgba(238,242,252,.25) 0%, rgba(238,242,252,0) 35%, rgba(238,242,252,.5) 100%)}
     .hero .inner{position:relative; padding-top:var(--zk-space-16); padding-bottom:var(--zk-space-16)}  /* don't reset .wrap's side padding */
     .muted{color:var(--zk-text-muted)}
+    /* small card heading that keeps semantic <h3> without the big default size */
+    .card-title{ font-family:var(--zk-font-sans); font-size:var(--zk-text-lg); font-weight:600; line-height:1.2; margin:var(--zk-space-3) 0 6px; color:var(--zk-text); }
+    /* overview section: align the two column headers + equalize card heights */
+    #about .col-head{ min-height:104px; }
+    #about .zk-card{ display:flex; flex-direction:column; min-height:172px; }
+    @media(max-width:900px){ #about .col-head{ min-height:0; } #about .zk-card{ min-height:0; } }
     /* compact footer */
     .ftr{border-top:var(--zk-rule); margin-top:var(--zk-space-16)}
     .ftr .top{display:grid; grid-template-columns:1.7fr 1fr 1fr; gap:var(--zk-space-8); padding-top:var(--zk-space-8); padding-bottom:var(--zk-space-8); align-items:start}
     @media(max-width:720px){ .ftr .top{grid-template-columns:1fr 1fr} .ftr .top>:first-child{grid-column:1/-1} }
-    .ftr h6{font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; color:var(--zk-text-muted); margin:0 0 10px}
+    .ftr h3{font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; font-weight:400; color:var(--zk-text-muted); margin:0 0 10px}
     .ftr ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
     .ftr a{font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; color:var(--zk-text)}
     .ftr a:hover{color:var(--zk-brand-700)}
@@ -169,14 +175,7 @@
       <h1 style="max-width:18ch;">Everything you need to design in the <strong>ZK&nbsp;Nation</strong> brand, in one place.</h1>
       <p style="max-width:52ch; font-size:var(--zk-text-lg);">Colors, type, logo, flags, voice, design tokens, fonts,
          and a Claude Code skill — all the building blocks for a doc, deck, or site that feels like ZK&nbsp;Nation.</p>
-      <div class="chips" style="margin:var(--zk-space-6) 0;">
-        <span class="chip-spec"><i style="background:#04085F"></i>Ink #04085F</span>
-        <span class="chip-spec"><i style="background:#0C18EC"></i>Accent #0C18EC</span>
-        <span class="chip-spec"><i style="background:#EE6D50"></i>Salmon #EE6D50</span>
-        <span class="chip-spec">ES Allianz + Avenue Mono</span>
-        <span class="chip-spec">Freedom → Progress → Prosperity</span>
-      </div>
-      <div class="chips">
+      <div class="chips" style="margin-top:var(--zk-space-8);">
         <a class="zk-btn" href="#kit">Get the kit</a>
         <a class="zk-btn zk-btn--ghost" href="https://github.com/zksync-association/brandkit">View on GitHub</a>
       </div>
@@ -189,20 +188,24 @@
     <section id="about">
       <div class="grid c2" style="gap:var(--zk-space-6); align-items:stretch;">
         <div>
-          <p class="zk-eyebrow">BRAND ARCHITECTURE</p>
-          <h2 style="font-size:var(--zk-text-3xl);">ZK Nation and the ZKsync protocol share one system.</h2>
+          <div class="col-head">
+            <p class="zk-eyebrow">BRAND ARCHITECTURE</p>
+            <h2 style="font-size:var(--zk-text-3xl);">ZK Nation and the ZKsync protocol share one system.</h2>
+          </div>
           <div class="grid c2" style="margin-top:var(--zk-space-4);">
-            <div class="zk-card zk-card--tab"><span class="zk-tag">PRIMARY</span><h5 style="margin:var(--zk-space-3) 0 6px;">ZK Nation</h5><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">Governance & community. ES Allianz + Avenue Mono, flags, salmon accent.</p></div>
-            <div class="zk-card"><span class="zk-tag" style="background:var(--zk-neutral-100); color:var(--zk-text-muted);">SECONDARY</span><h5 style="margin:var(--zk-space-3) 0 6px;">ZKsync Protocol</h5><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">The technology / enterprise product. Inter, triangle accents.</p></div>
+            <div class="zk-card zk-card--tab"><span class="zk-tag">PRIMARY</span><h3 class="card-title">ZK Nation</h3><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">Governance &amp; community. ES Allianz + Avenue Mono, flags, salmon accent.</p></div>
+            <div class="zk-card"><span class="zk-tag" style="background:var(--zk-neutral-100); color:var(--zk-text-muted);">SECONDARY</span><h3 class="card-title">ZKsync Protocol</h3><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">The technology / enterprise product. Inter, triangle accents.</p></div>
           </div>
         </div>
         <div>
-          <p class="zk-eyebrow">MISSION · THE ZK CREDO</p>
-          <h2 style="font-size:var(--zk-text-3xl);">Freedom → Progress → Prosperity</h2>
+          <div class="col-head">
+            <p class="zk-eyebrow">MISSION · THE ZK CREDO</p>
+            <h2 style="font-size:var(--zk-text-3xl);">Freedom → Progress → Prosperity</h2>
+          </div>
           <div class="grid c3" style="margin-top:var(--zk-space-4);">
-            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">INTEGRITY</p><p class="muted" style="margin:6px 0 0; font-size:var(--zk-text-sm);">Don't trust, verify.</p></div>
-            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">PRIVACY</p><p class="muted" style="margin:6px 0 0; font-size:var(--zk-text-sm);">A fundamental right.</p></div>
-            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">MAGIC</p><p class="muted" style="margin:6px 0 0; font-size:var(--zk-text-sm);">Magic Moon Math.</p></div>
+            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">INTEGRITY</p><p class="card-title" style="font-size:var(--zk-text-base); margin:6px 0 4px;">Don't trust, verify.</p><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">Computational integrity at any scale.</p></div>
+            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">PRIVACY</p><p class="card-title" style="font-size:var(--zk-text-base); margin:6px 0 4px;">A fundamental right.</p><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">Asserted and defended, together.</p></div>
+            <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">MAGIC</p><p class="card-title" style="font-size:var(--zk-text-base); margin:6px 0 4px;">Magic Moon Math.</p><p class="muted" style="margin:0; font-size:var(--zk-text-sm);">Advanced tech, like magic.</p></div>
           </div>
         </div>
       </div>
@@ -293,7 +296,7 @@
     <section id="components">
       <div class="sec-head"><div><p class="zk-eyebrow">COMPONENTS</p><h2 style="font-size:var(--zk-text-3xl);">Components are built from outlined boxes, mono labels, and arrow buttons.</h2></div></div>
       <div class="grid c2" style="align-items:stretch;">
-        <div class="zk-card"><p class="zk-eyebrow">PROPOSAL OVERVIEW</p><h5 style="margin:6px 0">Institutional-grade governance.</h5><p class="muted" style="font-size:var(--zk-text-sm)">Three bodies balance power: Token Assembly, Guardians, Security Council.</p><div class="chips"><a class="zk-btn" href="#">Vote now</a><a class="zk-btn zk-btn--ghost" href="#">Learn more</a></div></div>
+        <div class="zk-card"><p class="zk-eyebrow">PROPOSAL OVERVIEW</p><h3 class="card-title" style="margin:6px 0">Institutional-grade governance.</h3><p class="muted" style="font-size:var(--zk-text-sm)">Three bodies balance power: Token Assembly, Guardians, Security Council.</p><div class="chips"><a class="zk-btn" href="#">Vote now</a><a class="zk-btn zk-btn--ghost" href="#">Learn more</a></div></div>
         <div class="zk-card"><div class="chips"><span class="zk-tag">+234</span><span class="zk-tag zk-tag--gov">GOVERNANCE</span></div><p class="zk-meta" style="margin-top:var(--zk-space-3)">PROPOSALEXECUTED · ZKPROTOCOLGOVERNOR</p><p class="zk-meta">BY ZKSYNC GOVERNANCE • 5/29/2025</p><p class="muted" style="font-size:var(--zk-text-sm)">Every component on this page is built on <code>brand.css</code>.</p></div>
       </div>
       <details class="more"><summary>Buttons, tags &amp; the construction rules <span></span></summary><div class="body" style="padding-top:var(--zk-space-4)">
@@ -344,7 +347,7 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
         <p class="muted" style="font-size:var(--zk-text-sm); margin:var(--zk-space-3) 0 0;">The official ZKsync Association brand kit — colors, type, logo, voice, design tokens, and a Claude Code skill, all in one place.</p>
       </div>
       <div>
-        <h6>Use the kit</h6>
+        <h3>Use the kit</h3>
         <ul>
           <li><a href="#kit">Get started</a></li>
           <li><a href="zk-nation-brand-skill.zip">Download skill</a></li>
@@ -353,7 +356,7 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
         </ul>
       </div>
       <div>
-        <h6>ZK Nation</h6>
+        <h3>ZK Nation</h3>
         <ul>
           <li><a href="https://www.zknation.io">Website</a></li>
           <li><a href="https://docs.zknation.io">Documentation</a></li>

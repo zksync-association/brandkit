@@ -40,6 +40,39 @@ Together" — "Shape the" / "Together" are extralight, "Future of ZKsync," is bo
 - Body: `0`.
 - Mono labels: `+0.04em`, set UPPERCASE.
 
+## Typographic detail — be intentional (this is what lifts the work)
+
+Good kerning and considered type settings are the difference between "fine" and "crafted."
+`brand.css` ships these on by default; honor them anywhere you set type by hand.
+
+1. **Kerning is always on.** `font-kerning: normal` + `font-feature-settings: "kern" 1`. Never
+   let the browser fall back to no-kern (default in some engines for performance).
+2. **Ligatures & contextual alternates on.** `"liga" 1, "calt" 1` — ES Allianz's `f`-ligatures
+   and joins render properly. (Stylistic set `"ss01"` is enabled on headings.)
+3. **Optical tracking — the larger the type, the tighter it's set.** This is the single biggest
+   "pro" tell. Use a sliding scale, not one value:
+   | Size | Tracking |
+   |---|---|
+   | Display 64–88px | **−0.045em** |
+   | H2 32–48px | −0.03em |
+   | H3–H5 18–36px | −0.02em |
+   | Body 16px | 0 |
+   | Small / caption 12–14px | +0.005em |
+   | **Mono UPPERCASE labels** | **+0.04em** (uppercase always needs positive tracking) |
+4. **Balanced headlines, no orphans.** `text-wrap: balance` on headings (even line lengths,
+   no lonely last word); `text-wrap: pretty` on paragraphs (no single-word last lines).
+5. **Tabular, lining numerals for data.** `font-variant-numeric: tabular-nums lining-nums` on
+   labels, tables, code, and metadata so figures align in columns and don't jump.
+6. **Measure & rhythm.** Body measure **60–75 characters** (`max-width: ~68ch`); line-height
+   1.5–1.55 for body, ≤1.1 for display. Space blocks on the 8px grid.
+7. **Crisp smoothing.** `-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;`
+   so the light ES Allianz weights stay clean (especially navy-on-light).
+8. **The wordmark is kerned by hand** in the artwork (Inter ExtraBold "ZK" −6%, Inter Light
+   "sync" −7%). Never re-typeset it — use the logo file.
+
+> Rule of thumb: if a headline looks "a little loose," it usually is — tighten it. If uppercase
+> mono looks cramped, it needs more tracking. Trust the scale above before eyeballing.
+
 ## The type-size framework (use these roles, not arbitrary sizes)
 
 A single modular scale (~1.25 ratio, 8px-aligned). Pick the **role**, not a pixel value.

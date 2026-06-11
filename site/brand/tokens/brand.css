@@ -18,28 +18,38 @@ body {
   line-height: var(--zk-leading-body);
   color: var(--zk-text);
   background: var(--zk-surface);
+  /* intentional type rendering — kerning + ligatures + contextual alternates on, crisp smoothing */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-optical-sizing: auto;
 }
+/* tabular, lining figures for data/code/labels so numbers align */
+.zk-meta, .zk-label, code, pre, td, th, .role .m, .sw .m { font-variant-numeric: tabular-nums lining-nums; }
 h1, h2, h3, h4, h5 {
   color: var(--zk-text-accent);
   letter-spacing: var(--zk-tracking-title);
   line-height: var(--zk-leading-tight);
   margin: 0 0 var(--zk-space-4);
+  text-wrap: balance;          /* balanced line breaks — no lonely last word in a headline */
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
 }
 /* Editorial display (ES Allianz) — Extralight/Light by default, like zknation.io.
    Emphasize key words with <strong> or a span set to font-weight:700. */
 h1, h2 { font-family: var(--zk-font-display); }
-h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); font-weight: 200; }   /* hero: navy extralight */
-h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); font-weight: 400;     /* section headers: vivid */
+/* optical tracking: the larger the type, the tighter it's set */
+h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); font-weight: 200; letter-spacing: -0.045em; }  /* hero: navy extralight */
+h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); font-weight: 400; letter-spacing: -0.03em;     /* section headers: vivid */
      color: var(--zk-brand-500); }
 h1 strong, h2 strong, h1 b, h2 b { font-weight: 700; }
-/* Functional sub-heads (Inter) — semibold */
-h3, h4, h5 { font-family: var(--zk-font-sans); font-weight: var(--zk-weight-semibold); }
+/* Functional sub-heads (Inter) — semibold, gently tightened */
+h3, h4, h5 { font-family: var(--zk-font-sans); font-weight: var(--zk-weight-semibold); letter-spacing: -0.02em; }
 h3 { font-size: var(--zk-text-3xl); }
 h4 { font-size: var(--zk-text-2xl); }
 h5 { font-size: var(--zk-text-xl); }
-p  { margin: 0 0 var(--zk-space-4); max-width: 68ch; }
+p  { margin: 0 0 var(--zk-space-4); max-width: 68ch; text-wrap: pretty; }   /* avoid orphans/widows */
 a  { color: var(--zk-link); text-decoration: none; }
 a:hover { color: var(--zk-link-hover); }
 hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 0; }

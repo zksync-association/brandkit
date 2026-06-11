@@ -7,13 +7,15 @@
 
 | Typeface | Role | Where | Weights available |
 |---|---|---|---|
-| **Inter** | Master-brand sans; all body copy; product UI | ZKsync product, docs, anywhere | 400 / 500 / 600 / 700 |
-| **ES Allianz** | Editorial display headlines | ZK Nation headlines, hero, posters | Extralight 200 · Light 300 · Book 400 · Medium 500 · Bold 700 (+ italics) |
+| **ES Allianz** | ZK Nation's primary typeface — **display AND body** | ZK Nation headlines, hero, body copy (it's `--font-sans` on zknation.io) | Extralight 200 · Light 300 · Book 400 · Medium 500 · Bold 700 (+ italics) |
 | **Avenue Mono** | UI labels, nav, buttons, captions, code, tags | Nav items, CTAs, metadata, governance feed — **UPPERCASE** | Regular 400 |
+| **Inter** | Free fallback for body; the ZKsync-**protocol** brand's body | Anywhere ES Allianz isn't licensed; ZKsync product/docs | 400 / 500 / 600 / 700 |
 
-**Pairing rule.** Body is always Inter. Headlines are Inter (ZKsync) **or** ES Allianz
-(ZK Nation editorial). Anything that reads as an *interface label* — navigation, buttons,
-timestamps, tags, captions — is **Avenue Mono, uppercase**, with `letter-spacing: 0.04em`.
+**Pairing rule (verified in the zknation.io CSS).** ZK Nation sets **ES Allianz for both display
+and body** (`--font-sans: esAllianz`) and **Avenue Mono for every interface label**
+(nav, buttons, timestamps, tags, captions — uppercase, `letter-spacing: 0.04em`). **Inter is the
+free fallback** for body when ES Allianz isn't licensed, and is the body font for the secondary
+ZKsync-protocol brand. There is **no Inter** on the ZK Nation site itself.
 
 > Wordmark detail: the `ZKsync` logotype is **Inter Extra Bold** ("ZK", −6% spacing) +
 > **Inter Light** ("sync", −7% spacing). Don't typeset the wordmark by hand — use the logo asset.
@@ -37,6 +39,39 @@ Together" — "Shape the" / "Together" are extralight, "Future of ZKsync," is bo
 - **Titles: tighten −2% to −5%** (`letter-spacing: -0.02em … -0.05em`; default token `--zk-tracking-title: -0.03em`).
 - Body: `0`.
 - Mono labels: `+0.04em`, set UPPERCASE.
+
+## Typographic detail — be intentional (this is what lifts the work)
+
+Good kerning and considered type settings are the difference between "fine" and "crafted."
+`brand.css` ships these on by default; honor them anywhere you set type by hand.
+
+1. **Kerning is always on.** `font-kerning: normal` + `font-feature-settings: "kern" 1`. Never
+   let the browser fall back to no-kern (default in some engines for performance).
+2. **Ligatures & contextual alternates on.** `"liga" 1, "calt" 1` — ES Allianz's `f`-ligatures
+   and joins render properly. (Stylistic set `"ss01"` is enabled on headings.)
+3. **Optical tracking — the larger the type, the tighter it's set.** This is the single biggest
+   "pro" tell. Use a sliding scale, not one value:
+   | Size | Tracking |
+   |---|---|
+   | Display 64–88px | **−0.045em** |
+   | H2 32–48px | −0.03em |
+   | H3–H5 18–36px | −0.02em |
+   | Body 16px | 0 |
+   | Small / caption 12–14px | +0.005em |
+   | **Mono UPPERCASE labels** | **+0.04em** (uppercase always needs positive tracking) |
+4. **Balanced headlines, no orphans.** `text-wrap: balance` on headings (even line lengths,
+   no lonely last word); `text-wrap: pretty` on paragraphs (no single-word last lines).
+5. **Tabular, lining numerals for data.** `font-variant-numeric: tabular-nums lining-nums` on
+   labels, tables, code, and metadata so figures align in columns and don't jump.
+6. **Measure & rhythm.** Body measure **60–75 characters** (`max-width: ~68ch`); line-height
+   1.5–1.55 for body, ≤1.1 for display. Space blocks on the 8px grid.
+7. **Crisp smoothing.** `-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;`
+   so the light ES Allianz weights stay clean (especially navy-on-light).
+8. **The wordmark is kerned by hand** in the artwork (Inter ExtraBold "ZK" −6%, Inter Light
+   "sync" −7%). Never re-typeset it — use the logo file.
+
+> Rule of thumb: if a headline looks "a little loose," it usually is — tighten it. If uppercase
+> mono looks cramped, it needs more tracking. Trust the scale above before eyeballing.
 
 ## The type-size framework (use these roles, not arbitrary sizes)
 

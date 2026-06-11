@@ -89,7 +89,11 @@ The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)**
 
 ### Tags / pills / status
 - Mono uppercase, small. Default: Brand-50 fill + Brand-700 text. Governance highlight:
-  salmon-10 fill + salmon-100 text. Radius can be pill for status chips.
+  salmon-10 fill + **navy ink (Brand-900) text** — *not* salmon-100 text, which is only ~1.75:1
+  on salmon-10 and fails AA (on salmon, text is navy). Radius can be pill for status chips.
+- When tags share a row with taller elements (e.g. arrow buttons in a flex row), set the row to
+  `align-items:center` — otherwise the default `stretch` pulls a pill to the button's height and
+  the rounded ends turn into a distorted capsule.
 
 ---
 

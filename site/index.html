@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>ZK Nation — Brand Kit</title>
   <meta name="description" content="Everything you need to design in the ZK Nation brand, in one place — colors, type, logo, flags, voice, design tokens, fonts, and a Claude Code skill. The official ZKsync Association brand kit." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,21 @@
   </script>
   <style>
     /* ============ v2 layout: compact landing + progressive disclosure ============ */
-    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--zk-space-6); }
+    /* safe-area aware side padding so text never reaches a notch / curved edge */
+    .wrap { max-width: 1240px; margin: 0 auto;
+      padding-left: max(var(--zk-space-6), env(safe-area-inset-left));
+      padding-right: max(var(--zk-space-6), env(safe-area-inset-right)); }
+    .zk-nav { padding-left: max(var(--zk-space-6), env(safe-area-inset-left));
+              padding-right: max(var(--zk-space-6), env(safe-area-inset-right)); }
+    #zk-toast { bottom: max(24px, env(safe-area-inset-bottom)); }
+    /* swatch grids: always fit, never overflow (auto-fill instead of fixed columns) */
+    .c6 { grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)) !important; }
+    .sw { min-width: 0; } .sw .m b, .sw .m span { overflow: hidden; text-overflow: ellipsis; }
+    /* reserve image space to avoid layout shift */
+    .flags img { aspect-ratio: 3/2; object-fit: cover; }
+    .role .chip, .logo-cell { min-width: 0; }
+    /* respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce){ *,*::before,*::after{ transition:none !important; animation:none !important; scroll-behavior:auto !important; } }
     section { padding: var(--zk-space-16) 0; border-top: var(--zk-rule); scroll-margin-top: 72px; }
     .sec-head { display:flex; align-items:baseline; justify-content:space-between; gap:var(--zk-space-6); flex-wrap:wrap; margin-bottom:var(--zk-space-8); }
     .sec-head h2 { margin:0; }
@@ -103,20 +117,33 @@
     .hero::before{content:""; position:absolute; inset:0; background:
       linear-gradient(90deg, rgba(238,242,252,.96) 0%, rgba(238,242,252,.9) 42%, rgba(238,242,252,.55) 74%, rgba(238,242,252,.32) 100%),
       linear-gradient(180deg, rgba(238,242,252,.25) 0%, rgba(238,242,252,0) 35%, rgba(238,242,252,.5) 100%)}
-    .hero .inner{position:relative; padding:var(--zk-space-16) 0}
+    .hero .inner{position:relative; padding-top:var(--zk-space-16); padding-bottom:var(--zk-space-16)}  /* don't reset .wrap's side padding */
     .muted{color:var(--zk-text-muted)}
     /* compact footer */
     .ftr{border-top:var(--zk-rule); margin-top:var(--zk-space-16)}
-    .ftr .top{display:grid; grid-template-columns:1.7fr 1fr 1fr; gap:var(--zk-space-8); padding:var(--zk-space-8) 0; align-items:start}
+    .ftr .top{display:grid; grid-template-columns:1.7fr 1fr 1fr; gap:var(--zk-space-8); padding-top:var(--zk-space-8); padding-bottom:var(--zk-space-8); align-items:start}
     @media(max-width:720px){ .ftr .top{grid-template-columns:1fr 1fr} .ftr .top>:first-child{grid-column:1/-1} }
     .ftr h6{font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; color:var(--zk-text-muted); margin:0 0 10px}
     .ftr ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
     .ftr a{font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; color:var(--zk-text)}
     .ftr a:hover{color:var(--zk-brand-700)}
-    .ftr .bar{border-top:var(--zk-rule); padding:14px 0; display:flex; justify-content:space-between; gap:var(--zk-space-4); flex-wrap:wrap;
+    .ftr .bar{border-top:var(--zk-rule); padding-top:14px; padding-bottom:14px; display:flex; justify-content:space-between; gap:var(--zk-space-4); flex-wrap:wrap;
       font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:.04em; font-size:11px; color:var(--zk-text-muted)}
     @media(max-width:720px){ .ftr .cols{gap:var(--zk-space-8)} }
-    @media(max-width:720px){ .zk-nav__links{display:none} section{padding:var(--zk-space-12) 0} .flags{grid-template-columns:repeat(4,1fr)} }
+    @media(max-width:720px){
+      .zk-nav__links{display:none}
+      .zk-nav .zk-meta{display:none !important}  /* drop the "BRAND KIT" tag so the nav fits one row */
+      .zk-nav{padding-top:var(--zk-space-3); padding-bottom:var(--zk-space-3)}
+      .zk-nav .zk-btn{min-height:42px; font-size:var(--zk-text-xs)}
+      section{padding:var(--zk-space-12) 0}
+      .flags{grid-template-columns:repeat(4,1fr)}
+      .ftr a{display:inline-block; padding:9px 0}   /* taller tap targets in the footer (~36px) */
+      .ftr ul{gap:2px}
+      /* scale headlines down on phones so they don't crowd the edge */
+      .hero h1{font-size:2rem !important; line-height:1.12}
+      section h2, .sec-head h2{font-size:1.5rem !important; line-height:1.16}
+      .hero p, .lead, section p{ overflow-wrap:break-word; }
+    }
   </style>
 </head>
 <body>
@@ -124,7 +151,7 @@
   <!-- NAV -->
   <nav class="zk-nav" style="position:sticky; top:0; z-index:50;">
     <a href="#top" style="display:flex; align-items:center; gap:12px;" aria-label="ZK Nation Brand Kit">
-      <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto; display:block;"/>
+      <img loading="lazy" decoding="async" src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto; display:block;"/>
       <span class="zk-meta" style="color:var(--zk-text-muted); border-left:1px solid var(--zk-border-strong); padding-left:12px; height:22px; display:inline-flex; align-items:center;">BRAND&nbsp;KIT</span>
     </a>
     <ul class="zk-nav__links">
@@ -215,10 +242,10 @@
     <section id="logo">
       <div class="sec-head"><div><p class="zk-eyebrow">LOGO &amp; MARKS</p><h2 style="font-size:var(--zk-text-3xl);">Always use the original logomark — never redraw it.</h2></div></div>
       <div class="grid c4">
-        <div class="logo-cell"><img src="brand/logos/svg/zksync-mark-dark.svg" alt="ZKsync wordmark" style="max-width:160px; max-height:40px"/></div>
-        <div class="logo-cell" style="background:var(--zk-brand-950)"><img src="brand/logos/svg/zksync-medallion-light.svg" alt="ZKsync medallion" style="max-width:80px"/></div>
-        <div class="logo-cell"><img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="max-width:80px"/></div>
-        <div class="logo-cell" style="padding:0; overflow:hidden"><img src="brand/flags/blue/main-flag_blue.png" alt="ZK Nation flag" style="width:100%; max-height:130px; object-fit:cover"/></div>
+        <div class="logo-cell"><img loading="lazy" decoding="async" src="brand/logos/svg/zksync-mark-dark.svg" alt="ZKsync wordmark" style="max-width:160px; max-height:40px"/></div>
+        <div class="logo-cell" style="background:var(--zk-brand-950)"><img loading="lazy" decoding="async" src="brand/logos/svg/zksync-medallion-light.svg" alt="ZKsync medallion" style="max-width:80px"/></div>
+        <div class="logo-cell"><img loading="lazy" decoding="async" src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="max-width:80px"/></div>
+        <div class="logo-cell" style="padding:0; overflow:hidden"><img loading="lazy" decoding="async" src="brand/flags/blue/main-flag_blue.png" alt="ZK Nation flag" style="width:100%; max-height:130px; object-fit:cover"/></div>
       </div>
       <details class="more"><summary>Clear space &amp; the "never" list <span></span></summary><div class="body"><div class="grid c2" style="margin-top:var(--zk-space-4)">
         <p class="muted" style="margin:0; font-size:var(--zk-text-sm)">Keep ≥1× clear space (≥2× small). The ZKsync wordmark is the master brand; the ZK Nation square logomark (blue default, orange expressive) is the governance sub-brand. Use the original artwork.</p>
@@ -230,15 +257,15 @@
     <section id="visual">
       <div class="sec-head"><div><p class="zk-eyebrow">VISUAL LANGUAGE</p><h2 style="font-size:var(--zk-text-3xl);">The visual language is built from a signal-flag alphabet.</h2></div></div>
       <div class="flags">
-        <img src="brand/flags/blue/main-flag_blue.png" alt="flag"/><img src="brand/flags/blue/flag-1_blue.png" alt="flag"/><img src="brand/flags/blue/flag-2_blue.png" alt="flag"/><img src="brand/flags/blue/flag-3_blue.png" alt="flag"/>
-        <img src="brand/flags/blue/flag-5_blue.png" alt="flag"/><img src="brand/flags/orange/flag-1_orange.png" alt="flag"/><img src="brand/flags/orange/flag-3_orange.png" alt="flag"/><img src="brand/flags/orange/flag-5_orange.png" alt="flag"/>
+        <img loading="lazy" decoding="async" src="brand/flags/blue/main-flag_blue.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/blue/flag-1_blue.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/blue/flag-2_blue.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/blue/flag-3_blue.png" alt="flag"/>
+        <img loading="lazy" decoding="async" src="brand/flags/blue/flag-5_blue.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/orange/flag-1_orange.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/orange/flag-3_orange.png" alt="flag"/><img loading="lazy" decoding="async" src="brand/flags/orange/flag-5_orange.png" alt="flag"/>
       </div>
       <details class="more"><summary>Icons &amp; the ASCII flag fields <span></span></summary><div class="body">
         <p class="zk-label" style="margin:var(--zk-space-4) 0 var(--zk-space-3); color:var(--zk-text-muted)">DUOTONE ICONS</p>
-        <div class="grid c4"><div class="zk-card" style="padding:var(--zk-space-3)"><img src="brand/icons/svg/icons-large_blue.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img src="brand/icons/svg/icons-large_blue-1.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img src="brand/icons/svg/icons-large_blue-2.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img src="brand/icons/svg/icons-large_blue-3.svg" style="width:100%" alt="icon"/></div></div>
+        <div class="grid c4"><div class="zk-card" style="padding:var(--zk-space-3)"><img loading="lazy" decoding="async" src="brand/icons/svg/icons-large_blue.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img loading="lazy" decoding="async" src="brand/icons/svg/icons-large_blue-1.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img loading="lazy" decoding="async" src="brand/icons/svg/icons-large_blue-2.svg" style="width:100%" alt="icon"/></div><div class="zk-card" style="padding:var(--zk-space-3)"><img loading="lazy" decoding="async" src="brand/icons/svg/icons-large_blue-3.svg" style="width:100%" alt="icon"/></div></div>
         <p class="zk-label" style="margin:var(--zk-space-6) 0 var(--zk-space-3); color:var(--zk-text-muted)">ASCII FLAG FIELDS — THE HERO TEXTURE (CLICK TO COPY URL)</p>
         <div class="ascii">
-          <img src="brand/ascii/group-3.png" alt="ascii"/><img src="brand/ascii/group.png" alt="ascii"/><img src="brand/ascii/ascii-2-2.png" alt="ascii"/><img src="brand/ascii/group-6.png" alt="ascii"/><img src="brand/ascii/group-4.png" alt="ascii"/><img src="brand/ascii/group-7.png" alt="ascii"/>
+          <img loading="lazy" decoding="async" src="brand/ascii/group-3.png" alt="ascii"/><img loading="lazy" decoding="async" src="brand/ascii/group.png" alt="ascii"/><img loading="lazy" decoding="async" src="brand/ascii/ascii-2-2.png" alt="ascii"/><img loading="lazy" decoding="async" src="brand/ascii/group-6.png" alt="ascii"/><img loading="lazy" decoding="async" src="brand/ascii/group-4.png" alt="ascii"/><img loading="lazy" decoding="async" src="brand/ascii/group-7.png" alt="ascii"/>
         </div>
       </div></details>
     </section>
@@ -313,7 +340,7 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
   <footer class="ftr">
     <div class="wrap top">
       <div style="max-width:340px;">
-        <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:24px; display:block;"/>
+        <img loading="lazy" decoding="async" src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:24px; display:block;"/>
         <p class="muted" style="font-size:var(--zk-text-sm); margin:var(--zk-space-3) 0 0;">The official ZKsync Association brand kit — colors, type, logo, voice, design tokens, and a Claude Code skill, all in one place.</p>
       </div>
       <div>

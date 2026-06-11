@@ -22,18 +22,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 h1, h2, h3, h4, h5 {
-  font-family: var(--zk-font-display);
   color: var(--zk-text-accent);
   letter-spacing: var(--zk-tracking-title);
   line-height: var(--zk-leading-tight);
-  font-weight: var(--zk-weight-semibold);
   margin: 0 0 var(--zk-space-4);
 }
-h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); }
-h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); }
-h3 { font-size: var(--zk-text-3xl); font-family: var(--zk-font-sans); }
-h4 { font-size: var(--zk-text-2xl); font-family: var(--zk-font-sans); }
-h5 { font-size: var(--zk-text-xl); font-family: var(--zk-font-sans); }
+/* Editorial display (ES Allianz) — Extralight/Light by default, like zknation.io.
+   Emphasize key words with <strong> or a span set to font-weight:700. */
+h1, h2 { font-family: var(--zk-font-display); }
+h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); font-weight: 200; }
+h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); font-weight: 300; }
+h1 strong, h2 strong, h1 b, h2 b { font-weight: 700; }
+/* Functional sub-heads (Inter) — semibold */
+h3, h4, h5 { font-family: var(--zk-font-sans); font-weight: var(--zk-weight-semibold); }
+h3 { font-size: var(--zk-text-3xl); }
+h4 { font-size: var(--zk-text-2xl); }
+h5 { font-size: var(--zk-text-xl); }
 p  { margin: 0 0 var(--zk-space-4); max-width: 68ch; }
 a  { color: var(--zk-link); text-decoration: none; }
 a:hover { color: var(--zk-link-hover); }

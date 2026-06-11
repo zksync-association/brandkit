@@ -16,6 +16,14 @@
   <style>
     section { padding: var(--zk-space-24) 0; border-top: var(--zk-rule); }
     section:first-of-type { border-top: 0; }
+    /* signature ASCII / dot-flag hero texture (denser at center, fading out) */
+    .zk-hero::before {
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background-image: radial-gradient(var(--zk-brand-400) 1.6px, transparent 1.7px);
+      background-size: 20px 20px; opacity:0.30;
+      -webkit-mask-image: radial-gradient(ellipse 62% 65% at 50% 42%, #000 22%, transparent 74%);
+              mask-image: radial-gradient(ellipse 62% 65% at 50% 42%, #000 22%, transparent 74%);
+    }
     .lead { font-size: var(--zk-text-xl); color: var(--zk-text-muted); max-width: 40ch; }
     .grid { display:grid; gap:var(--zk-space-6); }
     .g2 { grid-template-columns:repeat(2,1fr); } .g3 { grid-template-columns:repeat(3,1fr); }

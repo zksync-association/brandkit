@@ -54,9 +54,10 @@
   --zk-border:           var(--zk-neutral-200);
   --zk-border-strong:    var(--zk-neutral-300);
 
-  --zk-text:             var(--zk-neutral-950);
+  --zk-ink:              var(--zk-brand-900);     /* ZK Nation primary "ink" — navy text (matches zknation.io) */
+  --zk-text:             var(--zk-brand-900);     /* ZK Nation reads in navy ink; for ZKsync-protocol mode use neutral-950 */
   --zk-text-muted:       var(--zk-neutral-600);
-  --zk-text-accent:      var(--zk-brand-700);     /* headlines, links, emphasis */
+  --zk-text-accent:      var(--zk-brand-900);     /* display headlines = navy; links/emphasis can step to brand-700 */
   --zk-text-on-inverse:  var(--zk-neutral-50);
 
   --zk-accent:           var(--zk-brand-700);

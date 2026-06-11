@@ -18,6 +18,21 @@ timestamps, tags, captions — is **Avenue Mono, uppercase**, with `letter-spaci
 > Wordmark detail: the `ZKsync` logotype is **Inter Extra Bold** ("ZK", −6% spacing) +
 > **Inter Light** ("sync", −7% spacing). Don't typeset the wordmark by hand — use the logo asset.
 
+## Display weight — go light (verified against zknation.io)
+
+The signature ZK Nation headline is **ES Allianz Extralight (200) or Light (300)** at large
+sizes with **tight tracking (−4 to −5%)**, set in **navy ink (Brand-900)**, with **one or two
+key words in Bold (700)** for contrast. Example: the hero "Shape the *Future of ZKsync,*
+Together" — "Shape the" / "Together" are extralight, "Future of ZKsync," is bold.
+- Big display / hero: ES Allianz **200**. H1: **200–300**. H2: **300**.
+- Don't default large editorial headlines to semibold/bold — that's the heavier ZKsync-product
+  register. ZK Nation editorial = thin + tight + navy, bolded selectively.
+- Functional sub-heads (H3–H5, in Inter) stay **Semibold (600)**.
+
+> **Mono for short marketing copy.** On zknation.io even the hero sub-paragraph and CTAs are
+> **Avenue Mono**. For short, punchy strings (hero subhead, captions, callouts) mono is on-brand;
+> reserve Inter for longer-form body where monospace would hurt readability.
+
 ## Tracking (letter-spacing)
 - **Titles: tighten −2% to −5%** (`letter-spacing: -0.02em … -0.05em`; default token `--zk-tracking-title: -0.03em`).
 - Body: `0`.
@@ -30,9 +45,9 @@ Sizes are `rem` (1rem = 16px). Tokens: `--zk-text-*`.
 
 | Role | Token | Size | Line-height | Weight | Tracking | Font |
 |---|---|---|---|---|---|---|
-| Display / Hero | `6xl` | 5.5rem / 88px | 1.05 | 600–700 | −0.04em | ES Allianz / Inter |
-| H1 | `5xl` | 4rem / 64px | 1.05 | 600–700 | −0.03em | ES Allianz / Inter |
-| H2 | `4xl` | 3rem / 48px | 1.1 | 600 | −0.03em | ES Allianz / Inter |
+| Display / Hero | `6xl` | 5.5rem / 88px | 1.05 | **200** (bold key words) | −0.04em | ES Allianz |
+| H1 | `5xl` | 4rem / 64px | 1.05 | **200–300** | −0.04em | ES Allianz |
+| H2 | `4xl` | 3rem / 48px | 1.1 | **300** | −0.03em | ES Allianz |
 | H3 | `3xl` | 2.25rem / 36px | 1.15 | 600 | −0.02em | Inter |
 | H4 | `2xl` | 1.75rem / 28px | 1.2 | 600 | −0.02em | Inter |
 | H5 | `xl` | 1.375rem / 22px | 1.25 | 600 | −0.01em | Inter |

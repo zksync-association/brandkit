@@ -21,6 +21,15 @@
 `salmon-10 #F6B6A6 · salmon-50 #EA9682 · salmon-100 #EE6D50`. Use **sparingly** as a
 governance/community accent (a CTA underline, a tag, a single highlight). Never as a page fill.
 
+## Ink: ZK Nation reads in navy
+
+A signature, verified against zknation.io: **the primary text color is brand-900 `#04085F`
+(navy), not gray-black.** Headlines, body, and labels are set in navy ink on white/light
+surfaces — it's what gives ZK Nation its calm, bluish, editorial feel.
+- **ZK Nation (primary):** text = **Brand-900 `#04085F`**; links/emphasis may step to Brand-700.
+- **ZKsync protocol (secondary):** the more corporate mode may use Neutral-950 `#11141A` for text.
+Token: `--zk-ink` / `--zk-text` default to Brand-900.
+
 ## The governing idea: light & airy
 
 > "Our interface should feel light and airy."

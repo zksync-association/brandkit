@@ -30,8 +30,9 @@ h1, h2, h3, h4, h5 {
 /* Editorial display (ES Allianz) — Extralight/Light by default, like zknation.io.
    Emphasize key words with <strong> or a span set to font-weight:700. */
 h1, h2 { font-family: var(--zk-font-display); }
-h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); font-weight: 200; }
-h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); font-weight: 300; }
+h1 { font-size: clamp(2.5rem, 6vw, var(--zk-text-5xl)); font-weight: 200; }   /* hero: navy extralight */
+h2 { font-size: clamp(2rem, 4.5vw, var(--zk-text-4xl)); font-weight: 400;     /* section headers: vivid */
+     color: var(--zk-brand-500); }
 h1 strong, h2 strong, h1 b, h2 b { font-weight: 700; }
 /* Functional sub-heads (Inter) — semibold */
 h3, h4, h5 { font-family: var(--zk-font-sans); font-weight: var(--zk-weight-semibold); }
@@ -54,28 +55,38 @@ hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 
 .zk-eyebrow { font-size: var(--zk-text-xs); color: var(--zk-text-muted); letter-spacing: 0.06em; }
 .zk-meta    { font-size: var(--zk-text-xs); color: var(--zk-text-muted); }
 
-/* ---------- buttons ---------- */
+/* ---------- buttons ----------
+   Signature ZK Nation CTA (matches zknation.io exactly): a label box + a 26×26 arrow glyph
+   = a Brand-500 square holding a Brand-300 right-triangle. Sharp corners, Avenue Mono 500,
+   14px side padding, 24px gap. The arrow SVG is the actual mark from zknation.io. */
 .zk-btn {
-  display: inline-flex; align-items: center; gap: var(--zk-space-3);
+  --zk-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cpath fill='%230C18EC' d='M0 .015h26v25.97H0z'/%3E%3Cpath fill='%238897F2' d='M0 .361.046 25.61l17.76-12.583L0 .361Z'/%3E%3C/svg%3E");
+  display: inline-flex; align-items: center; gap: var(--zk-space-6); flex: none;
+  white-space: nowrap; line-height: 1; vertical-align: middle;
   font-family: var(--zk-font-mono); text-transform: uppercase;
-  letter-spacing: var(--zk-tracking-mono); font-size: var(--zk-text-sm);
-  min-height: 44px; padding: 0 var(--zk-space-6);
-  background: var(--zk-brand-700); color: #fff; border: 1px solid var(--zk-brand-700);
-  border-radius: var(--zk-radius-md); cursor: pointer;
-  transition: background var(--zk-dur) var(--zk-ease), border-color var(--zk-dur) var(--zk-ease);
+  letter-spacing: var(--zk-tracking-mono); font-size: var(--zk-text-sm); font-weight: 500;
+  min-height: 52px; padding: 0 14px;
+  background: var(--zk-brand-900); color: #fff; border: 0;
+  border-radius: 0; cursor: pointer; text-decoration: none;
+  transition: background var(--zk-dur) var(--zk-ease), color var(--zk-dur) var(--zk-ease);
 }
-.zk-btn::after { content: "▸"; font-size: 0.9em; }
-.zk-btn:hover { background: var(--zk-brand-500); border-color: var(--zk-brand-500); color: #fff; }
-.zk-btn--ghost { background: transparent; color: var(--zk-brand-700); border-color: var(--zk-border-strong); }
-.zk-btn--ghost:hover { background: transparent; border-color: var(--zk-brand-700); color: var(--zk-brand-700); }
-.zk-btn--salmon { background: var(--zk-salmon-100); border-color: var(--zk-salmon-100); }
-.zk-btn--salmon:hover { background: var(--zk-salmon-50); border-color: var(--zk-salmon-50); }
+.zk-btn::after {                       /* the 26×26 arrow glyph (brand-500 square + brand-300 ▸) */
+  content: ""; flex: none; width: 26px; height: 26px;
+  background: var(--zk-arrow) center / contain no-repeat;
+}
+.zk-btn:hover { background: var(--zk-brand-800); color: #fff; }   /* keep white text (beats base a:hover) */
+/* secondary: light-blue fill, brand-500 ink, same arrow glyph */
+.zk-btn--ghost { background: var(--zk-brand-100); color: var(--zk-brand-500); }
+.zk-btn--ghost:hover { background: var(--zk-brand-200); color: var(--zk-brand-600); }
+/* salmon: governance accent */
+.zk-btn--salmon { background: var(--zk-salmon-100); color: #fff; }
+.zk-btn--salmon:hover { background: var(--zk-salmon-50); color: #fff; }
 
 /* ---------- card / outlined box ---------- */
 .zk-card {
   background: var(--zk-surface-raised);
   border: var(--zk-rule);
-  border-radius: var(--zk-radius-md);
+  border-radius: 0;                    /* crisp corners — the brand is sharp, not soft */
   padding: var(--zk-space-8);
 }
 .zk-card--tab { border-left: 4px solid var(--zk-brand-700); }

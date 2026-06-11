@@ -7,13 +7,15 @@
 
 | Typeface | Role | Where | Weights available |
 |---|---|---|---|
-| **Inter** | Master-brand sans; all body copy; product UI | ZKsync product, docs, anywhere | 400 / 500 / 600 / 700 |
-| **ES Allianz** | Editorial display headlines | ZK Nation headlines, hero, posters | Extralight 200 · Light 300 · Book 400 · Medium 500 · Bold 700 (+ italics) |
+| **ES Allianz** | ZK Nation's primary typeface — **display AND body** | ZK Nation headlines, hero, body copy (it's `--font-sans` on zknation.io) | Extralight 200 · Light 300 · Book 400 · Medium 500 · Bold 700 (+ italics) |
 | **Avenue Mono** | UI labels, nav, buttons, captions, code, tags | Nav items, CTAs, metadata, governance feed — **UPPERCASE** | Regular 400 |
+| **Inter** | Free fallback for body; the ZKsync-**protocol** brand's body | Anywhere ES Allianz isn't licensed; ZKsync product/docs | 400 / 500 / 600 / 700 |
 
-**Pairing rule.** Body is always Inter. Headlines are Inter (ZKsync) **or** ES Allianz
-(ZK Nation editorial). Anything that reads as an *interface label* — navigation, buttons,
-timestamps, tags, captions — is **Avenue Mono, uppercase**, with `letter-spacing: 0.04em`.
+**Pairing rule (verified in the zknation.io CSS).** ZK Nation sets **ES Allianz for both display
+and body** (`--font-sans: esAllianz`) and **Avenue Mono for every interface label**
+(nav, buttons, timestamps, tags, captions — uppercase, `letter-spacing: 0.04em`). **Inter is the
+free fallback** for body when ES Allianz isn't licensed, and is the body font for the secondary
+ZKsync-protocol brand. There is **no Inter** on the ZK Nation site itself.
 
 > Wordmark detail: the `ZKsync` logotype is **Inter Extra Bold** ("ZK", −6% spacing) +
 > **Inter Light** ("sync", −7% spacing). Don't typeset the wordmark by hand — use the logo asset.

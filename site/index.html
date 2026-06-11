@@ -132,8 +132,8 @@
   <!-- NAV -->
   <nav class="zk-nav" style="position:sticky; top:0; z-index:50;">
     <a href="#top" style="display:flex; align-items:center; gap:12px;" aria-label="ZK Nation Brand Kit">
-      <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto;"/>
-      <span class="zk-meta" style="color:var(--zk-text-muted); border-left:1px solid var(--zk-border-strong); padding-left:12px;">BRAND&nbsp;KIT</span>
+      <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto; display:block;"/>
+      <span class="zk-meta" style="color:var(--zk-text-muted); border-left:1px solid var(--zk-border-strong); padding-left:12px; height:22px; display:inline-flex; align-items:center;">BRAND&nbsp;KIT</span>
     </a>
     <ul class="zk-nav__links">
       <li><a href="#color">Color</a></li>
@@ -213,9 +213,9 @@
       <p class="zk-eyebrow">TYPOGRAPHY</p>
       <h2>Three voices: ES Allianz, Inter, Avenue Mono.</h2>
       <div class="grid g3" style="margin:var(--zk-space-8) 0;">
-        <div class="zk-card"><p class="zk-label">DISPLAY</p><div style="font-family:var(--zk-font-display); font-size:var(--zk-text-3xl); letter-spacing:-0.03em; color:var(--zk-text-accent);">ES Allianz</div><p class="zk-meta">Editorial headlines</p></div>
-        <div class="zk-card"><p class="zk-label">BODY</p><div style="font-family:var(--zk-font-sans); font-size:var(--zk-text-3xl); color:var(--zk-text);">Inter</div><p class="zk-meta">All body &amp; UI text</p></div>
+        <div class="zk-card"><p class="zk-label">DISPLAY &amp; BODY</p><div style="font-family:var(--zk-font-display); font-size:var(--zk-text-3xl); letter-spacing:-0.03em; color:var(--zk-text-accent);">ES Allianz</div><p class="zk-meta">Headlines and body copy</p></div>
         <div class="zk-card"><p class="zk-label">MONO</p><div style="font-family:var(--zk-font-mono); font-size:var(--zk-text-2xl); text-transform:uppercase; color:var(--zk-text);">Avenue Mono</div><p class="zk-meta">Labels · nav · buttons</p></div>
+        <div class="zk-card"><p class="zk-label">FREE FALLBACK</p><div style="font-family:var(--zk-font-sans-inter,'Inter'); font-size:var(--zk-text-3xl); color:var(--zk-text);">Inter</div><p class="zk-meta">Body when ES Allianz isn't licensed</p></div>
       </div>
       <p class="zk-eyebrow">THE TYPE-SIZE FRAMEWORK</p>
       <div id="type-scale"></div>
@@ -377,7 +377,7 @@
     <section class="anchor" id="components">
       <p class="zk-eyebrow">COMPONENTS</p>
       <h2>Outlined boxes. Mono labels. ▸ buttons.</h2>
-      <div class="grid g2" style="margin-top:var(--zk-space-8); align-items:start;">
+      <div class="grid g2" style="margin-top:var(--zk-space-8); align-items:stretch;">
         <div class="zk-card">
           <p class="zk-eyebrow">PROPOSAL OVERVIEW</p>
           <h5>Institutional-grade governance.</h5>
@@ -389,6 +389,25 @@
           <span class="zk-meta">PROPOSALEXECUTED · ZKPROTOCOLGOVERNOR</span>
           <span class="zk-meta">BY ZKSYNC GOVERNANCE • 5/29/2025</span>
           <p>This whole page is built on <code>brand.css</code> — these are real components.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALMON CALLOUT BAND (governance accent, like zknation.io "Cornerstone" section) -->
+    <section class="anchor" id="involved" style="padding-bottom:0;">
+      <div style="background:var(--zk-salmon-50); padding:var(--zk-space-16) var(--zk-space-12); position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; opacity:.5; pointer-events:none;
+          background-image:repeating-linear-gradient(135deg, var(--zk-salmon-100) 0 18px, transparent 18px 64px);"></div>
+        <div style="position:relative; max-width:760px;">
+          <p class="zk-eyebrow" style="color:#fff;">GET INVOLVED · GOVERNANCE</p>
+          <h2 style="color:#fff;">Built in the open, together.</h2>
+          <p style="color:#fff; font-size:var(--zk-text-lg);">Govern, defend, and grow the ZKsync
+             protocol. Delegates, builders, and operators are the cornerstone of ZK Nation —
+             salmon is the governance accent that signals it.</p>
+          <div class="pill-row" style="margin-top:var(--zk-space-6);">
+            <a class="zk-btn" href="https://www.zknation.io">Shape the protocol</a>
+            <a class="zk-btn zk-btn--salmon" href="https://docs.zknation.io">Read the docs</a>
+          </div>
         </div>
       </div>
     </section>

@@ -9,8 +9,10 @@ https://github.com/zksync-association/brandkit
    or `tokens.json` / `tailwind.preset.js` in the same folder.
 2. Surfaces light (Neutral-50 `#F7F9FC` / Brand-25 `#F3F5FE`); text Neutral-950 `#11141A`;
    **accent Brand-700 `#070FA0`** (headlines, links, primary actions). Never full-bleed blue.
-3. Type: headings ES Allianz/Inter tracked −2…−5%; body **Inter**; every UI label **Avenue Mono,
-   UPPERCASE, +0.04em** (nav, buttons, tags, captions, meta).
+3. Type: **ES Allianz for display AND body** (hero h1 extralight/200 navy; section h2 weight 400
+   in Brand-500; titles tracked −2…−5%); every UI label **Avenue Mono, UPPERCASE, +0.04em** (nav,
+   buttons, tags, captions, meta). **Inter** is the free fallback for body. Buttons: label box +
+   a 26×26 Brand-500 square holding a Brand-300 ▸ triangle; sharp corners (radius 0).
 4. Geometry: outlined boxes, 1px rules, radii 0–4px, 8px grid. Buttons end with `▸`.
 5. Logo: twin arrows; original artwork; ≥1× clear space; never redraw/recolor/skew.
 6. Voice: principled, verifiable ("don't trust, verify"), collective ("…Together"), precise,

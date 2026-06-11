@@ -34,8 +34,10 @@ When unsure, use **ZK Nation**.
 - **Light & airy.** Default surfaces Neutral-50 `#F7F9FC` / Brand-25 `#F3F5FE`, or a subtle
   gradient `#BFEAFF → #A5C0EE`. **Never** full-bleed bright/dark blue.
 - **Brand-700 `#070FA0` is the accent** — headlines, key icons, links, primary actions. Not a background.
-- **Type:** headings = ES Allianz (or Inter), titles tracked **−2 to −5%**; body = Inter;
+- **Type:** **ES Allianz** for display **and body** (it's ZK Nation's `--font-sans`); hero headline
+  extralight (200) in navy, section headers weight 400 in Brand-500, titles tracked **−2 to −5%**;
   **every UI label = Avenue Mono, UPPERCASE, +0.04em** (nav, buttons, tags, captions, meta).
+  **Inter** is the free fallback for body (and the ZKsync-protocol body font).
 - **Geometry:** outlined boxes, 1px rules, small radii (0–4px), 8px grid.
 - **Mark:** twin opposing arrows (`←→`). Use the original artwork with ≥1× clear space; never
   redraw, recolor, skew, or pixel-ify it.

@@ -40,12 +40,16 @@ this 7-step checklist. Following it guarantees brand alignment.
 - Nav items in **Avenue Mono UPPERCASE**: `DOCS  FORUM  DELEGATE  BLOG  CODE  PROTOCOL`.
 - Primary action at right: **`VOTE`** button (solid Brand-500/700, white mono label).
 
-### Buttons / CTAs
-- **Primary:** solid Brand-700 (or Brand-500) fill, white **mono uppercase** label, small
-  radius, with a **▸ play/arrow glyph** at the right. e.g. `CONNECT WALLET ▸`, `SHAPE THE PROTOCOL. VOTE NOW. ▸`.
-- **Secondary:** transparent/Neutral fill, 1px border, Brand-700 mono label, same arrow.
-- Hover: shift fill Brand-700→Brand-500 (or border→Brand-700). Keep transitions ~200ms.
-- Min height 44px; horizontal padding ≥ 20px.
+### Buttons / CTAs (verified against zknation.io)
+The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)** at the right,
+**sharp corners (radius 0)**, Avenue Mono **uppercase, weight 500**, min-height ~48px.
+- **Primary:** label box **Brand-900 navy `#04085F`**, white text; arrow box **Brand-500 `#0C18EC`**,
+  white ▸. e.g. `SHAPE THE PROTOCOL. VOTE NOW ▸`.
+- **Secondary:** label box **Brand-100 `#D4DCFA`**, **Brand-500** text; arrow box Brand-500, white ▸.
+  e.g. `READ THE ZK CREDO ▸`.
+- **Salmon (governance):** label box Salmon, navy arrow box. Use for governance highlights.
+- Hover: darken the label box one step; keep transitions ~200ms.
+- Implementation: `.zk-btn` (primary) · `.zk-btn--ghost` (secondary) · `.zk-btn--salmon`.
 
 ### Cards / content blocks
 - Outlined box (1px Neutral-200), white fill, 24–32px padding, radius ≤ 4px.
@@ -53,8 +57,18 @@ this 7-step checklist. Following it guarantees brand alignment.
   (`BY ZKSYNC GOVERNANCE • 5/29/2025`).
 - Optional Brand-700 left-border "tab" (4px) for governance items.
 
+### Section headers
+- **ES Allianz, weight 400, in vivid Brand-500 `#0C18EC`** (verified on zknation.io) — section
+  titles "pop" in bright blue, distinct from the **navy (Brand-900) extralight hero headline**.
+  Large (≈80px desktop), tight tracking. Pair with a mono eyebrow above.
+
+### Salmon callout band
+- A full-width **Salmon-50 `#EA9682`** section for a single governance/community call-to-action
+  (e.g. "ZKsync Partners are the Cornerstone…"). White text, optional diagonal Salmon-100 flag
+  stripes, a navy CTA. This is the one place salmon fills a large area — used once, deliberately.
+
 ### Hero
-- Gradient or Brand-25 field with a **quiet ASCII/flag texture**.
+- Gradient or Brand-25 field with a **real ASCII flag texture** (`assets/ascii/`, light variant).
 - Center a **bordered content panel** (1px rule) holding: display headline (mix weights, e.g.
   ES Allianz light + a bold key phrase), Inter sub-paragraph, then 1–2 mono CTA bars.
 - Headline pattern: *light + bold mix*, e.g. "Shape the **Future of ZKsync,** Together."

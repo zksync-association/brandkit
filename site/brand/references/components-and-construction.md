@@ -75,7 +75,7 @@ The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)**
 
 ### Governance feed / ticker
 - Full-width strip, faint tint, 1px rules top & bottom. Mono row:
-  `[+234]  PROPOSALEXECUTED · ZKPROTOCOLGOVERNOR  ……  BY ZKSYNC GOVERNANCE • DATE`.
+  `[+234]  PROPOSAL EXECUTED · ZK PROTOCOL GOVERNOR  ……  BY ZKSYNC GOVERNANCE • DATE`.
 - Monospace everywhere; numbers and event names in caps.
 
 ### Footer

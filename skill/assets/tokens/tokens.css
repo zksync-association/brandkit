@@ -56,7 +56,7 @@
 
   --zk-ink:              var(--zk-brand-900);     /* ZK Nation primary "ink" — navy text (matches zknation.io) */
   --zk-text:             var(--zk-brand-900);     /* ZK Nation reads in navy ink; for ZKsync-protocol mode use neutral-950 */
-  --zk-text-muted:       var(--zk-neutral-600);
+  --zk-text-muted:       #565E72;                /* navy-tinted gray — WCAG AA (>=4.5:1) on every brand surface incl. the hero gradient (#EEF2FC). Darker than neutral-600 #6C7380, which fails on the gradient. */
   --zk-text-accent:      var(--zk-brand-900);     /* display headlines = navy; links/emphasis can step to brand-700 */
   --zk-text-on-inverse:  var(--zk-neutral-50);
 

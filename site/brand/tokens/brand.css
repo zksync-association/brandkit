@@ -54,6 +54,11 @@ a  { color: var(--zk-link); text-decoration: none; }
 a:hover { color: var(--zk-link-hover); }
 hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 0; }
 
+/* ---------- keyboard focus ----------
+   Always-visible focus ring on interactive elements (WCAG 2.4.7). Brand-500 outline with a
+   2px offset reads clearly on light, navy, and salmon fills alike. */
+:focus-visible { outline: 2px solid var(--zk-brand-500); outline-offset: 2px; }
+
 /* ---------- mono labels ---------- */
 .zk-label, .zk-eyebrow, .zk-meta {
   font-family: var(--zk-font-mono);
@@ -88,9 +93,10 @@ hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 
 /* secondary: light-blue fill, brand-500 ink, same arrow glyph */
 .zk-btn--ghost { background: var(--zk-brand-100); color: var(--zk-brand-500); }
 .zk-btn--ghost:hover { background: var(--zk-brand-200); color: var(--zk-brand-600); }
-/* salmon: governance accent */
-.zk-btn--salmon { background: var(--zk-salmon-100); color: #fff; }
-.zk-btn--salmon:hover { background: var(--zk-salmon-50); color: #fff; }
+/* salmon: governance accent. RULE — on salmon, text is navy ink, never white.
+   Navy #04085F on salmon-100 #EE6D50 = 5.76:1 (passes WCAG AA); white is only ~3.0:1 and fails. */
+.zk-btn--salmon { background: var(--zk-salmon-100); color: var(--zk-ink); }
+.zk-btn--salmon:hover { background: var(--zk-salmon-50); color: var(--zk-ink); }
 
 /* ---------- card / outlined box ---------- */
 .zk-card {

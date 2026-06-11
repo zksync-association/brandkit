@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+  :root{
+    --ink:#04085F; --accent:#0C18EC; --soft:#F7F9FC; --border:#DADDE5;
+    --high:#EE6D50; --med:#0C18EC; --low:#070FA0; --good:#1F9D6B;
+    --mono:"SFMono-Regular",ui-monospace,"Roboto Mono",Menlo,monospace;
+    --sans:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#fff;font-family:var(--sans);color:var(--ink)}
+  .frame{display:inline-flex;align-items:flex-start;gap:0;background:#fff}
+  .shot{position:relative;flex:0 0 auto;border:1px solid var(--border)}
+  .shot img{display:block}
+  .pin{position:absolute;width:34px;height:34px;border-radius:50%;
+    transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-weight:700;font-size:16px;color:#fff;
+    border:2px solid #fff;box-shadow:0 2px 6px rgba(4,8,95,.45);z-index:2}
+  .ring{position:absolute;border:2.5px solid;border-radius:6px;transform:translate(-50%,-50%);z-index:1;
+    box-shadow:0 0 0 2px rgba(255,255,255,.6) inset}
+  .legend{flex:0 0 460px;padding:34px 32px;border:1px solid var(--border);border-left:none;
+    background:var(--soft);min-height:100%}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:6px}
+  h1{font-size:26px;font-weight:300;letter-spacing:-.02em;margin-bottom:4px;line-height:1.12}
+  .sub{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#565E72;margin-bottom:22px}
+  .item{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--border)}
+  .num{flex:0 0 28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-weight:700;font-size:14px;color:#fff}
+  .body .t{font-size:14.5px;font-weight:600;line-height:1.25;margin-bottom:3px}
+  .body .d{font-size:13px;line-height:1.4;color:#3A4060}
+  .tag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;
+    text-transform:uppercase;padding:2px 7px;border-radius:2px;color:#fff;margin-bottom:5px}
+  .hi{background:var(--high)} .me{background:var(--med)} .lo{background:var(--low)} .go{background:var(--good)}
+</style></head>
+<body>
+<div class="frame">
+  <div class="shot" id="shot"><img id="img" alt=""></div>
+  <div class="legend">
+    <div class="eyebrow" id="eye">DESIGN REVIEW · MARKUP</div>
+    <h1 id="title">Title</h1>
+    <div class="sub" id="surface">surface</div>
+    <div id="items"></div>
+  </div>
+</div>
+<script>
+const SEV={HIGH:{c:'var(--high)',cl:'hi'},MED:{c:'var(--med)',cl:'me'},LOW:{c:'var(--low)',cl:'lo'},GOOD:{c:'var(--good)',cl:'go'}};
+const DATA={
+ hero:{img:'raw/desktop-hero.png',w:1440,h:900,title:'Hero — desktop (1440px)',surface:'#top · light-blue gradient hero',
+   pins:[
+    {x:15,y:48,sev:'HIGH',t:'Muted text fails AA on the gradient',d:'The eyebrow + sub-paragraph use #6C7380, which is 4.26:1 on the hero gradient — below the 4.5:1 WCAG AA floor for small text. Darken the muted-text token.',rw:30,rh:7},
+    {x:8,y:25.5,sev:'LOW',t:'Eyebrow reads gray, not brand-ink',d:'Brand ink is navy #04085F. A navy-tinted label color would be both on-brand and pass contrast.',rw:14,rh:4},
+    {x:33,y:37,sev:'GOOD',t:'Hero type is faithful',d:'ES Allianz extralight 64px in navy renders correctly with balanced wrapping — a strong, on-brand headline.',rw:46,rh:14}]},
+ color:{img:'raw/color-section.png',w:1193,h:1368,title:'Color — full palette expanded',surface:'#color · Neutral-50 surface',
+   pins:[
+    {x:8,y:46,sev:'MED',t:'Hex codes are clipped',d:'30 full-palette swatches truncate the hex (e.g. "#F3F5FE" renders "#F3F5F…"). A copy-the-hex reference must show all 7 characters.',rw:14,rh:5},
+    {x:5.5,y:30,sev:'GOOD',t:'Click-to-copy works',d:'The headline swatches expose title="Copy #…" and copy the hex on click — a thoughtful, usable touch.',rw:11,rh:9},
+    {x:50,y:16.5,sev:'MED',t:'Sticky nav covers anchored headings',d:'scroll-margin-top is 72px but the sticky nav is 85px tall, so jumping to a section tucks its eyebrow under the bar.',rw:96,rh:6}]},
+ salmon:{img:'raw/salmon-cta.png',w:641,h:179,title:'Governance CTA — the salmon moment',surface:'salmon #EE6D50 band',
+   pins:[
+    {x:16,y:9,sev:'HIGH',t:'Eyebrow fails AA on salmon',d:'White "GET INVOLVED · GOVERNANCE" on salmon is ≈3.0:1 — fails AA for small text.',rw:28,rh:13},
+    {x:39,y:53,sev:'HIGH',t:'Sub-line fails AA on salmon',d:'White body text on salmon is ≈3.0:1. Switch to navy ink #04085F (≈6.2:1) — passes AA and is more on-brand.',rw:74,rh:14},
+    {x:30,y:29,sev:'GOOD',t:'Headline passes (large text)',d:'The large headline clears the 3:1 large-text bar, and one deliberate salmon band matches the brand rule.',rw:54,rh:18}]},
+ components:{img:'raw/components-section.png',w:1193,h:492,title:'Components — cards & arrow buttons',surface:'#components · Neutral-50',
+   pins:[
+    {x:64,y:46,sev:'LOW',t:'Run-on mono labels',d:'Uppercased enum strings read as one word: "PROPOSALEXECUTED", "ZKPROTOCOLGOVERNOR". Insert word spacing for legibility.',rw:34,rh:18},
+    {x:13,y:62,sev:'GOOD',t:'Buttons are on-brand',d:'The two-part arrow buttons and 1px-outlined cards faithfully reproduce the ZK Nation component language.',rw:22,rh:22}]},
+ mobile:{img:'raw/mobile-top.png',w:390,h:844,title:'Mobile — top (390px)',surface:'iPhone-class viewport',
+   pins:[
+    {x:50,y:4,sev:'MED',t:'Section nav disappears on mobile',d:'The Color/Type/Logo/Visual/Voice/Components links are display:none with no hamburger — mobile users lose in-page navigation. Add a menu or a scrollable chip bar.',rw:96,rh:6},
+    {x:50,y:33,sev:'GOOD',t:'Clean responsive stack',d:'Single-column layout, no horizontal overflow, 52px tap targets — the responsive base is solid.',rw:90,rh:30}]},
+};
+const key=location.hash.slice(1)||'hero';
+const cfg=DATA[key];
+const img=document.getElementById('img');
+img.src=cfg.img;
+document.getElementById('title').textContent=cfg.title;
+document.getElementById('surface').textContent=cfg.surface;
+const shot=document.getElementById('shot');
+shot.style.width=cfg.w+'px';
+const items=document.getElementById('items');
+img.onload=()=>{
+  cfg.pins.forEach((p,i)=>{
+    const sev=SEV[p.sev];
+    if(p.rw){const r=document.createElement('div');r.className='ring';
+      r.style.borderColor=sev.c;r.style.left=p.x+'%';r.style.top=p.y+'%';
+      r.style.width=(p.rw/100*cfg.w)+'px';r.style.height=(p.rh/100*cfg.h)+'px';shot.appendChild(r);}
+    const pin=document.createElement('div');pin.className='pin';pin.textContent=i+1;
+    pin.style.background=sev.c;pin.style.left=p.x+'%';pin.style.top=p.y+'%';shot.appendChild(pin);
+    const it=document.createElement('div');it.className='item';
+    it.innerHTML=`<div class="num" style="background:${sev.c}">${i+1}</div>
+      <div class="body"><span class="tag ${sev.cl}">${p.sev}</span>
+      <div class="t">${p.t}</div><div class="d">${p.d}</div></div>`;
+    items.appendChild(it);
+  });
+  document.body.setAttribute('data-ready','1');
+};
+</script></body></html>

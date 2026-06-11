@@ -1,0 +1,68 @@
+{
+  "target": "https://npc.here.now/zknationbrand/",
+  "date": "2026-06-11",
+  "method": "Playwright (Chromium) + in-page DevTools instrumentation; desktop 1440x900, mobile 390x844",
+  "runtime": {
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "failedRequests": 0,
+    "domNodes": 576,
+    "horizontalOverflow_1440": false,
+    "horizontalOverflow_390": false
+  },
+  "performance": {
+    "domContentLoadedMs": 1169,
+    "loadCompleteMs": 1616,
+    "totalTransferKB": 369,
+    "requestCount": 12,
+    "transferByType": { "css": "178KB", "img": "185KB", "link": "5KB", "other": "2KB" },
+    "largestAssets": [
+      { "name": "group-3.png", "kb": 184, "naturalPx": "1939x1336", "displayedPx": "~184w", "note": "hero ASCII art, ~50% of page weight, oversized" },
+      { "name": "ESAllianz-Extralight.woff2", "kb": 53 },
+      { "name": "ESAllianz-Bold.woff2", "kb": 53 },
+      { "name": "ESAllianz-Book.woff2", "kb": 52 },
+      { "name": "AvenueMono.woff2", "kb": 17 }
+    ]
+  },
+  "fonts": {
+    "loaded": ["ES Allianz 200", "ES Allianz 400", "ES Allianz 700", "Avenue Mono 400", "Inter (fallback)"],
+    "heroH1": { "family": "ES Allianz", "weight": 200, "size": "64px", "color": "#04085F" }
+  },
+  "accessibility": {
+    "imagesTotal": 24,
+    "imagesMissingAlt": 0,
+    "imagesNotLazy": 0,
+    "headingOrder": "h1 -> h2 -> h3, correct",
+    "lang": "en",
+    "metaDescription": true,
+    "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+    "prefersReducedMotion": true,
+    "focusVisibleStyles": false,
+    "themeColorMeta": false,
+    "darkMode": false
+  },
+  "contrast": [
+    { "where": "hero h1 navy on gradient", "fg": "#04085F", "bg": "~#EEF2FC", "ratio": 15.55, "pass": true },
+    { "where": "muted text on hero gradient", "fg": "#6C7380", "bg": "~#EEF2FC", "ratio": 4.26, "pass": false, "finding": "A11Y-2" },
+    { "where": "muted text on Neutral-50", "fg": "#6C7380", "bg": "#F7F9FC", "ratio": 4.52, "pass": "marginal", "finding": "A11Y-2" },
+    { "where": "section h2 accent on Neutral-50", "fg": "#0C18EC", "bg": "#F7F9FC", "ratio": 8.45, "pass": true },
+    { "where": "small white text on salmon band", "fg": "#FFFFFF", "bg": "#EE6D50", "ratio": 3.0, "pass": false, "finding": "A11Y-1", "recommended": { "fg": "#04085F", "ratio": 6.2, "pass": true } },
+    { "where": "hero primary button", "fg": "#FFFFFF", "bg": "#04085F", "ratio": 17.43, "pass": true },
+    { "where": "hero secondary button", "fg": "#0C18EC", "bg": "#D4DCFA", "ratio": 7.95, "pass": true }
+  ],
+  "functional": {
+    "clippedPaletteHexCount": 30,
+    "clippedExample": "#F3F5FE renders as #F3F5F (40px box, 42px needed)",
+    "scrollMarginTopPx": 72,
+    "stickyNavHeightPx": 85,
+    "swatchCopyOnClick": true,
+    "disclosuresNative": 7
+  },
+  "responsive": {
+    "mobileSectionNavDisplay": "none",
+    "mobileNavReplacement": "none (no hamburger)",
+    "mobileTapTargets": "hero buttons 52px, swatches 156x147 (good)",
+    "mobileH1Size": "32px"
+  },
+  "findingsCount": { "high": 2, "med": 4, "low": 3, "total": 9 }
+}

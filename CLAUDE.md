@@ -27,6 +27,10 @@ Key, non-obvious facts (all verified against the live site/CSS):
 - **Buttons** = a label box + a **26×26 Brand-500 square holding a Brand-300 ▸ triangle**; sharp corners (radius 0).
 - **ES Allianz is also the body font** on zknation.io (`--font-sans`); Inter is only the free fallback.
 - **Copy style:** plain, full statements — NOT punchy "Fragment. Fragment." headlines. (Authentic brand quotes like "Don't trust, verify." are kept.)
+- **On salmon, text is navy** (Brand-900), never white. White on salmon ≈3:1 fails WCAG AA; navy
+  ≈5.8:1 passes. Encoded in `.zk-btn--salmon` / `.zk-tag--gov` and the governance band.
+- **Muted text = `#565E72`** (`--zk-text-muted`), not Neutral-600 `#6C7380` — the lighter gray
+  fails AA (4.26:1) on the hero gradient. See the AA-passing pairs table in `references/color.md`.
 
 ## Repo layout
 ```

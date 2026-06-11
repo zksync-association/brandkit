@@ -4,6 +4,13 @@ A summary of what's been built and the current state, for anyone (human or agent
 up. For *how to contribute*, see `CLAUDE.md`. Newest first.
 
 ## Current state (shipped)
+- ✅ **Design-review remediation (2026-06-11)**: closed a cluster of WCAG-AA contrast misses and
+  responsive/perf gaps from the end-to-end review (`design-review-2026-06-11/`). Token-level fixes
+  inherited by site + skill: muted-text `#6C7380 → #565E72` (AA on the hero gradient), navy-on-salmon
+  rule (`.zk-btn--salmon` / `.zk-tag--gov`), `:focus-visible` ring. Site fixes: mobile section chip
+  nav, un-clipped palette hex, `scroll-margin` for sticky-nav anchors, swatch `aria-label` + live
+  region, `theme-color`. Perf: hero ASCII `group-3.png` 184 KB → 8.8 KB. References gained an
+  AA-passing text/background pairs table; run-on governance labels cleaned in template + ref.
 - ✅ **Comprehensive brand kit**: tokens (CSS vars / Tailwind / JSON / Office XML), 11 reference
   docs (voice, color, typography, logo, visual language, components + construction framework,
   office/slides, font licensing, do's & don'ts, secondary brand, overview), artwork (ZKsync

@@ -114,7 +114,9 @@ hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 
   padding: 4px 10px; border-radius: var(--zk-radius-pill);
   background: var(--zk-brand-50); color: var(--zk-brand-700);
 }
-.zk-tag--gov { background: var(--zk-salmon-10); color: var(--zk-salmon-100); }
+/* governance tag: salmon-tinted chip with navy ink. Salmon-100 text on salmon-10 is only ~1.75:1
+   (fails AA); navy #04085F on salmon-10 #F6B6A6 is ~10:1 — on salmon, text is navy. */
+.zk-tag--gov { background: var(--zk-salmon-10); color: var(--zk-ink); }
 
 /* ---------- nav ---------- */
 .zk-nav {

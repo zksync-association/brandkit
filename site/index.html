@@ -112,7 +112,7 @@
     .role .m{padding:10px; display:flex; flex-direction:column; gap:2px}
     .role .m .k{font-family:var(--zk-font-mono); font-size:11px; color:var(--zk-text)} .role .m .v{font-family:var(--zk-font-mono); font-size:10px; color:var(--zk-text-muted)}
 
-    .chips{display:flex; gap:var(--zk-space-2); flex-wrap:wrap}
+    .chips{display:flex; align-items:center; gap:var(--zk-space-2); flex-wrap:wrap}  /* center items so pills/tags aren't stretched to button height */
     .chip-spec{display:inline-flex; align-items:center; gap:8px; border:var(--zk-rule); padding:6px 12px; background:var(--zk-surface-raised);
       font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:var(--zk-tracking-mono); font-size:var(--zk-text-xs)}
     .chip-spec i{width:12px; height:12px; display:inline-block; border:1px solid rgba(0,0,0,.1)}

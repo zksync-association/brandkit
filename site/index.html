@@ -12,7 +12,44 @@
        licensed brand domain so the showcase renders the true brand. Licensed binaries
        are NOT offered as downloads; third parties must license their own. -->
   <link rel="stylesheet" href="brand/tokens/fonts-licensed.css" />
-  <link rel="icon" href="brand/logos/svg/logo_blue.svg" />
+  <!-- Official ZK Nation favicon (from zknation.io) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="brand/logos/svg/logo_blue.svg" />
+  <link rel="apple-touch-icon" href="brand/logos/png/logo_blue.png" />
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="ZK Nation — Brand Kit" />
+  <meta property="og:description" content="Colors, type, logo, flags, voice, design tokens, fonts, and a Claude Code skill. Apply the ZK Nation brand to any doc, deck, or site." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://npc.here.now/zknationbrand/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZK Nation — Brand Kit" />
+  <meta name="twitter:image" content="og-image.png" />
+  <!-- Agent-readable: machine endpoints -->
+  <link rel="alternate" type="text/markdown" href="apply-zk-nation-brand.md" title="Apply the ZK Nation brand (agent instructions)" />
+  <link rel="alternate" type="application/json" href="brand.json" title="ZK Nation brand manifest" />
+  <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "ZK Nation",
+    "alternateName": "ZKsync Association",
+    "slogan": "Freedom → Progress → Prosperity",
+    "url": "https://npc.here.now/zknationbrand/",
+    "logo": "https://npc.here.now/zknationbrand/brand/logos/svg/zk-nation-lockup-navy.svg",
+    "description": "Official ZKsync Association / ZK Nation brand kit: colors, typography, logo, visual language, voice, design tokens, fonts, and a Claude Code skill.",
+    "sameAs": ["https://www.zknation.io", "https://docs.zknation.io", "https://github.com/zksync-association/brandkit"],
+    "mainEntityOfPage": {
+      "@type": "WebSite",
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Apply the ZK Nation brand",
+        "target": "https://npc.here.now/zknationbrand/apply-zk-nation-brand.md"
+      }
+    }
+  }
+  </script>
   <style>
     section { padding: var(--zk-space-24) 0; border-top: var(--zk-rule); }
     section:first-of-type { border-top: 0; }
@@ -29,7 +66,18 @@
     .g2 { grid-template-columns:repeat(2,1fr); } .g3 { grid-template-columns:repeat(3,1fr); }
     .g4 { grid-template-columns:repeat(4,1fr); }
     @media(max-width:820px){ .g2,.g3,.g4{ grid-template-columns:1fr; } }
-    .swatch { border:var(--zk-rule); border-radius:var(--zk-radius-md); overflow:hidden; }
+    .swatch { border:var(--zk-rule); border-radius:var(--zk-radius-md); overflow:hidden;
+      cursor:pointer; padding:0; background:none; width:100%; text-align:left; font:inherit;
+      color:inherit; display:block; transition:transform var(--zk-dur) var(--zk-ease); }
+    .swatch:hover { transform:translateY(-2px); }
+    .copyable { cursor:pointer; transition:transform var(--zk-dur) var(--zk-ease); }
+    .copyable:hover { transform:translateY(-2px); }
+    #zk-toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
+      background:var(--zk-brand-950); color:var(--zk-neutral-50); font-family:var(--zk-font-mono);
+      text-transform:uppercase; letter-spacing:0.04em; font-size:var(--zk-text-xs);
+      padding:10px 18px; border-radius:var(--zk-radius-md); opacity:0; pointer-events:none;
+      transition:opacity var(--zk-dur) var(--zk-ease), transform var(--zk-dur) var(--zk-ease); z-index:100; max-width:90vw; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    #zk-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
     .swatch .chip { height:84px; }
     .swatch .meta { padding:10px 12px; display:flex; justify-content:space-between; gap:8px; }
     .swatch .meta b { font-family:var(--zk-font-mono); font-size:var(--zk-text-xs); }
@@ -81,8 +129,9 @@
 
   <!-- NAV -->
   <nav class="zk-nav" style="position:sticky; top:0; z-index:50;">
-    <a href="#top" style="display:flex; align-items:center; gap:10px; font-family:var(--zk-font-display); color:var(--zk-text-accent); letter-spacing:-0.02em; font-size:var(--zk-text-lg);">
-      <img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="height:28px; width:28px; border-radius:4px;"/>ZK&nbsp;Nation Brand
+    <a href="#top" style="display:flex; align-items:center; gap:12px;" aria-label="ZK Nation Brand Kit">
+      <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto;"/>
+      <span class="zk-meta" style="color:var(--zk-text-muted); border-left:1px solid var(--zk-border-strong); padding-left:12px;">BRAND&nbsp;KIT</span>
     </a>
     <ul class="zk-nav__links">
       <li><a href="#color">Color</a></li>
@@ -227,6 +276,29 @@
         <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue-2.svg" style="width:100%" alt="icon"/></div>
         <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue-3.svg" style="width:100%" alt="icon"/></div>
       </div>
+
+      <h5 style="margin-top:var(--zk-space-12);">ASCII / dot-flag — the hero texture</h5>
+      <p class="lead">Fields of tiny marks (arrows, dots, squares) that resolve into a waving flag.
+         Use as hero backdrops, section dividers, loading and empty states. Two ways to apply it:</p>
+      <div class="grid g2" style="margin-top:var(--zk-space-6); align-items:stretch;">
+        <div class="zk-card" style="padding:0; overflow:hidden;">
+          <img src="brand/flags/blue/main-flag-ascii_blue.png" alt="ZK Nation ASCII flag asset" style="width:100%; display:block; background:var(--zk-brand-950);"/>
+          <div style="padding:var(--zk-space-4);"><span class="zk-meta">ASSET · main-flag-ascii_blue.png</span></div>
+        </div>
+        <div class="zk-card" style="background:var(--zk-brand-950); padding:var(--zk-space-4); display:flex; flex-direction:column; gap:var(--zk-space-3);">
+          <span class="zk-label" style="color:var(--zk-brand-300);">RENDERED IN AVENUE MONO</span>
+          <pre style="margin:0; font-family:var(--zk-font-mono); font-size:11px; line-height:1.35; color:var(--zk-brand-300); white-space:pre; overflow:auto;">· ▪ ◆ · ▸▸ · ■ · ▪ · ◆ ▸ · ▪ ■ · ◆ · ▸ · ▪
+▸ · ■ ◆ ▪ · ◆ ▸▸ · ■ ▪ · ◆ · ▸ ▪ · ◆ ■ · ▸ ·
+◆ ▪ · ▸ ■ ·  ███▖ ▗███  · ▪ ◆ · ▸ · ■ ▪ · ◆ ▸
+· ▸ ◆ · ▪ · ▐██████████▌ ▸ · ◆ ■ · ▪ ▸ · ◆ · ▪
+▪ ■ · ◆ ▸ ·  ▝███▘ ▝██▘  ◆ · ▪ ▸ · ■ · ◆ ▪ · ▸
+▸ · ▪ ◆ · ■ ▸ · ◆ · ▪ ▸▸ ■ · ◆ ▪ · ▸ · ◆ ■ · ▪
+· ◆ ▪ · ▸ · ■ ◆ · ▪ ▸ · ◆ · ■ ▪ · ▸ ◆ · ▪ · ▸</pre>
+          <span class="zk-meta" style="color:var(--zk-neutral-400);">— mono characters (▸ ◆ ■ ▪ ·) on Brand-950, density toward the mark</span>
+        </div>
+      </div>
+      <p style="margin-top:var(--zk-space-4);">The hero of this page uses the same idea as a subtle CSS dot-field. Keep it quiet
+         (≤15% contrast) so it never competes with foreground type — it's texture, not content.</p>
     </section>
 
     <!-- VOICE -->
@@ -349,7 +421,7 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
             <li><a href="brand/tokens/brand.css">brand.css</a> · <a href="brand/tokens/tokens.css">tokens.css</a> · <a href="brand/tokens/tokens.json">tokens.json</a></li>
             <li><a href="brand/tokens/tailwind.preset.js">Tailwind preset</a> · <a href="brand/tokens/office-theme-colors.xml">Office theme colors</a></li>
             <li><a href="brand/fonts/">Fonts</a> · <a href="brand/logos/">Logos</a> · <a href="brand/flags/">Flags</a> · <a href="brand/icons/">Icons</a></li>
-            <li><a href="apply-zk-nation-brand.md">apply-zk-nation-brand.md</a> (for agents)</li>
+            <li><b>For agents:</b> <a href="apply-zk-nation-brand.md">apply-zk-nation-brand.md</a> · <a href="llms.txt">llms.txt</a> · <a href="brand.json">brand.json</a></li>
           </ul>
         </div>
       </div>
@@ -360,9 +432,8 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
   <!-- FOOTER -->
   <footer class="zk-footer">
     <div>
-      <strong style="display:flex; align-items:center; gap:10px; font-family:var(--zk-font-display); color:var(--zk-text-accent);">
-        <img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="height:26px; width:26px; border-radius:4px;"/>ZK Nation Brand</strong>
-      <p class="zk-meta" style="margin-top:var(--zk-space-3)">FREEDOM → PROGRESS → PROSPERITY</p>
+      <img src="brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:24px; width:auto;"/>
+      <p class="zk-meta" style="margin-top:var(--zk-space-4)">FREEDOM → PROGRESS → PROSPERITY</p>
     </div>
     <div><h6>Brand</h6><ul><li><a href="#color">Color</a></li><li><a href="#type">Type</a></li><li><a href="#logo">Logo</a></li><li><a href="#voice">Voice</a></li></ul></div>
     <div><h6>Kit</h6><ul><li><a href="#kit">Get the kit</a></li><li><a href="zk-nation-brand-skill.zip">Skill .zip</a></li><li><a href="brand/tokens/brand.css">brand.css</a></li></ul></div>
@@ -375,9 +446,31 @@ cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
     const EXTRA = [['salmon-10','#F6B6A6'],['salmon-50','#EA9682'],['salmon-100','#EE6D50'],['sand-50','#FFF6E5'],['light-100','#EDF2FA'],['light-200','#DAE2F2'],['grad-from','#BFEAFF'],['grad-to','#A5C0EE']];
     function swatches(el, arr){
       document.getElementById(el).innerHTML = arr.map(([n,h])=>(
-        `<div class="swatch"><div class="chip" style="background:${h}"></div><div class="meta"><b>${n}</b><span>${h}</span></div></div>`
+        `<button class="swatch" type="button" data-hex="${h}" title="Click to copy ${h}"><div class="chip" style="background:${h}"></div><div class="meta"><b>${n}</b><span>${h}</span></div></button>`
       )).join('');
     }
+    // --- unified click-to-copy (hex swatches + asset URLs) ---
+    const toast = document.createElement('div'); toast.id='zk-toast'; document.body.appendChild(toast);
+    let toastTimer;
+    function flash(msg){ toast.textContent = msg; toast.classList.add('show');
+      clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove('show'), 1400); }
+    // tag every brand asset image as copyable (logos, flags, icons, ascii)
+    document.querySelectorAll('.logo-cell img, .flagwrap img, #flags .zk-card img, .swatch').forEach(el=>{
+      if(el.tagName==='IMG'){ el.classList.add('copyable'); el.title='Click to copy URL'; }
+    });
+    document.addEventListener('click', e=>{
+      const sw = e.target.closest('.swatch');
+      if(sw){ const hex=sw.dataset.hex; navigator.clipboard?.writeText(hex);
+        const span=sw.querySelector('.meta span'); const orig=span.textContent;
+        span.textContent='COPIED ✓'; sw.style.outline='2px solid var(--zk-brand-700)';
+        setTimeout(()=>{ span.textContent=orig; sw.style.outline='none'; }, 900);
+        flash('Copied '+hex); return; }
+      const img = e.target.closest('.copyable');
+      if(img && img.tagName==='IMG'){ const url=img.src; navigator.clipboard?.writeText(url);
+        img.style.outline='2px solid var(--zk-brand-700)'; img.style.outlineOffset='2px';
+        setTimeout(()=>{ img.style.outline='none'; }, 900);
+        flash('Copied URL · '+url.split('/').pop()); }
+    });
     swatches('brand-swatches', BRAND); swatches('neutral-swatches', NEUTRAL); swatches('extra-swatches', EXTRA);
 
     const SCALE = [

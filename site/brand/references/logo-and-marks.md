@@ -21,6 +21,14 @@
 - Ensure strong contrast with the background. Avoid gradients or outlines on the mark.
 - On light backgrounds prefer the brand blue or Neutral-950 mark.
 
+## Official lockup & favicon
+- **`zk-nation-lockup.svg`** (+ `-navy` / `-white` variants) — the official horizontal
+  "ZK Nation" lockup (mark + wordmark as one path), captured from zknation.io. Use this in
+  nav bars and headers. `currentColor` in the base file; the `-navy` (`#04085F`) and `-white`
+  variants are pre-colored for light/dark backgrounds.
+- **`favicon/favicon.ico`** — the official ZK Nation favicon (from zknation.io). Use for site
+  tabs/bookmarks. `favicon/og-image.png` is the official 1200×630 social card.
+
 ## Choosing an asset
 | Need | Use |
 |---|---|

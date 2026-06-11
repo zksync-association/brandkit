@@ -1,0 +1,42 @@
+# ZK Nation — Brand Kit
+
+> The official ZKsync Association / ZK Nation brand kit. Everything an agent needs to apply
+> the brand to a document, slide deck, website, or component: design tokens, fonts (Inter is
+> free; ES Allianz + Avenue Mono are licensed), logos, flags, icons, voice/tone, and a Claude
+> Code skill. Primary brand = ZK Nation (governance); secondary = ZKsync protocol.
+
+## Start here (agents)
+- [Apply the ZK Nation brand](https://npc.here.now/zknationbrand/apply-zk-nation-brand.md): step-by-step, machine-readable instructions with all token values.
+- [Brand manifest (JSON)](https://npc.here.now/zknationbrand/brand.json): structured colors, fonts, asset URLs, references.
+
+## Design tokens
+- [brand.css](https://npc.here.now/zknationbrand/brand/tokens/brand.css): ready-to-link CSS variables + component classes.
+- [tokens.css](https://npc.here.now/zknationbrand/brand/tokens/tokens.css): CSS custom properties only.
+- [tokens.json](https://npc.here.now/zknationbrand/brand/tokens/tokens.json): tokens as JSON.
+- [tailwind.preset.js](https://npc.here.now/zknationbrand/brand/tokens/tailwind.preset.js): Tailwind preset.
+- [office-theme-colors.xml](https://npc.here.now/zknationbrand/brand/tokens/office-theme-colors.xml): PowerPoint/Keynote theme colors.
+
+## References (full guidelines)
+- [Brand overview & the ZK Credo](https://npc.here.now/zknationbrand/brand/references/00-brand-overview.md)
+- [Voice, tone & vocabulary](https://npc.here.now/zknationbrand/brand/references/voice-tone-vocabulary.md)
+- [Color system](https://npc.here.now/zknationbrand/brand/references/color.md)
+- [Typography & type-size framework](https://npc.here.now/zknationbrand/brand/references/typography.md)
+- [Logo & marks](https://npc.here.now/zknationbrand/brand/references/logo-and-marks.md)
+- [Visual language (flags, ASCII, icons)](https://npc.here.now/zknationbrand/brand/references/visual-language.md)
+- [Components & construction framework](https://npc.here.now/zknationbrand/brand/references/components-and-construction.md)
+- [Office, docs & slides](https://npc.here.now/zknationbrand/brand/references/office-docs-and-slides.md)
+- [Font licensing](https://npc.here.now/zknationbrand/brand/references/font-licensing.md)
+- [Do's & don'ts](https://npc.here.now/zknationbrand/brand/references/dos-and-donts.md)
+- [Secondary brand — ZKsync protocol](https://npc.here.now/zknationbrand/brand/references/secondary-brand-zksync-protocol.md)
+
+## Assets
+- Logos (SVG/PNG), the ZK Nation lockup, ZKsync medallion, flags (blue/orange), ASCII flags, icons, official favicon — under `/brand/logos/`, `/brand/flags/`, `/brand/icons/`.
+
+## Install the skill
+- [Claude Code skill (.zip)](https://npc.here.now/zknationbrand/zk-nation-brand-skill.zip)
+- Source repo: https://github.com/zksync-association/brandkit
+
+## Key facts
+- Primary ink: Brand-900 #04085F (navy). Accent: Brand-700 #070FA0. Surfaces: light. Never full-bleed blue.
+- Fonts: Inter (free), ES Allianz Extralight display (licensed), Avenue Mono uppercase labels (licensed).
+- Values: Freedom → Progress → Prosperity (the ZK Credo). Spell "ZKsync" and "ZK Nation" exactly.

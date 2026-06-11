@@ -1,0 +1,69 @@
+{
+  "name": "ZK Nation",
+  "owner": "ZKsync Association",
+  "version": "2026.1",
+  "slogan": "Freedom → Progress → Prosperity",
+  "site": "https://npc.here.now/zknationbrand/",
+  "repo": "https://github.com/zksync-association/brandkit",
+  "applyInstructions": "https://npc.here.now/zknationbrand/apply-zk-nation-brand.md",
+  "brands": {
+    "primary":   { "name": "ZK Nation",       "use": "governance, community, voting, DAO" },
+    "secondary": { "name": "ZKsync protocol", "use": "technology, enterprise, developer product" }
+  },
+  "color": {
+    "ink": "#04085F",
+    "accent": "#070FA0",
+    "accentFill": "#0C18EC",
+    "accentSoft": "#8897F2",
+    "salmon": "#EE6D50",
+    "surface": "#F7F9FC",
+    "surfaceSunken": "#F3F5FE",
+    "surfaceInverse": "#02053C",
+    "text": "#04085F",
+    "gradient": ["#BFEAFF", "#A5C0EE"],
+    "brand": {"25":"#F3F5FE","50":"#E7ECFC","100":"#D4DCFA","200":"#ADB9F6","300":"#8897F2","400":"#5C6CEC","500":"#0C18EC","600":"#0914C4","700":"#070FA0","800":"#050B7D","900":"#04085F","950":"#02053C"},
+    "neutral": {"50":"#F7F9FC","100":"#E8ECF2","200":"#DADDE5","300":"#BEC2CC","400":"#A1A7B3","500":"#858C99","600":"#6C7380","700":"#555A66","800":"#3D424D","900":"#262B33","950":"#11141A","975":"#0A0C10"},
+    "salmonScale": {"10":"#F6B6A6","50":"#EA9682","100":"#EE6D50"}
+  },
+  "typography": {
+    "display": {"family": "ES Allianz", "weight": 200, "tracking": "-0.04em", "license": "commercial", "foundry": "https://extraset.ch"},
+    "body":    {"family": "Inter", "weight": 400, "license": "SIL OFL (free)", "source": "https://fonts.google.com/specimen/Inter"},
+    "mono":    {"family": "Avenue Mono", "transform": "uppercase", "tracking": "0.04em", "license": "commercial", "foundry": "https://boulevardlab.com"},
+    "note": "ES Allianz + Avenue Mono are licensed per-domain and are NOT redistributed. See font-licensing.md."
+  },
+  "stylesheets": {
+    "brand": "https://npc.here.now/zknationbrand/brand/tokens/brand.css",
+    "tokensCss": "https://npc.here.now/zknationbrand/brand/tokens/tokens.css",
+    "tokensJson": "https://npc.here.now/zknationbrand/brand/tokens/tokens.json",
+    "tailwindPreset": "https://npc.here.now/zknationbrand/brand/tokens/tailwind.preset.js",
+    "officeThemeXml": "https://npc.here.now/zknationbrand/brand/tokens/office-theme-colors.xml",
+    "fontsDemo": "https://npc.here.now/zknationbrand/brand/tokens/fonts-demo.css"
+  },
+  "logos": {
+    "lockupNavy": "https://npc.here.now/zknationbrand/brand/logos/svg/zk-nation-lockup-navy.svg",
+    "lockupWhite": "https://npc.here.now/zknationbrand/brand/logos/svg/zk-nation-lockup-white.svg",
+    "logomarkBlue": "https://npc.here.now/zknationbrand/brand/logos/svg/logo_blue.svg",
+    "zksyncWordmark": "https://npc.here.now/zknationbrand/brand/logos/svg/zksync-mark-dark.svg",
+    "zksyncMedallion": "https://npc.here.now/zknationbrand/brand/logos/svg/zksync-medallion-blue.svg",
+    "favicon": "https://npc.here.now/zknationbrand/favicon.ico"
+  },
+  "assetDirs": {
+    "logos": "https://npc.here.now/zknationbrand/brand/logos/",
+    "flags": "https://npc.here.now/zknationbrand/brand/flags/",
+    "icons": "https://npc.here.now/zknationbrand/brand/icons/"
+  },
+  "references": {
+    "overview": "https://npc.here.now/zknationbrand/brand/references/00-brand-overview.md",
+    "voice": "https://npc.here.now/zknationbrand/brand/references/voice-tone-vocabulary.md",
+    "color": "https://npc.here.now/zknationbrand/brand/references/color.md",
+    "typography": "https://npc.here.now/zknationbrand/brand/references/typography.md",
+    "logo": "https://npc.here.now/zknationbrand/brand/references/logo-and-marks.md",
+    "visualLanguage": "https://npc.here.now/zknationbrand/brand/references/visual-language.md",
+    "components": "https://npc.here.now/zknationbrand/brand/references/components-and-construction.md",
+    "officeAndSlides": "https://npc.here.now/zknationbrand/brand/references/office-docs-and-slides.md",
+    "fontLicensing": "https://npc.here.now/zknationbrand/brand/references/font-licensing.md",
+    "dosAndDonts": "https://npc.here.now/zknationbrand/brand/references/dos-and-donts.md",
+    "secondaryBrand": "https://npc.here.now/zknationbrand/brand/references/secondary-brand-zksync-protocol.md"
+  },
+  "skill": "https://npc.here.now/zknationbrand/zk-nation-brand-skill.zip"
+}

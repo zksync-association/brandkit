@@ -22,18 +22,24 @@ sovereign onchain "nation."
 graphics, "nation" iconography, loading/empty states. Treat them as a kit you can arrange in
 grids, rows, or bunting — but keep each tile's internal geometry intact.
 
-## 2. ASCII / dot-grid hero fields
+## 2. ASCII flag fields (the signature hero texture)
 
-The hero backgrounds are **fields of tiny repeated marks** — small arrows (`▸`), dots,
-diamonds, and squares laid on a regular grid, fading in density to suggest a *waving flag* or
-a flowing field. This "ASCII flag" is the brand's hero texture.
+The brand's hero/background texture is a **waving-flag field rendered in ASCII characters**
+(`z / x / k`, plus dots and small marks) on a regular grid, fading in density to suggest a flag
+in motion. **Real assets live in `assets/ascii/`** (12 fields: `group*.png`, `ascii-2-2.png`) —
+**use these, don't hand-roll dot patterns.**
+
+Variants in the set:
+- **Light** (blue characters on white) — for light heroes/sections. e.g. `group-3.png`, `group-5.png`.
+- **Dark** (blue characters on black) — for dark bands/heroes. e.g. `group.png`, `group-6/7/8.png` (square).
+- **Salmon** (orange/salmon characters) — for ZK Nation governance highlights, used sparingly.
+  e.g. `ascii-2-2.png`, `group-4.png`.
+- Aspect ratios: portrait (1334×2000), landscape (1939×1336), square (1600×1600).
 
 Rules:
-- Built from the **logomark arrow, dots, and small squares** only — the same shapes as the flags.
-- Monochrome-on-tint: marks in Brand-500/700 on a Brand-25/50 or gradient field (low contrast,
-  it's a texture, not content).
-- Density gradient is allowed (denser at edges, sparser at center, or vice-versa) to imply motion.
-- Never let the texture compete with foreground type — keep it quiet (≤ ~15% contrast).
+- Pick the variant by surface (light vs dark) and reserve salmon for governance accents.
+- Keep it **quiet behind foreground type** (it's texture, not content) — `cover`, low prominence.
+- Don't recolor or rebuild the logomark out of the ASCII field (that's a logo "Mistake").
 
 ## 3. Icons
 

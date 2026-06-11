@@ -1,0 +1,147 @@
+/* =====================================================================
+   ZKsync Association — Brand Design Tokens
+   Single source of truth for color, type, spacing, radius, motion.
+   Source: ZKsync Visual Guideline v.2025.2 + ZK Nation system (Jan 2026).
+   Import this file, then use the CSS custom properties below.
+   ===================================================================== */
+
+:root {
+  /* ---------- BRAND (blue) — the ZKsync master palette ---------- */
+  --zk-brand-25:  #F3F5FE;
+  --zk-brand-50:  #E7ECFC;
+  --zk-brand-100: #D4DCFA;
+  --zk-brand-200: #ADB9F6;
+  --zk-brand-300: #8897F2;
+  --zk-brand-400: #5C6CEC;
+  --zk-brand-500: #0C18EC;  /* full-saturation brand blue — fills, not backgrounds */
+  --zk-brand-600: #0914C4;
+  --zk-brand-700: #070FA0;  /* PRIMARY ACCENT — headlines, key icons, primary actions */
+  --zk-brand-800: #050B7D;
+  --zk-brand-900: #04085F;
+  --zk-brand-950: #02053C;
+
+  /* ---------- NEUTRAL ---------- */
+  --zk-neutral-50:  #F7F9FC;
+  --zk-neutral-100: #E8ECF2;
+  --zk-neutral-200: #DADDE5;
+  --zk-neutral-300: #BEC2CC;
+  --zk-neutral-400: #A1A7B3;
+  --zk-neutral-500: #858C99;
+  --zk-neutral-600: #6C7380;
+  --zk-neutral-700: #555A66;
+  --zk-neutral-800: #3D424D;
+  --zk-neutral-900: #262B33;
+  --zk-neutral-950: #11141A;  /* PRIMARY TEXT on light */
+  --zk-neutral-975: #0A0C10;
+
+  /* ---------- ADDITIONAL / ILLUSTRATION ---------- */
+  --zk-sand-50:        #FFF6E5;  /* warmth — pair with gradients in illustration */
+  --zk-light-100:      #EDF2FA;  /* alternative illustration fill */
+  --zk-light-200:      #DAE2F2;
+  --zk-gradient-from:  #BFEAFF;  /* subtle hero/section gradient */
+  --zk-gradient-to:    #A5C0EE;
+
+  /* ---------- ZK NATION sub-brand accent (salmon) ---------- */
+  --zk-salmon-10:  #F6B6A6;
+  --zk-salmon-50:  #EA9682;
+  --zk-salmon-100: #EE6D50;  /* governance / sub-brand accent, used sparingly */
+
+  /* ---------- SEMANTIC TOKENS (prefer these in product code) ---------- */
+  --zk-surface:          var(--zk-neutral-50);   /* default page background — light & airy */
+  --zk-surface-raised:   #FFFFFF;
+  --zk-surface-sunken:   var(--zk-brand-25);
+  --zk-surface-inverse:  var(--zk-brand-950);    /* dark sections; use sparingly */
+  --zk-border:           var(--zk-neutral-200);
+  --zk-border-strong:    var(--zk-neutral-300);
+
+  --zk-text:             var(--zk-neutral-950);
+  --zk-text-muted:       var(--zk-neutral-600);
+  --zk-text-accent:      var(--zk-brand-700);     /* headlines, links, emphasis */
+  --zk-text-on-inverse:  var(--zk-neutral-50);
+
+  --zk-accent:           var(--zk-brand-700);
+  --zk-accent-fill:      var(--zk-brand-500);     /* large solid fills step down to 400/500 */
+  --zk-accent-soft:      var(--zk-brand-300);
+  --zk-accent-2:         var(--zk-salmon-100);    /* ZK Nation governance accent */
+
+  --zk-link:             var(--zk-brand-700);
+  --zk-link-hover:       var(--zk-brand-500);
+
+  --zk-gradient-hero:    linear-gradient(180deg, var(--zk-gradient-from) 0%, var(--zk-gradient-to) 100%);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  /* Master brand (ZKsync protocol/product UI): Inter */
+  --zk-font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* ZK Nation display / editorial headlines */
+  --zk-font-display: "ES Allianz", "Inter", system-ui, sans-serif;
+  /* UI labels, nav, buttons, captions, code — UPPERCASE monospace */
+  --zk-font-mono:    "Avenue Mono", "Inter", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --zk-tracking-title: -0.03em;  /* titles: tighten -2% to -5% */
+  --zk-tracking-body:   0;
+  --zk-tracking-mono:   0.04em;   /* mono labels breathe a little, set UPPERCASE */
+
+  --zk-weight-regular:  400;
+  --zk-weight-medium:   500;
+  --zk-weight-semibold: 600;
+  --zk-weight-bold:     700;
+
+  /* Type scale (fluid-ready rem values) */
+  --zk-text-xs:   0.75rem;
+  --zk-text-sm:   0.875rem;
+  --zk-text-base: 1rem;
+  --zk-text-lg:   1.125rem;
+  --zk-text-xl:   1.375rem;
+  --zk-text-2xl:  1.75rem;
+  --zk-text-3xl:  2.25rem;
+  --zk-text-4xl:  3rem;
+  --zk-text-5xl:  4rem;
+  --zk-text-6xl:  5.5rem;
+
+  --zk-leading-tight: 1.05;
+  --zk-leading-snug:  1.2;
+  --zk-leading-body:  1.55;
+
+  /* ---------- SPACING (8px base) ---------- */
+  --zk-space-1: 0.25rem;
+  --zk-space-2: 0.5rem;
+  --zk-space-3: 0.75rem;
+  --zk-space-4: 1rem;
+  --zk-space-6: 1.5rem;
+  --zk-space-8: 2rem;
+  --zk-space-12: 3rem;
+  --zk-space-16: 4rem;
+  --zk-space-24: 6rem;
+
+  /* ---------- RADIUS ---------- */
+  /* The system favors crisp, square-ish geometry and outlined boxes. */
+  --zk-radius-none: 0;
+  --zk-radius-sm:   2px;
+  --zk-radius-md:   4px;
+  --zk-radius-lg:   8px;
+  --zk-radius-pill: 999px;
+
+  /* ---------- BORDERS / OUTLINES (signature "bordered box" look) ---------- */
+  --zk-rule: 1px solid var(--zk-border);
+  --zk-rule-strong: 1px solid var(--zk-brand-700);
+
+  /* ---------- MOTION ---------- */
+  --zk-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --zk-dur-fast: 120ms;
+  --zk-dur: 200ms;
+  --zk-dur-slow: 360ms;
+}
+
+/* ---------- FONTS & LICENSING ----------
+   Inter is open-source (SIL OFL) — load it freely from Google Fonts:
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   ES Allianz (Extraset Typefoundry) and Avenue Mono (Boulevard LAB) are COMMERCIAL,
+   per-domain licensed fonts. Their binaries are intentionally NOT bundled or hosted here —
+   redistribution is prohibited by their EULAs. See references/font-licensing.md.
+
+   The font stacks above fall back to Inter / system mono, so this stylesheet works for
+   everyone WITHOUT the licensed fonts (display renders in Inter).
+
+   If YOU hold a valid Extraset + Boulevard LAB license, place your own .woff2/.woff files
+   in ./fonts/ and additionally include fonts-licensed.css to activate ES Allianz + Avenue Mono. */

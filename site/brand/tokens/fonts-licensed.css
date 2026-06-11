@@ -1,0 +1,21 @@
+/* =====================================================================
+   ZK Nation — OPTIONAL licensed @font-face declarations.
+   ONLY for parties who hold valid licenses for BOTH:
+     • ES Allianz  — Extraset Typefoundry (https://extraset.ch)
+     • Avenue Mono — Boulevard LAB        (https://boulevardlab.com)
+   The font BINARIES are NOT included in this kit (redistribution is prohibited).
+   Drop your own licensed .woff2/.woff files into ./fonts/ with the names below,
+   then include this file AFTER tokens.css / brand.css. See references/font-licensing.md.
+   ===================================================================== */
+@font-face { font-family:"ES Allianz"; font-weight:200; font-style:normal; font-display:swap;
+  src:url("../fonts/ESAllianz-Extralight.woff2") format("woff2"), url("../fonts/ESAllianz-Extralight.woff") format("woff"); }
+@font-face { font-family:"ES Allianz"; font-weight:300; font-style:normal; font-display:swap;
+  src:url("../fonts/ESAllianz-Light.woff2") format("woff2"), url("../fonts/ESAllianz-Light.woff") format("woff"); }
+@font-face { font-family:"ES Allianz"; font-weight:400; font-style:normal; font-display:swap;
+  src:url("../fonts/ESAllianz-Book.woff2") format("woff2"), url("../fonts/ESAllianz-Book.woff") format("woff"); }
+@font-face { font-family:"ES Allianz"; font-weight:500; font-style:normal; font-display:swap;
+  src:url("../fonts/ESAllianz-Medium.woff2") format("woff2"), url("../fonts/ESAllianz-Medium.woff") format("woff"); }
+@font-face { font-family:"ES Allianz"; font-weight:700; font-style:normal; font-display:swap;
+  src:url("../fonts/ESAllianz-Bold.woff2") format("woff2"), url("../fonts/ESAllianz-Bold.woff") format("woff"); }
+@font-face { font-family:"Avenue Mono"; font-weight:400; font-style:normal; font-display:swap;
+  src:url("../fonts/AvenueMono.woff2") format("woff2"), url("../fonts/AvenueMono.woff") format("woff"); }

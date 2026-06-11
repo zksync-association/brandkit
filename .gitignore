@@ -1,0 +1,15 @@
+# --- Commercial, non-redistributable font binaries — never commit to the public repo ---
+# (Inter is free and IS committed. ES Allianz + Avenue Mono are licensed per-domain.)
+_licensed-fonts-DO-NOT-REDISTRIBUTE/
+**/ESAllianz-*.woff
+**/ESAllianz-*.woff2
+**/ESAllianz-*.otf
+**/ESAllianz-*.ttf
+**/AvenueMono.woff
+**/AvenueMono.woff2
+# The live showcase at the here.now mirror serves these for rendering; the repo stays clean.
+
+# Working scratch
+.DS_Store
+*.log
+.herenow/

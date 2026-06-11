@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZK Nation — Brand Kit</title>
+  <meta name="description" content="The official ZKsync Association / ZK Nation brand kit: colors, typography, logo, visual language, voice, design tokens, fonts, and a Claude Code skill. Apply the ZK Nation brand to any doc, deck, or site." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="brand/tokens/brand.css" />
+  <!-- Canonical brand fonts (ES Allianz + Avenue Mono). Served on the Association's
+       licensed brand domain so the showcase renders the true brand. Licensed binaries
+       are NOT offered as downloads; third parties must license their own. -->
+  <link rel="stylesheet" href="brand/tokens/fonts-licensed.css" />
+  <link rel="icon" href="brand/logos/svg/logo_blue.svg" />
+  <style>
+    section { padding: var(--zk-space-24) 0; border-top: var(--zk-rule); }
+    section:first-of-type { border-top: 0; }
+    .lead { font-size: var(--zk-text-xl); color: var(--zk-text-muted); max-width: 40ch; }
+    .grid { display:grid; gap:var(--zk-space-6); }
+    .g2 { grid-template-columns:repeat(2,1fr); } .g3 { grid-template-columns:repeat(3,1fr); }
+    .g4 { grid-template-columns:repeat(4,1fr); }
+    @media(max-width:820px){ .g2,.g3,.g4{ grid-template-columns:1fr; } }
+    .swatch { border:var(--zk-rule); border-radius:var(--zk-radius-md); overflow:hidden; }
+    .swatch .chip { height:84px; }
+    .swatch .meta { padding:10px 12px; display:flex; justify-content:space-between; gap:8px; }
+    .swatch .meta b { font-family:var(--zk-font-mono); font-size:var(--zk-text-xs); }
+    .swatch .meta span { font-family:var(--zk-font-mono); font-size:var(--zk-text-xs); color:var(--zk-text-muted); }
+    .type-row { display:flex; align-items:baseline; gap:var(--zk-space-6); padding:var(--zk-space-4) 0; border-bottom:var(--zk-rule); flex-wrap:wrap; }
+    .type-row .role { width:160px; flex:none; }
+    .flagwrap { display:grid; grid-template-columns:repeat(6,1fr); gap:var(--zk-space-4); }
+    .flagwrap img { width:100%; border:var(--zk-rule); border-radius:var(--zk-radius-sm); display:block; background:var(--zk-brand-25); }
+    @media(max-width:820px){ .flagwrap{ grid-template-columns:repeat(3,1fr);} }
+    .logo-cell { display:flex; align-items:center; justify-content:center; padding:var(--zk-space-12); border-radius:var(--zk-radius-md); }
+    .logo-cell img { max-width:220px; max-height:80px; }
+    pre.code { background:var(--zk-brand-950); color:var(--zk-neutral-100); padding:var(--zk-space-6);
+      border-radius:var(--zk-radius-md); overflow-x:auto; font-family:var(--zk-font-mono); font-size:var(--zk-text-sm);
+      line-height:1.6; white-space:pre-wrap; word-break:break-word; }
+    pre.code .c { color:var(--zk-brand-300); }
+    .pill-row{ display:flex; gap:var(--zk-space-3); flex-wrap:wrap; }
+    .say { display:grid; grid-template-columns:1fr 1fr; gap:var(--zk-space-6); }
+    @media(max-width:820px){ .say{ grid-template-columns:1fr; } }
+    .say ul { margin:0; padding-left:1.1em; } .say li{ margin-bottom:6px; }
+    .arrow-mark{ width:34px; height:auto; vertical-align:middle; margin-right:8px; }
+    .anchor{ scroll-margin-top:84px; }
+    /* prevent grid/flex children from forcing overflow */
+    .grid > *, .say > *, .zk-footer > *, .zk-hero__panel { min-width:0; }
+    img, svg { max-width:100%; }
+    /* sample-copy specimens */
+    .specimen { display:grid; grid-template-columns:2fr 1fr; gap:var(--zk-space-6); align-items:start; }
+    @media(max-width:820px){ .specimen{ grid-template-columns:1fr; } }
+    .pullquote { font-family:var(--zk-font-display); font-size:var(--zk-text-2xl); line-height:1.25;
+      letter-spacing:-0.02em; color:var(--zk-text-accent); border-left:4px solid var(--zk-brand-700);
+      padding-left:var(--zk-space-6); margin:0; }
+    .src { display:block; margin-top:var(--zk-space-3); }
+    /* ---------- RESPONSIVE / MOBILE ---------- */
+    @media (max-width: 720px){
+      .zk-nav__links{ display:none; }                 /* compact mobile nav: logo + Apply */
+      .zk-nav{ padding:var(--zk-space-3) var(--zk-space-4); }
+      .zk-container{ padding:0 var(--zk-space-4); }
+      section{ padding:var(--zk-space-16) 0; }
+      .zk-hero{ padding:var(--zk-space-12) var(--zk-space-4); }
+      .zk-hero__panel{ padding:var(--zk-space-6); }
+      .zk-footer{ padding:var(--zk-space-8) var(--zk-space-4); }
+      .zk-footer a{ display:inline-block; padding:4px 0; }   /* taller tap targets */
+      .logo-cell{ padding:var(--zk-space-6) !important; }
+      .flagwrap{ grid-template-columns:repeat(2,1fr); }
+      .lead{ max-width:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="zk-nav" style="position:sticky; top:0; z-index:50;">
+    <a href="#top" style="display:flex; align-items:center; gap:10px; font-family:var(--zk-font-display); color:var(--zk-text-accent); letter-spacing:-0.02em; font-size:var(--zk-text-lg);">
+      <img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="height:28px; width:28px; border-radius:4px;"/>ZK&nbsp;Nation Brand
+    </a>
+    <ul class="zk-nav__links">
+      <li><a href="#color">Color</a></li>
+      <li><a href="#type">Type</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#flags">Visual</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#copy">Copy</a></li>
+      <li><a href="#kit">Get the kit</a></li>
+    </ul>
+    <a class="zk-btn" href="#kit">Apply the brand</a>
+  </nav>
+
+  <span id="top"></span>
+  <!-- HERO -->
+  <header class="zk-hero">
+    <div class="zk-hero__panel">
+      <p class="zk-eyebrow">ZKSYNC ASSOCIATION · BRAND KIT</p>
+      <h1>The <span style="font-weight:700;">ZK&nbsp;Nation</span> brand,<br/>in one link.</h1>
+      <p class="lead">Colors, type, logo, flags, voice, design tokens, fonts, and a Claude Code skill —
+        everything you need to make a doc, deck, or site that feels like ZK&nbsp;Nation.</p>
+      <div class="pill-row" style="margin-top:var(--zk-space-6);">
+        <a class="zk-btn" href="#kit">Get the kit</a>
+        <a class="zk-btn zk-btn--ghost" href="https://github.com/zksync-association/brandkit">View on GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="zk-container">
+
+    <!-- ARCHITECTURE -->
+    <section class="anchor" id="about">
+      <p class="zk-eyebrow">BRAND ARCHITECTURE</p>
+      <h2>Two brands, one system.</h2>
+      <div class="grid g2" style="margin-top:var(--zk-space-8);">
+        <div class="zk-card zk-card--tab">
+          <span class="zk-tag">PRIMARY</span>
+          <h4 style="margin-top:var(--zk-space-4);">ZK Nation</h4>
+          <p>Governance, community, voting, the DAO. <b>ES Allianz</b> display + <b>Avenue Mono</b>
+             labels + Inter body. Signal-flag visual language. Salmon accent, used sparingly.</p>
+        </div>
+        <div class="zk-card">
+          <span class="zk-tag" style="background:var(--zk-neutral-100); color:var(--zk-text-muted);">SECONDARY</span>
+          <h4 style="margin-top:var(--zk-space-4);">ZKsync Protocol</h4>
+          <p>The technology &amp; enterprise product. Inter throughout, triangle CTA accents,
+             cleaner corporate feel. Same palette and logomark. "The Bank Stack of Ethereum."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDO -->
+    <section class="anchor" id="credo">
+      <p class="zk-eyebrow">MISSION · THE ZK CREDO</p>
+      <h2>Freedom → Progress → Prosperity</h2>
+      <p class="lead">ZK Nation exists to embed the values of the ZK Credo into every layer of the ZKsync protocol.</p>
+      <div class="grid g3" style="margin-top:var(--zk-space-8);">
+        <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">INTEGRITY</p><h5>Don't trust, verify.</h5><p>Computational integrity at any scale via recursive ZK proofs.</p></div>
+        <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">PRIVACY</p><h5>A fundamental right.</h5><p>Privacy we must assert and defend together — by default.</p></div>
+        <div class="zk-card zk-card--tab"><p class="zk-label" style="color:var(--zk-brand-700)">MAGIC</p><h5>Magic Moon Math.</h5><p>Advanced technology, indistinguishable from magic — honoring user control.</p></div>
+      </div>
+    </section>
+
+    <!-- COLOR -->
+    <section class="anchor" id="color">
+      <p class="zk-eyebrow">COLOR SYSTEM</p>
+      <h2>Light &amp; airy. Brand-700 is the accent, not the background.</h2>
+      <p class="lead">Default to light surfaces; reach for Brand-700 to emphasize. Never full-bleed blue.</p>
+      <div id="brand-swatches" class="grid g4" style="margin-top:var(--zk-space-8);"></div>
+      <h5 style="margin-top:var(--zk-space-12);">Neutral</h5>
+      <div id="neutral-swatches" class="grid g4"></div>
+      <h5 style="margin-top:var(--zk-space-12);">Accent &amp; additional</h5>
+      <div id="extra-swatches" class="grid g4"></div>
+    </section>
+
+    <!-- TYPE -->
+    <section class="anchor" id="type">
+      <p class="zk-eyebrow">TYPOGRAPHY</p>
+      <h2>Three voices: ES Allianz, Inter, Avenue Mono.</h2>
+      <div class="grid g3" style="margin:var(--zk-space-8) 0;">
+        <div class="zk-card"><p class="zk-label">DISPLAY</p><div style="font-family:var(--zk-font-display); font-size:var(--zk-text-3xl); letter-spacing:-0.03em; color:var(--zk-text-accent);">ES Allianz</div><p class="zk-meta">Editorial headlines</p></div>
+        <div class="zk-card"><p class="zk-label">BODY</p><div style="font-family:var(--zk-font-sans); font-size:var(--zk-text-3xl); color:var(--zk-text);">Inter</div><p class="zk-meta">All body &amp; UI text</p></div>
+        <div class="zk-card"><p class="zk-label">MONO</p><div style="font-family:var(--zk-font-mono); font-size:var(--zk-text-2xl); text-transform:uppercase; color:var(--zk-text);">Avenue Mono</div><p class="zk-meta">Labels · nav · buttons</p></div>
+      </div>
+      <p class="zk-eyebrow">THE TYPE-SIZE FRAMEWORK</p>
+      <div id="type-scale"></div>
+    </section>
+
+    <!-- LOGO -->
+    <section class="anchor" id="logo">
+      <p class="zk-eyebrow">LOGO &amp; MARKS</p>
+      <h2>Twin arrows. Never redrawn.</h2>
+
+      <h5 style="margin-top:var(--zk-space-8);">ZKsync — wordmark (master brand)</h5>
+      <div class="grid g2">
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule);"><img src="brand/logos/svg/zksync-mark-dark.svg" alt="ZKsync wordmark" style="max-width:260px; max-height:60px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-brand-950);"><img src="brand/logos/svg/zksync-mark-light.svg" alt="ZKsync wordmark white" style="max-width:260px; max-height:60px;"/></div>
+      </div>
+
+      <h5 style="margin-top:var(--zk-space-12);">ZKsync — medallion (twin-arrow mark)</h5>
+      <div class="grid g4">
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule); padding:var(--zk-space-8);"><img src="brand/logos/svg/zksync-medallion-light.svg" alt="ZKsync medallion light" style="max-width:120px; max-height:120px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule); padding:var(--zk-space-8);"><img src="brand/logos/svg/zksync-medallion-blue.svg" alt="ZKsync medallion blue" style="max-width:120px; max-height:120px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-brand-950); padding:var(--zk-space-4); grid-column:span 2;"><img src="brand/flags/blue/main-flag-ascii_blue.png" alt="ZK Nation flag with ASCII" style="max-width:100%; max-height:130px;"/></div>
+      </div>
+
+      <h5 style="margin-top:var(--zk-space-12);">ZK Nation — logomark &amp; flag-style</h5>
+      <div class="grid g4">
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule); padding:var(--zk-space-8);"><img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation mark blue" style="max-width:120px; max-height:120px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-brand-950); padding:var(--zk-space-8);"><img src="brand/logos/svg/logo_white.svg" alt="ZK Nation mark white" style="max-width:120px; max-height:120px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule); padding:var(--zk-space-4);"><img src="brand/flags/blue/main-flag_blue.png" alt="ZK Nation flag blue" style="max-width:100%; max-height:120px;"/></div>
+        <div class="logo-cell" style="background:var(--zk-neutral-50); border:var(--zk-rule); padding:var(--zk-space-4);"><img src="brand/flags/orange/main-flag_orange.png" alt="ZK Nation flag orange" style="max-width:100%; max-height:120px;"/></div>
+      </div>
+
+      <p style="margin-top:var(--zk-space-6);">Keep ≥1× clear space (≥2× at small sizes). Don't stretch, rotate, recolor, badge, or rebuild
+         the mark from dots/patterns. Use the original artwork from the kit. The ZKsync wordmark is the
+         master brand; the ZK Nation square logomark is the governance sub-brand (blue default, orange expressive).</p>
+    </section>
+
+    <!-- VISUAL LANGUAGE -->
+    <section class="anchor" id="flags">
+      <p class="zk-eyebrow">VISUAL LANGUAGE</p>
+      <h2>A signal-flag alphabet for an onchain nation.</h2>
+      <p class="lead">Flat, duotone, geometric tiles in brand blue (and an expressive orange set).</p>
+      <div class="flagwrap" style="margin-top:var(--zk-space-8);">
+        <img src="brand/flags/blue/main-flag_blue.png" alt="main flag"/>
+        <img src="brand/flags/blue/flag-1_blue.png" alt="flag 1"/>
+        <img src="brand/flags/blue/flag-2_blue.png" alt="flag 2"/>
+        <img src="brand/flags/blue/flag-3_blue.png" alt="flag 3"/>
+        <img src="brand/flags/blue/flag-5_blue.png" alt="flag 5"/>
+        <img src="brand/flags/blue/flag-7_blue.png" alt="flag 7"/>
+        <img src="brand/flags/orange/main-flag_orange.png" alt="main flag orange"/>
+        <img src="brand/flags/orange/flag-1_orange.png" alt="flag 1 orange"/>
+        <img src="brand/flags/orange/flag-2_orange.png" alt="flag 2 orange"/>
+        <img src="brand/flags/orange/flag-3_orange.png" alt="flag 3 orange"/>
+        <img src="brand/flags/orange/flag-5_orange.png" alt="flag 5 orange"/>
+        <img src="brand/flags/orange/flag-7_orange.png" alt="flag 7 orange"/>
+      </div>
+      <h5 style="margin-top:var(--zk-space-12);">Icons — duotone, split-tone</h5>
+      <div class="grid g4">
+        <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue.svg" style="width:100%" alt="icon"/></div>
+        <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue-1.svg" style="width:100%" alt="icon"/></div>
+        <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue-2.svg" style="width:100%" alt="icon"/></div>
+        <div class="zk-card" style="padding:var(--zk-space-4);"><img src="brand/icons/svg/icons-large_blue-3.svg" style="width:100%" alt="icon"/></div>
+      </div>
+    </section>
+
+    <!-- VOICE -->
+    <section class="anchor" id="voice">
+      <p class="zk-eyebrow">VOICE &amp; TONE</p>
+      <h2>Principled, verifiable, collective, precise, calm.</h2>
+      <div class="say" style="margin-top:var(--zk-space-8);">
+        <div class="zk-card"><p class="zk-label" style="color:var(--zk-brand-700)">SAY</p>
+          <ul>
+            <li>"Shape the Future of ZKsync, Together."</li>
+            <li>"Don't trust, verify."</li>
+            <li>"Independently checked, not blindly trusted."</li>
+            <li>Govern · delegate · proposal · sovereignty · onchain</li>
+            <li>Spell it <b>ZKsync</b> and <b>ZK Nation</b> — exactly.</li>
+          </ul>
+        </div>
+        <div class="zk-card"><p class="zk-label" style="color:var(--zk-salmon-100)">DON'T SAY</p>
+          <ul>
+            <li>Hype / FOMO ("to the moon", "LFG", "wagmi")</li>
+            <li>Price or "investment" framing</li>
+            <li>"Decentralized" with no mechanism</li>
+            <li>"zkSync", "ZK Sync", "ZKSync"</li>
+            <li>Emoji spam &amp; exclamation theatre</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE COPY / VOICE IN THE WILD -->
+    <section class="anchor" id="copy">
+      <p class="zk-eyebrow">VOICE IN THE WILD · REAL COPY</p>
+      <h2>How the brand actually reads.</h2>
+      <p class="lead">Real text from zknation.io and the governance docs — set in the brand type.</p>
+
+      <div class="specimen" style="margin-top:var(--zk-space-8);">
+        <div>
+          <div style="font-family:var(--zk-font-display); font-size:clamp(2rem,5vw,3.25rem); line-height:1.08; letter-spacing:-0.035em; color:var(--zk-text-accent);">
+            Shape the <span style="font-weight:700;">Future of ZKsync,</span> Together.
+          </div>
+          <p style="margin-top:var(--zk-space-6); font-size:var(--zk-text-lg);">
+            ZK Nation unites chains, builders, and operators to govern and grow the ZKsync
+            Protocol—advancing onchain privacy, sovereignty, and interoperability.</p>
+          <span class="zk-meta src">— zknation.io, hero</span>
+        </div>
+        <div class="zk-card">
+          <p class="zk-eyebrow">TAGLINES (AVENUE MONO)</p>
+          <div class="pill-row" style="margin-top:var(--zk-space-3);">
+            <span class="zk-tag">INSTITUTIONAL-GRADE GOVERNANCE</span>
+            <span class="zk-tag">VERIFIABLE AND FINAL</span>
+            <span class="zk-tag">UNCOMPROMISING SECURITY</span>
+            <span class="zk-tag zk-tag--gov">DECENTRALIZED</span>
+          </div>
+          <span class="zk-meta src">— zknation.io, section headers</span>
+        </div>
+      </div>
+
+      <div class="grid g2" style="margin-top:var(--zk-space-12); align-items:start;">
+        <div>
+          <blockquote class="pullquote">"History shows us how technology can expand personal freedoms, unleashing creativity and innovation, leading to progress and prosperity."</blockquote>
+          <span class="zk-meta src">— docs.zknation.io, Mission &amp; the ZK Credo</span>
+        </div>
+        <div class="zk-card zk-card--tab">
+          <p class="zk-label" style="color:var(--zk-brand-700)">THE ZK PRINCIPLES</p>
+          <p>Trustlessness · Security · Reliability · Censorship-Resistance · Privacy ·
+             Hyperscalability · Accessibility · Sovereignty.</p>
+          <p style="margin-bottom:0;">A decentralized network must be able to verify its own
+             integrity — "independently checked, not blindly trusted."</p>
+          <span class="zk-meta src">— docs.zknation.io, ZK Principles</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="anchor" id="components">
+      <p class="zk-eyebrow">COMPONENTS</p>
+      <h2>Outlined boxes. Mono labels. ▸ buttons.</h2>
+      <div class="grid g2" style="margin-top:var(--zk-space-8); align-items:start;">
+        <div class="zk-card">
+          <p class="zk-eyebrow">PROPOSAL OVERVIEW</p>
+          <h5>Institutional-grade governance.</h5>
+          <p>Three bodies balance power: Token Assembly, Guardians, Security Council.</p>
+          <div class="pill-row"><a class="zk-btn" href="#">Vote now</a><a class="zk-btn zk-btn--ghost" href="#">Learn more</a></div>
+        </div>
+        <div class="zk-card" style="display:flex; flex-direction:column; gap:var(--zk-space-4);">
+          <div class="pill-row"><span class="zk-tag">+234</span><span class="zk-tag zk-tag--gov">GOVERNANCE</span></div>
+          <span class="zk-meta">PROPOSALEXECUTED · ZKPROTOCOLGOVERNOR</span>
+          <span class="zk-meta">BY ZKSYNC GOVERNANCE • 5/29/2025</span>
+          <p>This whole page is built on <code>brand.css</code> — these are real components.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET THE KIT -->
+    <section class="anchor" id="kit">
+      <p class="zk-eyebrow">GET THE KIT · APPLY THE BRAND</p>
+      <h2>One link. Everything public.</h2>
+      <div class="grid g2" style="margin-top:var(--zk-space-8); align-items:start;">
+        <div>
+          <h5>1 · In Claude Code</h5>
+          <p>Point Claude at this kit and ask it to apply the brand:</p>
+          <pre class="code"><span class="c"># tell Claude Code:</span>
+Apply the ZK Nation brand from
+https://github.com/zksync-association/brandkit
+
+<span class="c"># or fetch the machine-readable instructions:</span>
+curl -s https://npc.here.now/zknationbrand/apply-zk-nation-brand.md</pre>
+          <h5 style="margin-top:var(--zk-space-8);">2 · Install the skill</h5>
+          <pre class="code"><span class="c"># drop the skill into your Claude Code skills dir</span>
+git clone https://github.com/zksync-association/brandkit
+cp -R brandkit/skill ~/.claude/skills/zk-nation-brand</pre>
+        </div>
+        <div>
+          <h5>3 · Link the stylesheet (web)</h5>
+          <p>Any site can use the live tokens + fonts:</p>
+          <pre class="code">&lt;link rel="stylesheet"
+  href="https://npc.here.now/zknationbrand/brand/tokens/brand.css"&gt;</pre>
+          <h5 style="margin-top:var(--zk-space-8);">4 · Downloads</h5>
+          <ul style="padding-left:1.1em;">
+            <li><a href="zk-nation-brand-skill.zip">Claude Code skill (.zip)</a></li>
+            <li><a href="brand/tokens/brand.css">brand.css</a> · <a href="brand/tokens/tokens.css">tokens.css</a> · <a href="brand/tokens/tokens.json">tokens.json</a></li>
+            <li><a href="brand/tokens/tailwind.preset.js">Tailwind preset</a> · <a href="brand/tokens/office-theme-colors.xml">Office theme colors</a></li>
+            <li><a href="brand/fonts/">Fonts</a> · <a href="brand/logos/">Logos</a> · <a href="brand/flags/">Flags</a> · <a href="brand/icons/">Icons</a></li>
+            <li><a href="apply-zk-nation-brand.md">apply-zk-nation-brand.md</a> (for agents)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="zk-footer">
+    <div>
+      <strong style="display:flex; align-items:center; gap:10px; font-family:var(--zk-font-display); color:var(--zk-text-accent);">
+        <img src="brand/logos/svg/logo_blue.svg" alt="ZK Nation logomark" style="height:26px; width:26px; border-radius:4px;"/>ZK Nation Brand</strong>
+      <p class="zk-meta" style="margin-top:var(--zk-space-3)">FREEDOM → PROGRESS → PROSPERITY</p>
+    </div>
+    <div><h6>Brand</h6><ul><li><a href="#color">Color</a></li><li><a href="#type">Type</a></li><li><a href="#logo">Logo</a></li><li><a href="#voice">Voice</a></li></ul></div>
+    <div><h6>Kit</h6><ul><li><a href="#kit">Get the kit</a></li><li><a href="zk-nation-brand-skill.zip">Skill .zip</a></li><li><a href="brand/tokens/brand.css">brand.css</a></li></ul></div>
+    <div><h6>Source</h6><ul><li><a href="https://github.com/zksync-association/brandkit">GitHub</a></li><li><a href="https://www.zknation.io">zknation.io</a></li><li><a href="https://docs.zknation.io">Docs</a></li></ul></div>
+  </footer>
+
+  <script>
+    const BRAND = [['brand-25','#F3F5FE'],['brand-50','#E7ECFC'],['brand-100','#D4DCFA'],['brand-200','#ADB9F6'],['brand-300','#8897F2'],['brand-400','#5C6CEC'],['brand-500','#0C18EC'],['brand-600','#0914C4'],['brand-700','#070FA0'],['brand-800','#050B7D'],['brand-900','#04085F'],['brand-950','#02053C']];
+    const NEUTRAL = [['neutral-50','#F7F9FC'],['neutral-100','#E8ECF2'],['neutral-200','#DADDE5'],['neutral-300','#BEC2CC'],['neutral-400','#A1A7B3'],['neutral-500','#858C99'],['neutral-600','#6C7380'],['neutral-700','#555A66'],['neutral-800','#3D424D'],['neutral-900','#262B33'],['neutral-950','#11141A'],['neutral-975','#0A0C10']];
+    const EXTRA = [['salmon-10','#F6B6A6'],['salmon-50','#EA9682'],['salmon-100','#EE6D50'],['sand-50','#FFF6E5'],['light-100','#EDF2FA'],['light-200','#DAE2F2'],['grad-from','#BFEAFF'],['grad-to','#A5C0EE']];
+    function swatches(el, arr){
+      document.getElementById(el).innerHTML = arr.map(([n,h])=>(
+        `<div class="swatch"><div class="chip" style="background:${h}"></div><div class="meta"><b>${n}</b><span>${h}</span></div></div>`
+      )).join('');
+    }
+    swatches('brand-swatches', BRAND); swatches('neutral-swatches', NEUTRAL); swatches('extra-swatches', EXTRA);
+
+    const SCALE = [
+      ['Display','5.5rem','600','var(--zk-font-display)','Aa'],
+      ['H1','4rem','600','var(--zk-font-display)','Aa'],
+      ['H2','3rem','600','var(--zk-font-display)','Aa'],
+      ['H3','2.25rem','600','var(--zk-font-sans)','Aa'],
+      ['H4','1.75rem','600','var(--zk-font-sans)','Aa'],
+      ['H5','1.375rem','600','var(--zk-font-sans)','Aa'],
+      ['Body','1rem','400','var(--zk-font-sans)','The quick brown fox'],
+      ['Label','0.875rem','400','var(--zk-font-mono)','UI LABEL · MONO'],
+    ];
+    document.getElementById('type-scale').innerHTML = SCALE.map(([r,s,w,f,sample])=>(
+      `<div class="type-row"><div class="role"><b class="zk-label">${r}</b><br><span class="zk-meta">${s}</span></div>
+       <div style="font-family:${f}; font-size:min(${s}, 9vw); font-weight:${w}; letter-spacing:${parseFloat(s)>1.3?'-0.03em':'0'}; ${f.includes('mono')?'text-transform:uppercase;letter-spacing:0.04em;':''} color:var(--zk-text); line-height:1.1;">${sample}</div></div>`
+    )).join('');
+  </script>
+</body>
+</html>

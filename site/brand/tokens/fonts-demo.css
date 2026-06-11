@@ -1,0 +1,22 @@
+/* =====================================================================
+   ZK Nation — DEMO FONTS (free, redistributable look-alikes)
+   For prototyping, demos, and anyone WITHOUT an ES Allianz / Avenue Mono license.
+   Loads open-licensed Google Fonts and re-points the brand font variables to them,
+   so layouts keep the right *rhythm* (grotesk display + monospace labels) legally.
+   Include this AFTER brand.css (or tokens.css).
+
+   Substitutions:
+     ES Allianz  (neo-grotesk display)  ->  Archivo        (SIL OFL)
+     Avenue Mono (monospace labels)     ->  Space Mono     (SIL OFL)
+     Inter stays Inter (already open).
+   These are approximations, NOT the real brand fonts. For production brand work,
+   license ES Allianz (extraset.ch) + Avenue Mono (boulevardlab.com) and use
+   fonts-licensed.css instead. See references/font-licensing.md.
+   ===================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --zk-font-display: "Archivo", "Inter", system-ui, sans-serif;
+  --zk-font-mono:    "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+  /* --zk-font-sans stays Inter */
+}

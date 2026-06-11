@@ -1,0 +1,17 @@
+<!-- ZK Nation Office theme color scheme (Open XML).
+     Paste into a PowerPoint .thmx theme1.xml <a:clrScheme>, or use the hexes manually
+     in Slide Master > Colors > Customize. See references/office-docs-and-slides.md. -->
+<a:clrScheme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" name="ZK Nation">
+  <a:dk1><a:srgbClr val="11141A"/></a:dk1>   <!-- Text/Bg Dark 1  · Neutral-950 -->
+  <a:lt1><a:srgbClr val="F7F9FC"/></a:lt1>   <!-- Text/Bg Light 1 · Neutral-50 -->
+  <a:dk2><a:srgbClr val="04085F"/></a:dk2>   <!-- Text/Bg Dark 2  · Brand-900 -->
+  <a:lt2><a:srgbClr val="F3F5FE"/></a:lt2>   <!-- Text/Bg Light 2 · Brand-25 -->
+  <a:accent1><a:srgbClr val="070FA0"/></a:accent1>  <!-- Brand-700 -->
+  <a:accent2><a:srgbClr val="0C18EC"/></a:accent2>  <!-- Brand-500 -->
+  <a:accent3><a:srgbClr val="8897F2"/></a:accent3>  <!-- Brand-300 -->
+  <a:accent4><a:srgbClr val="EE6D50"/></a:accent4>  <!-- Salmon-100 -->
+  <a:accent5><a:srgbClr val="858C99"/></a:accent5>  <!-- Neutral-500 -->
+  <a:accent6><a:srgbClr val="FFF6E5"/></a:accent6>  <!-- Sand-50 -->
+  <a:hlink><a:srgbClr val="070FA0"/></a:hlink>      <!-- Brand-700 -->
+  <a:folHlink><a:srgbClr val="04085F"/></a:folHlink><!-- Brand-900 -->
+</a:clrScheme>

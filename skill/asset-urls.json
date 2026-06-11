@@ -1,0 +1,39 @@
+{
+  "$comment": "Canonical public URLs for ZK Nation brand assets. The skill references these so it stays lightweight; heavy assets (fonts, flags, logos) live in the public brandkit repo and the published mirror. If the repo branch/owner changes, update `base`. The published here.now mirror is a CDN alternative with proper CORS for web font linking.",
+  "base": "https://raw.githubusercontent.com/zksync-association/brandkit/main",
+  "siteMirror": "https://npc.here.now/zknationbrand",
+  "repo": "https://github.com/zksync-association/brandkit",
+  "stylesheets": {
+    "tokens": "{base}/skill/assets/tokens/tokens.css",
+    "brand": "{base}/skill/assets/tokens/brand.css",
+    "brandHosted": "{siteMirror}/brand/tokens/brand.css",
+    "tailwindPreset": "{base}/skill/assets/tokens/tailwind.preset.js",
+    "tokensJson": "{base}/skill/assets/tokens/tokens.json",
+    "officeThemeXml": "{base}/skill/assets/tokens/office-theme-colors.xml"
+  },
+  "fonts": {
+    "$licensing": "ES Allianz (Extraset) and Avenue Mono (Boulevard LAB) are commercial, per-domain licensed fonts and are NOT redistributed here. Only Inter is public. See skill/references/font-licensing.md.",
+    "inter": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+    "demoCss": "{base}/skill/assets/tokens/fonts-demo.css",
+    "licensedCss": "{base}/skill/assets/tokens/fonts-licensed.css",
+    "esAllianzLicense": "https://extraset.ch",
+    "avenueMonoLicense": "https://boulevardlab.com"
+  },
+  "logos": {
+    "zkNationBlue": "{base}/skill/assets/logos/svg/logo_blue.svg",
+    "zkNationWhite": "{base}/skill/assets/logos/svg/logo_white.svg",
+    "zkNationDarkBlue": "{base}/skill/assets/logos/svg/logo-dark_blue.svg",
+    "zkNationOrange": "{base}/skill/assets/logos/svg/logo-dark_orange.svg",
+    "zksyncMarkDark": "{base}/skill/assets/logos/svg/zksync-mark-dark.svg",
+    "zksyncMarkLight": "{base}/skill/assets/logos/svg/zksync-mark-light.svg"
+  },
+  "assetDirs": {
+    "fonts": "{base}/skill/assets/fonts/",
+    "logos": "{base}/skill/assets/logos/",
+    "icons": "{base}/skill/assets/icons/",
+    "flags": "{base}/skill/assets/flags/",
+    "tokens": "{base}/skill/assets/tokens/"
+  },
+  "applyInstructions": "{siteMirror}/apply-zk-nation-brand.md",
+  "skillDownload": "{siteMirror}/zk-nation-brand-skill.zip"
+}

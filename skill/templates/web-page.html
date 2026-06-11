@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZK Nation — Web Page Template</title>
+  <!-- Inter from Google Fonts; ES Allianz + Avenue Mono come from brand.css @font-face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/tokens/brand.css" />
+  <style>
+    /* page-specific helpers only — everything else comes from brand.css */
+    .grid-3 { display:grid; gap:var(--zk-space-6); grid-template-columns:repeat(3,1fr); margin:var(--zk-space-12) 0; }
+    @media(max-width:768px){ .grid-3{ grid-template-columns:1fr; } }
+    section { padding: var(--zk-space-16) 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="zk-nav">
+    <strong style="font-family:var(--zk-font-display); color:var(--zk-text-accent); letter-spacing:-0.02em;">◄► ZK Nation</strong>
+    <ul class="zk-nav__links">
+      <li><a href="#">Docs</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><a href="#">Delegate</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Protocol</a></li>
+    </ul>
+    <a class="zk-btn" href="#">Vote</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="zk-hero">
+    <div class="zk-hero__panel">
+      <p class="zk-eyebrow">ZK NATION · GOVERNANCE</p>
+      <h1>Shape the <span style="font-weight:700;">Future of ZKsync,</span> Together.</h1>
+      <p>ZK Nation unites chains, builders, and operators to govern and grow the ZKsync
+         Protocol — advancing onchain privacy, sovereignty, and interoperability.</p>
+      <div style="display:flex; gap:var(--zk-space-4); flex-wrap:wrap; margin-top:var(--zk-space-6);">
+        <a class="zk-btn" href="#">Shape the protocol. Vote now.</a>
+        <a class="zk-btn zk-btn--ghost" href="#">New to ZKsync? Learn more</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="zk-container">
+    <section>
+      <p class="zk-eyebrow">WHY ZK NATION</p>
+      <h2>Freedom → Progress → Prosperity</h2>
+      <p>Embedding the values of the ZK Credo into every layer of the ZKsync protocol.</p>
+
+      <div class="grid-3">
+        <article class="zk-card zk-card--tab">
+          <p class="zk-label" style="color:var(--zk-brand-700)">INTEGRITY</p>
+          <h4>Don't trust, verify.</h4>
+          <p>Computational integrity at any scale via recursive ZK proofs.</p>
+        </article>
+        <article class="zk-card zk-card--tab">
+          <p class="zk-label" style="color:var(--zk-brand-700)">PRIVACY</p>
+          <h4>A fundamental right.</h4>
+          <p>Privacy we must assert and defend together — by default.</p>
+        </article>
+        <article class="zk-card zk-card--tab">
+          <p class="zk-label" style="color:var(--zk-brand-700)">MAGIC</p>
+          <h4>Magic Moon Math.</h4>
+          <p>Advanced technology, indistinguishable from magic — honoring user control.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- governance feed strip -->
+    <div class="zk-card" style="display:flex; justify-content:space-between; gap:var(--zk-space-6); flex-wrap:wrap;">
+      <span class="zk-meta"><span class="zk-tag">+234</span>&nbsp; PROPOSALEXECUTED · ZKPROTOCOLGOVERNOR</span>
+      <span class="zk-meta">BY ZKSYNC GOVERNANCE • 5/29/2025</span>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="zk-footer">
+    <div><strong style="font-family:var(--zk-font-display); color:var(--zk-text-accent);">◄► ZK Nation</strong>
+      <p class="zk-meta" style="margin-top:var(--zk-space-3)">Govern, defend, and grow the ZKsync protocol.</p></div>
+    <div><h6>Governance</h6><ul><li><a href="#">Active Votes</a></li><li><a href="#">Delegation Portal</a></li><li><a href="#">Forum</a></li></ul></div>
+    <div><h6>Legal</h6><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">ZKsync Association</a></li><li><a href="#">MiCA Whitepaper</a></li></ul></div>
+    <div><h6>Resources</h6><ul><li><a href="#">Blog</a></li><li><a href="#">Governance Docs</a></li><li><a href="#">Brand Assets</a></li></ul></div>
+  </footer>
+
+</body>
+</html>

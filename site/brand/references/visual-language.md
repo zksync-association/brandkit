@@ -46,7 +46,15 @@ a redraw of brand artwork — see the asset gate in `dos-and-donts.md`). Always 
 - **Salmon fields (salmon chars on black) — sparing governance accents, on DARK surfaces:**
   `group-4.png` (landscape 1939×1336), `group-1.png`, `ascii-2-2.png` (portrait 1334×2000). These
   sit on **black**, not light — use them in a dark governance band, never as a light hero.
-- All dark/salmon fields are full-res (≈130–330 KB); the light hero `group-3.png` is right-sized (≈8 KB).
+- All dark/salmon fields are full-res (≈130–330 KB); the light hero `group-3.png` is 1440×992 (≈46 KB).
+
+**Resolution — match the asset to the surface (avoid blur).** A **full-bleed hero** needs a full-res
+field: `group-3.png` (light, **1440×992**) or any dark field (1334–1939 px). The **Flag banner**
+`main-flag-ascii_*.png` is small (~478 px) — use it as a contained motif/banner, **not** stretched
+across a hero. **Never upscale** a small image to fill a large surface (`background-size:cover` or a
+stretched `<img>` past its native size) — that is the blur. For a retina hero, supply a 2× source.
+*Quick post-build check:* no image should render wider than its `naturalWidth` —
+`[...document.querySelectorAll('img')].filter(i => i.clientWidth > i.naturalWidth * 1.3)` should be empty.
 
 **Offline / single-file?** Still use the **real** field — never synthesize one. Embed the actual
 `group-3.png` as a base64 data-URI, or link it from the hosted mirror:

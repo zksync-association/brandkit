@@ -56,6 +56,7 @@ The violations that slip past a color/type review — each with its tell and the
 | **Salmon as body text** | salmon-colored paragraphs | Navy ink; salmon is an accent fill only. |
 | **White on salmon** | white text on a salmon fill (~3:1, fails AA) | Navy ink (Brand-900). |
 | **Full-bleed blue** | page flooded with bright/dark brand blue | Light surfaces; Brand-700 as the *accent*, not the background. |
+| **Low-res / blurry fill** | a small or thumbnail asset stretched to fill a hero/large surface (soft, upscaled) | Match resolution to surface: full-bleed hero → a full-res field (`group-3.png`, 1440 px). Never upscale; check no `<img>` renders wider than its `naturalWidth`. |
 
 Run `scripts/check-brand-assets.py` on HTML/SVG/CSS output to catch the asset ones automatically.
 

@@ -1,34 +1,44 @@
 # Voice, Tone & Vocabulary
 
-> Sources: zknation.io copy; docs.zknation.io (ZK Credo, Governance North Star, Code of Conduct);
-> the **ZKsync Association Operational Report 2024–2025**. Quotes below are verbatim brand copy —
-> see the Reference exemplars at the end for longer passages tagged by register.
+> Sources: the **ZK Nation Verbal Identity** (Wednesday Studio, R2 — the canonical framework, see
+> [[verbal-identity]]); the **ZKsync Association Operational Report 2024–2025** (the voice *in
+> practice*); zknation.io; docs.zknation.io (ZK Credo, Governance North Star, Code of Conduct).
+> Quotes below are verbatim brand copy — see the Reference exemplars at the end for longer passages.
+>
+> **Theory vs. practice.** [[verbal-identity]] defines the intended voice; the Operational Report is
+> the clearest example of it actually shipped. When they differ, the practice wins — but both should
+> read as one voice.
 
-## Voice — who we sound like
+## Voice — the four traits
 
-We sound **authoritative yet inclusive, technical yet accessible.** We are a builder-led,
-principled community making serious infrastructure feel open and human. We don't hype; we
-state what is true and verifiable — and we stay honest when something went wrong.
+ZK Nation **takes its mission seriously, but doesn't take itself too seriously.** We sound
+authoritative yet inclusive, technical yet accessible — a builder-led, principled community making
+serious infrastructure feel open and human. Our personality combines revolutionary, ambitious
+innovation with grounded focus and quick wit. We speak in a way that is **Bold, Grounded, Dynamic,
+and Passionate** — the four canonical voice traits (each rooted in a brand value; full detail in
+[[verbal-identity]]):
 
-Five voice principles:
+1. **Bold** *(root: Freedom).* Confident and courageous about our values; unafraid to take a strong
+   stance and set the tone for the industry. Loud and confident enough to break through the noise of
+   scams and short-term players. Defend open-source values, privacy, and individual sovereignty at
+   every opportunity. *"Don't trust, verify."*
+2. **Grounded** *(root: Responsibility).* Measured, pragmatic, resourceful, meritocratic — building
+   for the endgame. Integrity and alignment between words and actions; clear roadmaps; proactively
+   own mistakes. When we report, we ground claims in outcomes (KPIs, dates, addresses), not
+   adjectives, and name incidents plainly rather than spin them.
+3. **Dynamic** *(root: Constant evolution).* At the cutting edge; take the lead and set the pace with
+   quick wit. Articulate clear visions of what ZK makes possible; fold in the memes and narratives of
+   the moment, lightly. Energetic and adaptable.
+4. **Passionate** *(root: Serious play).* Passion is infectious. We play long-term games with
+   long-term players — cooperative competition that brings out the best. Balance serious ambition
+   with playful camaraderie. *"Shape the Future of ZKsync, Together."*
 
-1. **Principled.** Anchor claims in the ZK Credo (freedom, progress, prosperity) and the
-   ZK Principles. We have a worldview and we state it plainly. *"Privacy shouldn't be a gift
-   given to us; it's a fundamental right we must assert and defend together."*
-2. **Verifiable, not boastful.** Prefer "independently checked, not blindly trusted" over
-   adjectives. *"Don't trust, verify."* Show the mechanism, not the marketing. When we report,
-   we ground claims in numbers and outcomes (KPIs, dates, addresses), not adjectives.
-3. **Collective.** The subject is usually "we," "the community," "together." *"Shape the
-   Future of ZKsync, Together."* We invite participation rather than announce at people:
-   *"Join us in bringing to life the potential of blockchain protocols and zero-knowledge technology."*
-4. **Precise.** Short, declarative sentences. Concrete nouns (delegate, proposal, quorum,
-   Capped Minter) over vague ones (synergy, solution). Technical terms are used correctly,
-   never as decoration.
-5. **Calm confidence — and candor.** "Institutional-grade," "verifiable and final" — stated
-   once, flatly, then backed by detail. No exclamation marks, no urgency theatre. When an
-   incident happens, we describe it factually and say what we did about it; we don't spin and
-   we don't hide. *"It is our belief that success depends on pairing clear strategy with
-   disciplined execution."*
+**Constants across all four:** the subject is usually "we," "the community," "together"; sentences are
+short and declarative; concrete nouns (delegate, proposal, quorum, Capped Minter) over vague ones
+(synergy, solution); technical terms used correctly, never as decoration. Anchor claims in the ZK
+Credo (freedom, progress, prosperity). No exclamation marks, no urgency theatre — confidence comes
+from clarity. *"Privacy shouldn't be a gift given to us; it's a fundamental right we must assert and
+defend together."*
 
 ## Tone — shifts by context
 
@@ -171,3 +181,25 @@ without a mechanism; "revolutionary/game-changing" as filler; calling the token 
 > layer 1 and layer 2 blockchains, but that is no reason to disparage, defame, or slander any
 > competitor to ZKsync. … keep to the facts and be respectful of all the builders in web3 trying
 > to advance freedom through blockchain technology."
+
+**Positioning (canonical — quote verbatim for hero/about copy)** — *ZK Nation Verbal Identity (R2):*
+> Purpose: "To create a support structure, forum, and community for passionate builders focused on
+> real-world impact." · Mission: "To unite and coordinate an ambitious community committed to
+> advancing global freedom through intentional innovation." · Vision: "To accelerate freedom,
+> progress, and prosperity for all."
+
+**Manifesto / digital nation (Bold + visionary)** — *ZK Nation Verbal Identity (R2), Narrative:*
+> "We do not belong to the digital nation, because the digital nation belongs to us. We are bound by
+> choice. We govern ourselves — not each other — but we help each other to do it. We are a universe,
+> not a monolith."
+
+## Channel calibration
+
+One voice, four emphases. Lead with the trait that fits the surface, but never drop the others:
+
+| Channel | Lead trait |
+|---|---|
+| Press / announcements | **Bold** |
+| Governance forum / docs / reports | **Grounded** |
+| Social media | **Dynamic** |
+| IRL events & hackathons | **Passionate** |

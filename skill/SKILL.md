@@ -52,8 +52,9 @@ automatically "the technical brand."
 - **Mark:** twin opposing arrows (`←→`). Use the original artwork with ≥1× clear space; never
   redraw, recolor, skew, or pixel-ify it. **Offline/single-file? Drop in `.zk-logo` /
   `.zk-logo--lockup`** (the real mark, inlined as a data-URI) — never reconstruct it.
-- **Voice:** principled, verifiable ("don't trust, verify"), collective ("…Together"), precise,
-  calm. No hype/FOMO/price talk. Spell **ZKsync** and **ZK Nation** exactly.
+- **Voice:** **Bold · Grounded · Dynamic · Passionate** (the four canonical traits) — takes the mission
+  seriously, not itself; verifiable ("don't trust, verify"), collective ("…Together"), precise, calm.
+  No hype/FOMO/price talk. Spell **ZKsync** and **ZK Nation** exactly. See `references/verbal-identity.md`.
 - **Values:** the ZK Credo — **Freedom → Progress → Prosperity.**
 
 ## How to use this skill
@@ -66,6 +67,8 @@ automatically "the technical brand."
    display falls back to Inter.
 2. **Read the relevant reference** (each is short and self-contained):
    - `references/00-brand-overview.md` — architecture, mission, the ZK Credo.
+   - `references/verbal-identity.md` — the Brand House: positioning (purpose/mission/vision),
+     values, archetypes, the four voice traits, narrative — the canonical source for marketing/site copy.
    - `references/voice-tone-vocabulary.md` — how to write (voice, tone, glossary, spelling).
    - `references/color.md` — palette + semantic roles + accessibility.
    - `references/typography.md` — the three fonts + the **type-size framework** (role→size table).

@@ -62,4 +62,6 @@ Power is balanced across three bodies — the **Token Assembly**, the **Guardian
 1. Decide the layer: **ZKsync** (product/technical) or **ZK Nation** (governance/community).
 2. Pull tokens from `assets/tokens/` (CSS / Tailwind / JSON — one source of truth).
 3. Follow the relevant reference file (color, typography, logo, visual-language, components, voice).
+   For positioning, mission/vision, brand values, archetypes, and the four voice traits, see
+   `verbal-identity.md` (the canonical Brand House) and `voice-tone-vocabulary.md`.
 4. Use assets from `assets/` (logos, icons, flags, fonts) — never recreate the mark.

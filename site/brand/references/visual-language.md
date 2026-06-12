@@ -29,12 +29,25 @@ The brand's hero/background texture is a **waving-flag field rendered in ASCII c
 in motion. **Real assets live in `assets/ascii/`** (12 fields: `group*.png`, `ascii-2-2.png`) —
 **use these, don't hand-roll dot patterns.**
 
-Variants in the set:
-- **Light** (blue characters on white) — for light heroes/sections. e.g. `group-3.png`, `group-5.png`.
-- **Dark** (blue characters on black) — for dark bands/heroes. e.g. `group.png`, `group-6/7/8.png` (square).
-- **Salmon** (orange/salmon characters) — for ZK Nation governance highlights, used sparingly.
-  e.g. `ascii-2-2.png`, `group-4.png`.
-- Aspect ratios: portrait (1334×2000), landscape (1939×1336), square (1600×1600).
+**The fields by surface (verified against the actual files — match the field to your background):**
+- **Light field (navy chars on white) — use this for a light hero:** **`group-3.png`** is the only
+  light field (640×441, right-sized to ≈8 KB). ⚠️ `group-5.png` is effectively **blank — don't use it**.
+- **Dark fields (blue/white chars on black) — for dark bands/heroes:** `group.png`, `group-2.png`,
+  `group-9.png`, `group-10.png` (portrait 1334×2000); `group-6.png`, `group-7.png`, `group-8.png`
+  (square 1600×1600).
+- **Salmon fields (salmon chars on black) — sparing governance accents, on DARK surfaces:**
+  `group-4.png` (landscape 1939×1336), `group-1.png`, `ascii-2-2.png` (portrait 1334×2000). These
+  sit on **black**, not light — use them in a dark governance band, never as a light hero.
+- All dark/salmon fields are full-res (≈130–330 KB); for a light hero the right-sized `group-3.png`
+  (or the inline `--zk-texture-ascii` below) is the lighter choice.
+
+**Offline / single-file option.** The PNGs are the richer render, but they're heavy and need a
+fetch. For a self-contained or emailed page, use the inline token **`--zk-texture-ascii`** (a
+tileable faint ASCII field as an SVG data-URI, no asset request):
+```css
+.hero { position: relative; background: var(--zk-texture-ascii) repeat, var(--zk-gradient-hero); }
+```
+Layer it under foreground type and keep it quiet; raise/lower presence with the element's `opacity`.
 
 Rules:
 - Pick the variant by surface (light vs dark) and reserve salmon for governance accents.

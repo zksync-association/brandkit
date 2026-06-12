@@ -4,10 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZK Nation — Web Page Template</title>
-  <!-- Inter from Google Fonts; ES Allianz + Avenue Mono come from brand.css @font-face -->
+  <!-- Brand styles. The hosted URL works anywhere (this is what a copied-out page should use).
+       Inside the skill tree you may instead link ../assets/tokens/brand.css, or
+       ../assets/tokens/brand.inline.css for a single self-contained file. -->
+  <link rel="stylesheet" href="https://npc.here.now/zknationbrand/brand/tokens/brand.css" />
+  <link rel="icon" href="https://npc.here.now/zknationbrand/brand/logos/favicon/favicon.ico" sizes="any" />
+  <!-- Inter (the free body fallback) from Google Fonts. ES Allianz + Avenue Mono need a @font-face
+       source — fonts-licensed.css (your licensed files) or fonts-demo.css (free look-alikes: Archivo +
+       Space Mono). brand.css does NOT include @font-face; without one, display falls back to Inter. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/tokens/brand.css" />
   <style>
     /* page-specific helpers only — everything else comes from brand.css */
     .grid-3 { display:grid; gap:var(--zk-space-6); grid-template-columns:repeat(3,1fr); margin:var(--zk-space-12) 0; }

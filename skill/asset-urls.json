@@ -1,5 +1,5 @@
 {
-  "$comment": "Canonical public URLs for ZK Nation brand assets. The skill references these so it stays lightweight; heavy assets (fonts, flags, logos) live in the public brandkit repo and the published mirror. If the repo branch/owner changes, update `base`. The published here.now mirror is a CDN alternative with proper CORS for web font linking.",
+  "$comment": "Canonical public URLs for ZK Nation brand assets. The skill references these so it stays lightweight; heavy assets (fonts, flags, logos) live in the public brandkit repo and the published mirror. If the repo branch/owner changes, update `base`. The `base` repo is PUBLIC and raw.githubusercontent.com serves it with CORS `access-control-allow-origin: *` (verified), so the raw URLs are safe to fetch and to link from a browser. The published here.now mirror is a CDN alternative, also CORS-enabled, preferred for web font linking.",
   "base": "https://raw.githubusercontent.com/zksync-association/brandkit/main",
   "siteMirror": "https://npc.here.now/zknationbrand",
   "repo": "https://github.com/zksync-association/brandkit",
@@ -7,6 +7,8 @@
     "tokens": "{base}/skill/assets/tokens/tokens.css",
     "brand": "{base}/skill/assets/tokens/brand.css",
     "brandHosted": "{siteMirror}/brand/tokens/brand.css",
+    "brandInline": "{siteMirror}/brand/tokens/brand.inline.css",
+    "brandSingleFile": "{siteMirror}/brand.css",
     "tailwindPreset": "{base}/skill/assets/tokens/tailwind.preset.js",
     "tokensJson": "{base}/skill/assets/tokens/tokens.json",
     "officeThemeXml": "{base}/skill/assets/tokens/office-theme-colors.xml"

@@ -11,6 +11,7 @@
 
 ## Design tokens
 - [brand.css](https://npc.here.now/zknationbrand/brand/tokens/brand.css): ready-to-link CSS variables + component classes.
+- [brand.inline.css](https://npc.here.now/zknationbrand/brand/tokens/brand.inline.css): flattened, self-contained (tokens + components, no @import) for single-file / offline pages. Also at the short URL https://npc.here.now/zknationbrand/brand.css
 - [tokens.css](https://npc.here.now/zknationbrand/brand/tokens/tokens.css): CSS custom properties only.
 - [tokens.json](https://npc.here.now/zknationbrand/brand/tokens/tokens.json): tokens as JSON.
 - [tailwind.preset.js](https://npc.here.now/zknationbrand/brand/tokens/tailwind.preset.js): Tailwind preset.

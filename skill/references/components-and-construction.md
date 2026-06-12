@@ -43,11 +43,12 @@ this 7-step checklist. Following it guarantees brand alignment.
 ### Buttons / CTAs (verified against zknation.io)
 The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)** at the right,
 **sharp corners (radius 0)**, Avenue Mono **uppercase, weight 500**, min-height ~48px.
-- **Primary:** label box **Brand-900 navy `#04085F`**, white text; arrow box **Brand-500 `#0C18EC`**,
-  white ▸. e.g. `SHAPE THE PROTOCOL. VOTE NOW ▸`.
-- **Secondary:** label box **Brand-100 `#D4DCFA`**, **Brand-500** text; arrow box Brand-500, white ▸.
-  e.g. `READ THE ZK CREDO ▸`.
-- **Salmon (governance):** label box Salmon, navy arrow box. Use for governance highlights.
+- **The arrow box is the same across every variant:** a 26×26 **Brand-500 `#0C18EC`** square holding
+  a **Brand-300 `#8897F2`** ▸ triangle (the data-URI baked into `.zk-btn` — matches zknation.io).
+  It is *not* a white ▸ and *not* navy; only the label box changes per variant.
+- **Primary:** label box **Brand-900 navy `#04085F`**, white text. e.g. `SHAPE THE PROTOCOL. VOTE NOW ▸`.
+- **Secondary:** label box **Brand-100 `#D4DCFA`**, **Brand-500** text. e.g. `READ THE ZK CREDO ▸`.
+- **Salmon (governance):** label box Salmon-100, **navy text** (never white — fails AA). Governance highlights.
 - Hover: darken the label box one step; keep transitions ~200ms.
 - Implementation: `.zk-btn` (primary) · `.zk-btn--ghost` (secondary) · `.zk-btn--salmon`.
 
@@ -73,6 +74,34 @@ The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)**
   ES Allianz light + a bold key phrase), Inter sub-paragraph, then 1–2 mono CTA bars.
 - Headline pattern: *light + bold mix*, e.g. "Shape the **Future of ZKsync,** Together."
 
+Copy-paste hero — uses the **real** light field `group-3.png` (paths: `assets/…` in the skill tree,
+or the `asset-urls.json` hosted URLs in production). Do not hand-draw the texture:
+```html
+<header class="zk-hero" style="position:relative; background:var(--zk-gradient-hero); overflow:hidden;">
+  <div style="position:absolute; inset:0; background:url('assets/ascii/group-3.png') center/cover no-repeat;
+              mix-blend-mode:multiply; opacity:.6;"></div>
+  <div class="zk-hero__panel" style="position:relative;">
+    <p class="zk-eyebrow">ZK NATION</p>
+    <h1>Shape the <strong>Future of ZKsync,</strong> Together.</h1>
+    <p>One Inter sub-line in the brand voice.</p>
+    <a class="zk-btn" href="#">Get involved</a>
+  </div>
+</header>
+<!-- Single-file / offline: drop the url() layer and use
+     background: var(--zk-texture-ascii) repeat, var(--zk-gradient-hero); -->
+```
+
+Icon row — the **5 real duotone SVGs**, never glyph/emoji stand-ins:
+```html
+<ul style="list-style:none; display:flex; gap:var(--zk-space-8); margin:0; padding:0;">
+  <li><img src="assets/icons/svg/icons-large_blue.svg"   alt="" width="48" height="48"></li>
+  <li><img src="assets/icons/svg/icons-large_blue-1.svg" alt="" width="48" height="48"></li>
+  <li><img src="assets/icons/svg/icons-large_blue-2.svg" alt="" width="48" height="48"></li>
+  <li><img src="assets/icons/svg/icons-large_blue-3.svg" alt="" width="48" height="48"></li>
+  <li><img src="assets/icons/svg/icons-large_blue-4.svg" alt="" width="48" height="48"></li>
+</ul>
+```
+
 ### Governance feed / ticker
 - Full-width strip, faint tint, 1px rules top & bottom. Mono row:
   `[+234]  PROPOSAL EXECUTED · ZK PROTOCOL GOVERNOR  ……  BY ZKSYNC GOVERNANCE • DATE`.
@@ -94,6 +123,21 @@ The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)**
 - When tags share a row with taller elements (e.g. arrow buttons in a flex row), set the row to
   `align-items:center` — otherwise the default `stretch` pulls a pill to the button's height and
   the rounded ends turn into a distorted capsule.
+
+### Docs / long-form layout (reference & developer sites)
+A whole genre (e.g. docs.zknation.io). Compose it from the existing primitives — no new visual language:
+- **Three-column frame:** left sidebar nav, centered content (max ~72ch), right "on this page" TOC.
+  1px Neutral-200 rules between columns; light surface; never full-bleed blue.
+- **Sidebar nav:** mono UPPERCASE section headers (Avenue Mono, `--zk-text-muted`); item list in
+  body type. **Active item:** Brand-25 fill + Brand-700 text + a 4px Brand-700 left tab (reuse the
+  `.zk-card--tab` left-border idea). Hover: Brand-25 fill.
+- **On-this-page TOC:** mono eyebrow "ON THIS PAGE", anchor links in `--zk-text-muted`, active
+  heading steps to Brand-700.
+- **Breadcrumb:** mono uppercase, ` / ` or `›` separators, `--zk-text-muted`, last crumb in ink.
+- **Prev / next:** two outlined `.zk-card`s at the page foot, each a mono label + the page title;
+  the "next" card right-aligned with a `▸`.
+- **Headings:** h1 ES Allianz; h2/h3 with tightened tracking; `scroll-margin-top` to clear any sticky
+  header. Code blocks: Brand-950 surface, mono, 1px frame (see the site's `pre.code`).
 
 ---
 

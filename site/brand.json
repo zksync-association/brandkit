@@ -33,6 +33,8 @@
   },
   "stylesheets": {
     "brand": "https://npc.here.now/zknationbrand/brand/tokens/brand.css",
+    "brandInline": "https://npc.here.now/zknationbrand/brand/tokens/brand.inline.css",
+    "brandSingleFile": "https://npc.here.now/zknationbrand/brand.css",
     "tokensCss": "https://npc.here.now/zknationbrand/brand/tokens/tokens.css",
     "tokensJson": "https://npc.here.now/zknationbrand/brand/tokens/tokens.json",
     "tailwindPreset": "https://npc.here.now/zknationbrand/brand/tokens/tailwind.preset.js",

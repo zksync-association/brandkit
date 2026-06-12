@@ -22,13 +22,18 @@ of truth for color, type, logo, visual language, voice, and reusable components.
   throughout, triangle CTA accents, cleaner corporate feel. See
   `references/secondary-brand-zksync-protocol.md`.
 
-When unsure, use **ZK Nation**.
+When unsure, use **ZK Nation**. *Docs / developer sites:* governance & community docs
+(e.g. docs.zknation.io) are **ZK Nation**; switch to the **secondary** ZKsync-protocol mode only
+when the content is specifically about the protocol/SDK/technology. A docs site is not
+automatically "the technical brand."
 
 > ⚠️ **Fonts & licensing.** Inter is free (SIL OFL). **ES Allianz** (Extraset) and **Avenue
 > Mono** (Boulevard LAB) are commercial, per-domain licensed fonts and are **NOT bundled** —
 > using them in production requires your own license. Without one, the CSS falls back to Inter,
-> or include `assets/tokens/fonts-demo.css` for free look-alikes. Always read
-> `references/font-licensing.md` before shipping anything that uses the brand fonts.
+> or include `assets/tokens/fonts-demo.css` for the **blessed free look-alikes — Archivo** for ES
+> Allianz, **Space Mono** for Avenue Mono (both SIL OFL). Use that pairing so output stays
+> consistent; don't re-pick per project. Always read `references/font-licensing.md` before
+> shipping anything that uses the brand fonts.
 
 ## The 60-second brand (internalize this)
 - **Light & airy.** Default surfaces Neutral-50 `#F7F9FC` / Brand-25 `#F3F5FE`, or a subtle
@@ -52,7 +57,10 @@ When unsure, use **ZK Nation**.
 
 1. **Load tokens.** Everything derives from `assets/tokens/` —
    `tokens.css` (CSS variables), `tailwind.preset.js`, or `tokens.json`. Don't hardcode hexes;
-   reference tokens. For web, link `tokens.css` (it also declares the `@font-face`s).
+   reference tokens. For web, link `brand.css` (it `@import`s `tokens.css` and adds the base +
+   component styles). Note: `@font-face` lives in `fonts-licensed.css` (your licensed copy) or
+   `fonts-demo.css` (free look-alikes) — **not** in `tokens.css`/`brand.css`. Without one of those,
+   display falls back to Inter.
 2. **Read the relevant reference** (each is short and self-contained):
    - `references/00-brand-overview.md` — architecture, mission, the ZK Credo.
    - `references/voice-tone-vocabulary.md` — how to write (voice, tone, glossary, spelling).
@@ -70,7 +78,9 @@ When unsure, use **ZK Nation**.
    - `references/dos-and-donts.md` — the final ship gate.
    - `references/secondary-brand-zksync-protocol.md` — the ZKsync protocol mode.
 3. **Use real assets** from `assets/` (logos, icons, flags, fonts) — never recreate the mark.
-4. **Use a template** from `templates/` as a starting point (document, slides, web page).
+4. **Use a template** from `templates/` as a starting point: `document.html`, `slides.html`,
+   `web-page.html`, or **`docs-page.html`** (sidebar nav + breadcrumb + on-this-page TOC + prev/next
+   for reference / developer docs).
 5. **Gate before shipping** against `references/dos-and-donts.md` and WCAG AA.
 
 ## Building NEW things (the construction framework)
@@ -97,9 +107,13 @@ accents, light surfaces, 8px grid.**
   Start from `templates/web-page.html`.
 - **"Apply the ZK Nation brand" to an existing site/app:** map their primaries→Brand-700,
   surfaces→Neutral-50/Brand-25, text→Neutral-950; swap display→ES Allianz, labels→Avenue Mono,
-  body→Inter; replace shadows with 1px outlines + small radii; add the logo + a quiet flag/ASCII
-  motif; rewrite copy per `voice-tone-vocabulary.md`. The public kit also ships a ready-to-link
-  `brand.css` (see the brand-kit website) so you can drop in tokens + fonts via one URL.
+  body→Inter; replace shadows with 1px outlines + small radii; rewrite copy per
+  `voice-tone-vocabulary.md`. **Use the real assets, by name** (don't draw stand-ins — see the asset
+  gate in `dos-and-donts.md`): logo `assets/logos/svg/logo_blue.svg`; the **light** ASCII hero field
+  `assets/ascii/group-3.png` (the only light one — `group-5.png` is blank); the **5 duotone icons**
+  `assets/icons/svg/icons-large_blue.svg` + `icons-large_blue-1…-4.svg`. The kit also ships a
+  ready-to-link hosted `brand.css` — and a flattened **`brand.inline.css`** (also at the short URL
+  `…/zknationbrand/brand.css`) for single-file pages.
 
 ## Assets are hosted (the skill is lightweight)
 Heavy assets (fonts, flags, logos, icons) live in the **public `brandkit` repo** and a published
@@ -112,6 +126,13 @@ For web work you can link the hosted stylesheet directly instead of copying file
 ```html
 <link rel="stylesheet" href="https://npc.here.now/zknationbrand/brand/tokens/brand.css">
 ```
+**Single-file / offline / email pages** (one self-contained file, no external CSS): use the
+flattened build — `assets/tokens/brand.inline.css` (in the kit) or the hosted
+`…/brand/tokens/brand.inline.css`, also served at the short URL `…/zknationbrand/brand.css`. It is
+`tokens.css` + `brand.css` with the `@import` inlined and the CTA arrow as a data-URI, so you can
+paste it into a single `<style>` and never hand-flatten (which risks drift). Fonts still need a
+`@font-face` source or they fall back to Inter/system — see Fonts above.
+
 A small local copy of `tokens/` lives under `assets/` for offline/iteration use; prefer the
 hosted URLs (in `asset-urls.json`) when you need the full font/flag/logo set.
 

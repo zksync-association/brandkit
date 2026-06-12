@@ -3,6 +3,15 @@
 > Run this before shipping anything. Sourced from the Visual Guideline "Mistakes" page,
 > the color system notes, and the ZK Nation system.
 
+> ### ⛔ Asset gate (check this first)
+> This is the failure a color/type review won't catch. **Never substitute CSS, Unicode, or
+> hand-drawn text for a shipped asset.** The ASCII hero fields, flags, icons, and the logomark must
+> be the **real files from `assets/`** (index: `assets/MANIFEST.md`; URLs: `asset-urls.json`).
+> **Detectable symptom — if any of these is true, you have a bug:** you drew a dot-grid or CSS-gradient
+> "flag"; you used a glyph/emoji/`◄►`/`←→` in place of an icon or the mark; you rebuilt the logo from
+> pixels or strokes. Swap in the real asset. *(Single self-contained file with no network? Use the
+> inline `--zk-texture-ascii` token or inline the real SVG marks — still never ad-hoc text.)*
+
 ## Always do
 - ✅ **Light & airy.** Default to Neutral-50 / Brand-25 surfaces or a subtle gradient.
 - ✅ **Brand-700 as the accent** — headlines, key icons, primary actions, links.
@@ -22,6 +31,8 @@
 - ❌ Fill large areas with Brand-700+ — step down to Brand-300/400 or neutrals.
 - ❌ Salmon as a large fill or as body text — it's a *sparing* accent.
 - ❌ **White text on salmon** (fails WCAG AA) — use navy ink (Brand-900) instead.
+- ❌ **Fake a shipped asset** with CSS/Unicode/text (dot-grid "flags", glyph/emoji icons, `◄►` marks)
+  instead of loading the real file — see the **asset gate** above.
 - ❌ Stretch, squeeze, rotate, or skew the logo; place it in circles/badges; or rebuild it
   from dots/pixels/patterns/outlines/strokes/noise/effects.
 - ❌ Recolor the mark outside the palette (no greens/arbitrary tints/gradients on the mark).

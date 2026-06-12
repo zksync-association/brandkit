@@ -66,6 +66,13 @@ def lattice_line_hits(text):
             hits.append(i)
     return hits
 
+# Component classes that brand.css OWNS. Redefining one in a page that ALSO links brand.css collides
+# with the kit's rules (e.g. .zk-btn::after appends a 2nd arrow; .zk-footer's grid hijacks your layout).
+RESERVED_KIT_CLASSES = ("btn", "footer", "card", "nav", "tag", "hero", "label", "eyebrow", "meta", "rule")
+RESTYLE = re.compile(r"\.zk-(" + "|".join(RESERVED_KIT_CLASSES) + r")\b[^{}]*\{([^{}]*)\}")
+COLLIDE_PROPS = ("background", "display", "grid-template", "padding", "width", "height", "content", "border")
+LINKS_BRANDCSS = re.compile(r"(?:href|@import)[^;>]*brand\.css", re.I)
+
 def classify(path):
     text = pathlib.Path(path).read_text(errors="replace")
     lines = text.splitlines()
@@ -104,6 +111,17 @@ def classify(path):
     if len(lat) >= 2:
         fails.append((lat[0], f"{len(lat)} lines look like a typed ASCII/character flag field (z/x/k/i grid) — "
                               f"load the real image (assets/ascii/ or assets/flags/…/main-flag-ascii_*.png), never type the texture"))
+
+    # 3c. Redefining a kit class while linking brand.css → collision (only in consumer HTML, not the kit's own CSS).
+    if str(path).lower().endswith((".html", ".htm")) and LINKS_BRANDCSS.search(text):
+        seen = set()
+        for m in RESTYLE.finditer(text):
+            cls, body = m.group(1), m.group(2)
+            if cls not in seen and any(p in body for p in COLLIDE_PROPS):
+                seen.add(cls)
+                warns.append((loc(m.start()), f"redefines kit class .zk-{cls} while linking brand.css — this collides with the "
+                                              f"kit's own rules (e.g. .zk-btn::after arrow, .zk-footer grid). Use the class as-is, "
+                                              f"or give your custom variant a NEW name."))
 
     # 4. Faked texture heuristic: radial-gradient (the brand gradient is linear) often stands in for an ASCII field.
     for m in re.finditer(r"radial-gradient\(", text, re.I):

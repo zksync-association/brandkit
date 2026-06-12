@@ -35,14 +35,25 @@ this 7-step checklist. Following it guarantees brand alignment.
 
 ## Part B — The standard components (observed patterns)
 
+> **Using the kit (don't reconstruct, don't collide).** When you link `brand.css`, these classes are
+> already fully implemented — **use them as-is.** Do **not** redefine a `.zk-*` class in your own
+> `<style>`: you will collide with the kit's rules (e.g. `.zk-btn::after` appends the real arrow, so a
+> hand-built arrow box yields *two* arrows; `.zk-footer`'s grid targets the `<footer>` element and will
+> hijack a custom layout). Need a custom variant? Give it a **new** class name. The anatomy below
+> describes what each component *looks like* — it is not an instruction to rebuild it.
+
 ### Navigation bar
 - White bar, 1px bottom rule (Neutral-200). ZK Nation lockup at left.
 - Nav items in **Avenue Mono UPPERCASE**: `DOCS  FORUM  DELEGATE  BLOG  CODE  PROTOCOL`.
 - Primary action at right: **`VOTE`** button (solid Brand-500/700, white mono label).
 
 ### Buttons / CTAs (verified against zknation.io)
-The signature CTA is **two boxes**: a label box + a **separate arrow box (▸)** at the right,
-**sharp corners (radius 0)**, Avenue Mono **uppercase, weight 500**, min-height ~48px.
+**Use it as ONE element:** `<a class="zk-btn">Vote now</a>` (or `.zk-btn--ghost` / `.zk-btn--salmon`).
+The arrow box renders **automatically** via `.zk-btn::after` — **do not** add an arrow element, type a
+`▸`, or redefine `.zk-btn`. That's the whole button.
+
+*Anatomy (what it looks like — not a build recipe):* two boxes — a label box + a **separate arrow box
+(▸)** at the right, **sharp corners (radius 0)**, Avenue Mono **uppercase, weight 500**, min-height ~48px.
 - **The arrow box is the same across every variant:** a 26×26 **Brand-500 `#0C18EC`** square holding
   a **Brand-300 `#8897F2`** ▸ triangle (the data-URI baked into `.zk-btn` — matches zknation.io).
   It is *not* a white ▸ and *not* navy; only the label box changes per variant.

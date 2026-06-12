@@ -57,6 +57,7 @@ The violations that slip past a color/type review — each with its tell and the
 | **White on salmon** | white text on a salmon fill (~3:1, fails AA) | Navy ink (Brand-900). |
 | **Full-bleed blue** | page flooded with bright/dark brand blue | Light surfaces; Brand-700 as the *accent*, not the background. |
 | **Low-res / blurry fill** | a small or thumbnail asset stretched to fill a hero/large surface (soft, upscaled) | Match resolution to surface: full-bleed hero → a full-res field (`group-3.png`, 1440 px). Never upscale; check no `<img>` renders wider than its `naturalWidth`. |
+| **Redefined a kit class** | you link `brand.css` and also re-declare `.zk-btn` / `.zk-footer` / etc. in your own CSS (doubled button arrow, hijacked footer grid) | Use kit classes as-is — the button is one element `<a class="zk-btn">Label</a>`. For a custom variant, use a NEW class name. The linter flags this. |
 
 Run `scripts/check-brand-assets.py` on HTML/SVG/CSS output to catch the asset ones automatically.
 

@@ -21,6 +21,7 @@
 
 ## References (full guidelines)
 - [Brand overview & the ZK Credo](https://npc.here.now/zknationbrand/brand/references/00-brand-overview.md)
+- [Verbal identity — Brand House (positioning, values, voice traits)](https://npc.here.now/zknationbrand/brand/references/verbal-identity.md)
 - [Voice, tone & vocabulary](https://npc.here.now/zknationbrand/brand/references/voice-tone-vocabulary.md)
 - [Color system](https://npc.here.now/zknationbrand/brand/references/color.md)
 - [Typography & type-size framework](https://npc.here.now/zknationbrand/brand/references/typography.md)

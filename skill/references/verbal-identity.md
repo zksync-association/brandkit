@@ -1,7 +1,9 @@
 # Verbal Identity — Brand House (Positioning, Values, Personality, Voice)
 
 > Source: **ZK Nation Verbal Identity — Brand Positioning + Voice, R2** (Wednesday Studio, Oct 9 2025).
-> This is the canonical **framework** for ZK Nation's positioning and voice — the *theory*.
+> Full verbatim text: [[verbal-identity-source]]. Original PDF in the repo at
+> `brand-source/ZK-Nation-Verbal-Identity-R2-2025-10-09.pdf`.
+> This file is the curated **framework** for ZK Nation's positioning and voice — the *theory*.
 > For the voice **in practice**, read the verbatim exemplars in [[voice-tone-vocabulary]] and the
 > ZKsync Association Operational Report. When the two ever differ, the practice (how the brand
 > actually writes in shipped work) wins; this deck defines the intent.

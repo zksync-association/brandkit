@@ -69,6 +69,7 @@ automatically "the technical brand."
    - `references/00-brand-overview.md` — architecture, mission, the ZK Credo.
    - `references/verbal-identity.md` — the Brand House: positioning (purpose/mission/vision),
      values, archetypes, the four voice traits, narrative — the canonical source for marketing/site copy.
+     (`references/verbal-identity-source.md` is the full verbatim deck text.)
    - `references/voice-tone-vocabulary.md` — how to write (voice, tone, glossary, spelling).
    - `references/color.md` — palette + semantic roles + accessibility.
    - `references/typography.md` — the three fonts + the **type-size framework** (role→size table).

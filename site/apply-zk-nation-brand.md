@@ -15,8 +15,10 @@ https://github.com/zksync-association/brandkit
    a 26×26 Brand-500 square holding a Brand-300 ▸ triangle; sharp corners (radius 0).
 4. Geometry: outlined boxes, 1px rules, radii 0–4px, 8px grid. Buttons end with `▸`.
 5. Logo: twin arrows; original artwork; ≥1× clear space; never redraw/recolor/skew.
-6. Voice: principled, verifiable ("don't trust, verify"), collective ("…Together"), precise,
-   calm. No hype/price/emoji. Spell **ZKsync** and **ZK Nation** exactly. Values: Freedom → Progress → Prosperity.
+6. Voice: **Bold · Grounded · Dynamic · Passionate** (the four canonical traits) — takes the mission
+   seriously, not itself; verifiable ("don't trust, verify"), collective ("…Together"), precise, calm.
+   No hype/price/emoji. Spell **ZKsync** and **ZK Nation** exactly. Vision: Freedom → Progress →
+   Prosperity. Full positioning + voice traits: `brand/references/verbal-identity.md`.
 
 ## Core tokens (hex)
 - Brand: 25 `#F3F5FE` · 50 `#E7ECFC` · 100 `#D4DCFA` · 200 `#ADB9F6` · 300 `#8897F2` ·
@@ -48,9 +50,10 @@ Inter body (+ Consolas for mono); 1px outlines not shadows. Ready Open XML:
 `brand/tokens/office-theme-colors.xml`. Full guide: `brand/references/office-docs-and-slides.md`.
 
 ## Full reference set
-`brand/references/`: 00-brand-overview · voice-tone-vocabulary · color · typography ·
-logo-and-marks · visual-language · components-and-construction · office-docs-and-slides ·
-font-licensing · dos-and-donts · secondary-brand-zksync-protocol.
+`brand/references/`: 00-brand-overview · verbal-identity (+ verbal-identity-source, full text) ·
+voice-tone-vocabulary · color · typography · logo-and-marks · visual-language ·
+components-and-construction · office-docs-and-slides · font-licensing · dos-and-donts ·
+secondary-brand-zksync-protocol.
 
 ## Install the Claude Code skill
 ```

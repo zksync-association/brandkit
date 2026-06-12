@@ -12,7 +12,9 @@ description: >-
 # ZK Nation / ZKsync Association Brand
 
 Make anything look, read, and feel like the official brand. This skill is the single source
-of truth for color, type, logo, visual language, voice, and reusable components.
+of truth for color, type, logo, visual language, voice, and reusable components. A machine-readable
+**`DESIGN.md`** (the design-md spec — YAML design tokens + prose) ships alongside, for tools/agents
+that consume that format; `brand.json` + `llms.txt` are the other agent endpoints.
 
 ## Two brands — pick one first
 - **ZK Nation (PRIMARY, default):** governance, community, voting, the DAO, civic/expressive
@@ -48,7 +50,8 @@ automatically "the technical brand."
   tabular numerals for data. This craft is what lifts the work — see `references/typography.md`.
 - **Geometry:** outlined boxes, 1px rules, small radii (0–4px), 8px grid.
 - **Mark:** twin opposing arrows (`←→`). Use the original artwork with ≥1× clear space; never
-  redraw, recolor, skew, or pixel-ify it.
+  redraw, recolor, skew, or pixel-ify it. **Offline/single-file? Drop in `.zk-logo` /
+  `.zk-logo--lockup`** (the real mark, inlined as a data-URI) — never reconstruct it.
 - **Voice:** principled, verifiable ("don't trust, verify"), collective ("…Together"), precise,
   calm. No hype/FOMO/price talk. Spell **ZKsync** and **ZK Nation** exactly.
 - **Values:** the ZK Credo — **Freedom → Progress → Prosperity.**
@@ -77,11 +80,17 @@ automatically "the technical brand."
      license paths.
    - `references/dos-and-donts.md` — the final ship gate.
    - `references/secondary-brand-zksync-protocol.md` — the ZKsync protocol mode.
-3. **Use real assets** from `assets/` (logos, icons, flags, fonts) — never recreate the mark.
+3. **Use real assets** from `assets/` (logos, icons, flags, fonts) — never recreate the mark, and
+   **never type a `z`/`x`/`k`/`i`/dot character grid** to imitate the ASCII flag field. Load the real
+   image: `assets/ascii/group-3.png` (light field) or the Flag banner `assets/flags/blue/main-flag-ascii_blue.png`.
 4. **Use a template** from `templates/` as a starting point: `document.html`, `slides.html`,
    `web-page.html`, or **`docs-page.html`** (sidebar nav + breadcrumb + on-this-page TOC + prev/next
-   for reference / developer docs).
-5. **Gate before shipping** against `references/dos-and-donts.md` and WCAG AA.
+   for reference / developer docs). For docs/long-form, also link **`brand-docs.css`** — the canonical
+   docs components (`.zk-doc`, `.zk-sidenav`, `.zk-toc`, `.zk-breadcrumb`, `.zk-linklist`, `.zk-dl`,
+   `.zk-callout`, `.zk-pager`) so you don't hand-roll them.
+5. **Gate before shipping** against `references/dos-and-donts.md` and WCAG AA. For HTML/SVG/CSS
+   output, run the asset check — it confirms every visual is sourced from the kit and flags fakes:
+   `python3 scripts/check-brand-assets.py <your-file-or-dir>` (must report no FAILs).
 
 ## Building NEW things (the construction framework)
 For any component not already in the kit (a block, menu, banner, modal, table…), follow the

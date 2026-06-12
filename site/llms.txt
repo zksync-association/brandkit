@@ -8,10 +8,12 @@
 ## Start here (agents)
 - [Apply the ZK Nation brand](https://npc.here.now/zknationbrand/apply-zk-nation-brand.md): step-by-step, machine-readable instructions with all token values.
 - [Brand manifest (JSON)](https://npc.here.now/zknationbrand/brand.json): structured colors, fonts, asset URLs, references.
+- [DESIGN.md](https://npc.here.now/zknationbrand/DESIGN.md): the design system in the design-md format (YAML design tokens + prose; colors, typography, components, do's/don'ts).
 
 ## Design tokens
 - [brand.css](https://npc.here.now/zknationbrand/brand/tokens/brand.css): ready-to-link CSS variables + component classes.
 - [brand.inline.css](https://npc.here.now/zknationbrand/brand/tokens/brand.inline.css): flattened, self-contained (tokens + components, no @import) for single-file / offline pages. Also at the short URL https://npc.here.now/zknationbrand/brand.css
+- [brand-docs.css](https://npc.here.now/zknationbrand/brand/tokens/brand-docs.css): docs/long-form component layer (sidebar, TOC, breadcrumb, link list, definition list, callout, pager). Link after brand.css.
 - [tokens.css](https://npc.here.now/zknationbrand/brand/tokens/tokens.css): CSS custom properties only.
 - [tokens.json](https://npc.here.now/zknationbrand/brand/tokens/tokens.json): tokens as JSON.
 - [tailwind.preset.js](https://npc.here.now/zknationbrand/brand/tokens/tailwind.preset.js): Tailwind preset.

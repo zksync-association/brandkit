@@ -156,6 +156,13 @@ hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 
 .zk-footer a { font-family: var(--zk-font-mono); text-transform: uppercase;
   letter-spacing: var(--zk-tracking-mono); font-size: var(--zk-text-xs); color: var(--zk-text); }
 
+/* ---------- logo (drop-in REAL mark; never redraw) ----------
+   .zk-logo = square logomark · .zk-logo--lockup = full ZK Nation wordmark lockup. Both paint the
+   original artwork from the inlined data-URI tokens, so they work in a single offline file. */
+.zk-logo { display:inline-block; width:40px; height:40px; vertical-align:middle;
+  background:var(--zk-logo-mark) center/contain no-repeat; }
+.zk-logo--lockup { width:auto; height:24px; aspect-ratio:213/36; background-image:var(--zk-logo-lockup); }
+
 /* ---------- layout helper ---------- */
 .zk-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--zk-space-8); }
 @media (max-width: 768px) {

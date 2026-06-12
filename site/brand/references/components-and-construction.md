@@ -87,8 +87,8 @@ or the `asset-urls.json` hosted URLs in production). Do not hand-draw the textur
     <a class="zk-btn" href="#">Get involved</a>
   </div>
 </header>
-<!-- Single-file / offline: drop the url() layer and use
-     background: var(--zk-texture-ascii) repeat, var(--zk-gradient-hero); -->
+<!-- Single-file / offline: keep the real field — base64-embed assets/ascii/group-3.png into the
+     url() above (no fetch, still the real asset). Don't synthesize a CSS/Unicode texture. -->
 ```
 
 Icon row — the **5 real duotone SVGs**, never glyph/emoji stand-ins:
@@ -125,7 +125,10 @@ Icon row — the **5 real duotone SVGs**, never glyph/emoji stand-ins:
   the rounded ends turn into a distorted capsule.
 
 ### Docs / long-form layout (reference & developer sites)
-A whole genre (e.g. docs.zknation.io). Compose it from the existing primitives — no new visual language:
+A whole genre (e.g. docs.zknation.io). **Canonical classes ship in `brand-docs.css`** — link it after
+`brand.css` and use them rather than hand-rolling (which drifts from the system): `.zk-doc` (3-col
+frame), `.zk-sidenav`, `.zk-toc`, `.zk-breadcrumb`, `.zk-linklist`, `.zk-dl`, `.zk-callout`
+(`--info` / `--gov`), `.zk-pager`. Start from `templates/docs-page.html`. The treatments they encode:
 - **Three-column frame:** left sidebar nav, centered content (max ~72ch), right "on this page" TOC.
   1px Neutral-200 rules between columns; light surface; never full-bleed blue.
 - **Sidebar nav:** mono UPPERCASE section headers (Avenue Mono, `--zk-text-muted`); item list in

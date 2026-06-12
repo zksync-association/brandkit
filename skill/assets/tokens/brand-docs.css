@@ -1,0 +1,99 @@
+/* =====================================================================
+   ZK Nation — brand-docs.css
+   Component layer for documentation / long-form / knowledge-base sites.
+   Link AFTER brand.css (it builds on the same tokens + components):
+     <link rel="stylesheet" href=".../brand/tokens/brand.css">
+     <link rel="stylesheet" href=".../brand/tokens/brand-docs.css">
+   Canonical classes so docs pages don't re-derive (and drift from) the system:
+     .zk-doc (3-col frame) · .zk-sidenav · .zk-toc · .zk-breadcrumb ·
+     .zk-linklist · .zk-dl (definition list) · .zk-callout · .zk-pager
+   See references/components-and-construction.md → "Docs / long-form layout".
+   ===================================================================== */
+
+/* ---------- 3-column frame: sidebar | content | on-this-page ---------- */
+.zk-doc {
+  display: grid; grid-template-columns: 240px minmax(0, 1fr) 200px;
+  gap: var(--zk-space-8); max-width: 1280px; margin: 0 auto;
+  padding: 0 var(--zk-space-8); align-items: start;
+}
+.zk-doc__main { min-width: 0; max-width: 72ch; }
+@media (max-width: 900px) {
+  .zk-doc { grid-template-columns: 1fr; }
+  .zk-doc__toc { display: none; }   /* fold the secondary TOC on small screens */
+}
+
+/* ---------- sidebar navigation ---------- */
+.zk-sidenav { position: sticky; top: var(--zk-space-8); border-right: var(--zk-rule); padding-right: var(--zk-space-6); }
+.zk-sidenav h2, .zk-sidenav__group {        /* mono uppercase section header */
+  font-family: var(--zk-font-mono); text-transform: uppercase; letter-spacing: var(--zk-tracking-mono);
+  font-size: var(--zk-text-xs); color: var(--zk-text-muted); margin: var(--zk-space-6) 0 var(--zk-space-2);
+}
+.zk-sidenav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.zk-sidenav a {
+  display: block; padding: 6px 10px; color: var(--zk-text); font-size: var(--zk-text-sm);
+  border-left: 4px solid transparent;
+}
+.zk-sidenav a:hover { background: var(--zk-brand-25); }
+.zk-sidenav a[aria-current="page"], .zk-sidenav a.is-active {   /* active item: Brand-25 fill + Brand-700 + left tab */
+  background: var(--zk-brand-25); color: var(--zk-brand-700);
+  border-left-color: var(--zk-brand-700); font-weight: 600;
+}
+@media (max-width: 900px) { .zk-sidenav { position: static; border-right: 0; padding-right: 0; } }
+
+/* ---------- on-this-page TOC ---------- */
+.zk-toc { position: sticky; top: var(--zk-space-8); }
+.zk-toc__title {                            /* "ON THIS PAGE" mono eyebrow */
+  font-family: var(--zk-font-mono); text-transform: uppercase; letter-spacing: var(--zk-tracking-mono);
+  font-size: var(--zk-text-xs); color: var(--zk-text-muted); margin: 0 0 var(--zk-space-2);
+}
+.zk-toc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.zk-toc a { color: var(--zk-text-muted); font-size: var(--zk-text-sm); }
+.zk-toc a:hover, .zk-toc a[aria-current="true"], .zk-toc a.is-active { color: var(--zk-brand-700); }
+
+/* ---------- breadcrumb ---------- */
+.zk-breadcrumb {
+  font-family: var(--zk-font-mono); text-transform: uppercase; letter-spacing: var(--zk-tracking-mono);
+  font-size: var(--zk-text-xs); color: var(--zk-text-muted); margin: var(--zk-space-8) 0 var(--zk-space-4);
+}
+.zk-breadcrumb a { color: var(--zk-text-muted); } .zk-breadcrumb a:hover { color: var(--zk-brand-700); }
+.zk-breadcrumb [aria-current="page"], .zk-breadcrumb b { color: var(--zk-ink); font-weight: 400; }
+
+/* ---------- link list (resource lists, "see also") ---------- */
+.zk-linklist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--zk-space-2); }
+.zk-linklist a {
+  display: inline-flex; align-items: center; gap: var(--zk-space-2);
+  color: var(--zk-link); font-size: var(--zk-text-base);
+}
+.zk-linklist a:hover { color: var(--zk-link-hover); }
+
+/* ---------- definition / term list ---------- */
+.zk-dl { display: grid; gap: var(--zk-space-4); margin: var(--zk-space-6) 0; }
+.zk-dl dt {
+  font-family: var(--zk-font-mono); text-transform: uppercase; letter-spacing: var(--zk-tracking-mono);
+  font-size: var(--zk-text-xs); color: var(--zk-brand-700);
+}
+.zk-dl dd { margin: 4px 0 0; color: var(--zk-text); }
+
+/* ---------- callout / admonition ---------- */
+.zk-callout {
+  border: var(--zk-rule); border-left: 4px solid var(--zk-brand-700);
+  background: var(--zk-surface-raised); padding: var(--zk-space-5) var(--zk-space-6);
+  margin: var(--zk-space-6) 0; border-radius: 0;
+}
+.zk-callout__label {
+  font-family: var(--zk-font-mono); text-transform: uppercase; letter-spacing: var(--zk-tracking-mono);
+  font-size: var(--zk-text-xs); color: var(--zk-brand-700); display: block; margin-bottom: 4px;
+}
+.zk-callout p:last-child { margin-bottom: 0; }
+.zk-callout--info { border-left-color: var(--zk-brand-500); background: var(--zk-brand-25); }
+.zk-callout--info .zk-callout__label { color: var(--zk-brand-700); }
+/* governance accent — salmon tint, navy ink (on salmon, text is navy) */
+.zk-callout--gov { border-left-color: var(--zk-salmon-100); background: var(--zk-salmon-10); }
+.zk-callout--gov .zk-callout__label, .zk-callout--gov { color: var(--zk-ink); }
+
+/* ---------- prev / next pager ---------- */
+.zk-pager { display: grid; grid-template-columns: 1fr 1fr; gap: var(--zk-space-4); margin: var(--zk-space-16) 0 var(--zk-space-12); }
+.zk-pager a { display: flex; flex-direction: column; gap: 4px; border: var(--zk-rule); padding: var(--zk-space-4) var(--zk-space-5); }
+.zk-pager a:hover { border-color: var(--zk-brand-300); }
+.zk-pager .zk-pager__next { text-align: right; }
+.zk-pager .zk-meta { color: var(--zk-text-muted); }

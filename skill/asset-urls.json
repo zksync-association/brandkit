@@ -9,6 +9,7 @@
     "brandHosted": "{siteMirror}/brand/tokens/brand.css",
     "brandInline": "{siteMirror}/brand/tokens/brand.inline.css",
     "brandSingleFile": "{siteMirror}/brand.css",
+    "brandDocs": "{siteMirror}/brand/tokens/brand-docs.css",
     "tailwindPreset": "{base}/skill/assets/tokens/tailwind.preset.js",
     "tokensJson": "{base}/skill/assets/tokens/tokens.json",
     "officeThemeXml": "{base}/skill/assets/tokens/office-theme-colors.xml"

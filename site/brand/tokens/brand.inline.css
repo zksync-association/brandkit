@@ -47,10 +47,13 @@
   --zk-gradient-from:  #BFEAFF;  /* subtle hero/section gradient */
   --zk-gradient-to:    #A5C0EE;
 
-  /* ---------- ZK NATION sub-brand accent (salmon) ---------- */
-  --zk-salmon-10:  #F6B6A6;
-  --zk-salmon-50:  #EA9682;
-  --zk-salmon-100: #EE6D50;  /* governance / sub-brand accent, used sparingly */
+  /* ---------- ZK NATION sub-brand accent (salmon) ----------
+     A 3-step accent ramp, light → saturated (same higher-number-is-darker direction as the brand ramp).
+     NOTE: unlike the brand ramp, where -100 is a LIGHT tint, salmon-100 is the SATURATED governance accent.
+     So: -10 = lightest tint, -50 = mid, -100 = the deep accent. Reach for -100 for the accent itself. */
+  --zk-salmon-10:  #F6B6A6;  /* lightest tint (chips/tag fills) */
+  --zk-salmon-50:  #EA9682;  /* mid */
+  --zk-salmon-100: #EE6D50;  /* THE governance/sub-brand accent — the saturated one. Used sparingly. */
 
   /* ---------- SEMANTIC TOKENS (prefer these in product code) ---------- */
   --zk-surface:          var(--zk-neutral-50);   /* default page background — light & airy */
@@ -76,11 +79,11 @@
 
   --zk-gradient-hero:    linear-gradient(180deg, var(--zk-gradient-from) 0%, var(--zk-gradient-to) 100%);
 
-  /* Tileable faint ASCII flag-field texture as an inline SVG data-URI — no PNG fetch, works in a
-     single self-contained/offline file. Brand-300 glyphs at low opacity. Use as a hero/section
-     background, e.g.  background: var(--zk-texture-ascii) repeat, var(--zk-gradient-hero);
-     For the heavier photographic ASCII renders, the PNGs in assets/ascii/ remain the richer option. */
-  --zk-texture-ascii: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%238897F2' fill-opacity='.32' font-family='monospace' font-size='11'%3E%3Ctext x='6' y='16'%3Ex%3C/text%3E%3Ctext x='30' y='12'%3E.%3C/text%3E%3Ctext x='50' y='20'%3E/%3C/text%3E%3Ctext x='18' y='34'%3E+%3C/text%3E%3Ctext x='44' y='40'%3Ex%3C/text%3E%3Ctext x='8' y='52'%3E.%3C/text%3E%3Ctext x='34' y='56'%3Ex%3C/text%3E%3Ctext x='56' y='50'%3E:%3C/text%3E%3C/g%3E%3C/svg%3E");
+  /* The REAL logomark + lockup, inlined as data-URIs (the original artwork — NOT a redraw).
+     Lets a single-file / offline page drop in the official mark with zero fetch, so the kit's
+     #1 rule ("never reconstruct the mark") finally has a compliant offline path. */
+  --zk-logo-mark:   url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjExIiBoZWlnaHQ9IjIxMSIgdmlld0JveD0iMCAwIDIxMSAyMTEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMTAuMTI5IiBoZWlnaHQ9IjIxMC4xMjkiIGZpbGw9IiMwQzE4RUMiLz4KPHBhdGggZD0iTTM2LjY5OTIgNjMuMzg0OFYxNDIuNTkzQzgyLjI3MTUgMTY5LjUyOCAxMjIuNzE0IDExNi40MjUgMTczLjQzNyAxNDIuNTkzVjYzLjM4NDhDMTI1LjkyOCAzNi4xMDg0IDgyLjI5MjggOTAuMzIwMiAzNi42OTkyIDYzLjM4NDhaTTc2LjI5MDMgMTIwLjAyNlYxNDkuMTk5QzYxLjU4MiAxMzQuNjg3IDUyLjM0NDEgMTIzLjU2MyAzNy45MzM4IDEwNy41ODFDNTEuMDQ1NiA5NS43MTE2IDYzLjUxOSA4Ni41NDg0IDc2LjI5MDMgNzEuMzk3MlY5MC44NTNDODkuMDgyOCA4OC42Nzk0IDEwMS44NzUgODQuMzUzNSAxMTQuNjQ3IDgwLjc1MjJDMTAxLjg1NCA5NC4wNzA3IDg5LjA2MTYgMTA4LjExNCA3Ni4yOTAzIDEyMC4wMDVWMTIwLjAyNlpNMTMzLjg0NiAxMzQuNjAyVjExNS4xNDZDMTIxLjA1NCAxMTcuMzIgMTA4LjI2MSAxMjEuNjQ1IDk1LjQ4OTggMTI1LjIyNUMxMDguMjgyIDExMS45MDcgMTIxLjA3NSA5Ny44NjM5IDEzMy44NDYgODUuOTczMVY1Ni44MDAxQzE0OC41NzYgNzEuNjk1NiAxNTcuNDczIDc5LjA5IDE3Mi4yMDMgOTQuNzUyNkMxNjEuMTEzIDEwNS44MzQgMTQ3LjI5OSAxMjEuMzI2IDEzMy44NDYgMTM0LjYwMloiIGZpbGw9IiNENERDRkEiLz4KPC9zdmc+Cg==");
+  --zk-logo-lockup: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMTMgMzYiIGZpbGw9Im5vbmUiPjxwYXRoIGZpbGw9IiMwNDA4NUYiIGQ9Ik0xNTAuOTMxIDEyLjA0YzUuNDA0IDAgNi43MTggMi44MTIgNi43MTggNy4xMnY2LjYxMWMwIDEuODI2LjExMSAzLjQzMi41ODUgNS41MTRoLTIuMjI3Yy0uMjU2LS40NzUtLjQ3NS0xLjQ5Ny0uNTQ4LTIuNTItMS4yMDUgMS44MjYtMy40MzMgMi44NDktNi4wMjUgMi44NDktMy42NTIgMC02LjMxOS0yLjE1NS02LjMxOS01LjQ3OCAwLTMuMjUgMS45MzYtNC45NjcgNS42MjQtNS42Nmw1LjExMy0uOTVjLjg3Ni0uMTQ2IDEuMzg3LS4zMjkgMS4zODctMS44NjIgMC0xLjktLjg3Ni0zLjQ3LTQuMzgyLTMuNDctMi45MjEgMC00LjQxOCAxLjM1Mi00LjcxMSA0LjA5bC0yLjQ0Ni0uMDczYy40MzgtNC4zMDkgMy4yODctNi4xNzEgNy4yMzEtNi4xNzFabTE0LjQ2Ny4zMjloNC4yMzd2Mi4xNTRoLTQuMjM3djExLjk0MWMwIDMuMTQgMS4wMjMgMy4zMjQgNC41MjkgMi41NTd2Mi4wMDhhOS4yMzkgOS4yMzkgMCAwIDEtMy4yNS41ODVjLTIuNTU3IDAtMy42ODktMS40MjUtMy42ODktNC4zODNWMTQuNTIzaC0zLjMyM3YtMi4xNTRoMy4zMjNWNy4xODNoMi40MXY1LjE4NlptMjEuMzE0LS4zM2M1LjQ0MSAwIDguNjkxIDQuMDU1IDguNjkxIDkuNzUyIDAgNS43MzMtMy4yNSA5LjgyMy04LjY5MSA5LjgyMy01LjQwNSAwLTguNjU1LTQuMDktOC42NTUtOS44MjMgMC01LjY5NyAzLjI1LTkuNzUxIDguNjU1LTkuNzUxWm0tNDkuNjc2IDE0LjQ2M1Y1LjUwM2gyLjQ4NHYyNS43ODJoLTIuNDg0TDEyMy4xOTUgOS41OTN2MjEuNjkyaC0yLjQ4M1Y1LjUwM2gzLjAzMWwxMy4yOTMgMjAuOTk4Wm0zOC4xMDEgNC43ODNoLTIuNDFWMTIuMzY5aDIuNDF2MTguOTE2Wm0zMS42NTUtMTkuMjQ1YzYuMjA4IDAgNi4yMDggNS41ODcgNi4yMDggOS4yMDN2MTAuMDQyaC0yLjQxdi05Ljk3YzAtMy40Ny0uMDczLTcuMDQ4LTQuMjczLTcuMDQ4LTMuMjUgMC01LjczMyAyLjQ0Ny01LjczMyA2LjQ2NHYxMC41NTRoLTIuNDFWMTIuMzY5aDIuNDF2Mi42NjZjMS40NjEtMS45IDMuNTc5LTIuOTk1IDYuMjA4LTIuOTk1Wk04Ni45ODYgMTAuNTIzbC0xMy42MyAxNS44MjVoMTMuNjN2NC44NDlINjYuNTQxdi00Ljg5NGwxMy43NjgtMTYuMDA5SDY3LjE4MlY1LjQ0NmgxOS44MDR2NS4wNzdabTcuNTAxIDQuOTQgOS42OTgtMTAuMDE3aDcuMDQzbC0xMC4yIDEwLjQ3NCAxMS4yNTIgMTUuMjc3aC02Ljk1M2wtOC4xODYtMTEuMjUyLTIuNjU0IDIuNzQ0djguNTA4SDg5LjA5VjUuNDQ2aDUuMzk3djEwLjAxNlptNjAuNzg5IDUuNzQzYy0uNDM4LjE4Mi0xLjAyMi4zMjgtMS43NTMuNDc0bC00LjA1My43M2MtMi44ODUuNTQ4LTMuNzk4IDEuOS0zLjc5OCAzLjY1MyAwIDIuMDQ1IDEuNjA2IDMuMzk1IDQuMTI2IDMuMzk2IDMuNTc5IDAgNS40NzgtMi40ODMgNS40NzgtNS42OTd2LTIuNTU2Wm0zMS41MDktNi45MzljLTQuMTk5IDAtNi4yODEgMy40MzQtNi4yODEgNy41MjQgMCA0LjE2MiAyLjExOCA3LjU5NSA2LjIwOCA3LjU5NSA0LjI3MyAwIDYuMjQ0LTMuNjE2IDYuMjQ0LTcuNjMzIDAtNC4wOS0yLjAwOC03LjQ4Ni02LjE3MS03LjQ4NlptLTExLjUzOS01LjMzMWgtMi42NjZWNS41MDNoMi42NjZ2My40MzNaTTAgMy43NTV2MjguNTA5YzE2LjQwMiA5LjY5NCAzMC45NTgtOS40MTkgNDkuMjE0IDBWMy43NTVDMzIuMTE0LTYuMDYyIDE2LjQxIDEzLjQ1IDAgMy43NTVabTE0LjI1IDIwLjM4NnYxMC41QzguOTU1IDI5LjQxOCA1LjYzIDI1LjQxNS40NDMgMTkuNjYyYzQuNzItNC4yNzIgOS4yMDktNy41NyAxMy44MDUtMTMuMDIzdjcuMDAzYzQuNjA1LS43ODMgOS4yMDktMi4zNCAxMy44MDYtMy42MzYtNC42MDUgNC43OTQtOS4yMDkgOS44NDgtMTMuODA2IDE0LjEyOHYuMDA3Wm0yMC43MTUgNS4yNDd2LTcuMDAzYy00LjYwNS43ODItOS4yMDkgMi4zNC0xMy44MDUgMy42MjggNC42MDQtNC43OTQgOS4yMDgtOS44NDggMTMuODA1LTE0LjEyOHYtMTAuNWM1LjMwMSA1LjM2MiA4LjUwMyA4LjAyMyAxMy44MDUgMTMuNjYtMy45OTIgMy45ODgtOC45NjQgOS41NjQtMTMuODA1IDE0LjM0MloiPjwvcGF0aD48L3N2Zz4K");
 
   /* ---------- TYPOGRAPHY ----------
      ZK Nation (primary) uses ES Allianz for BOTH display and body (verified in the zknation.io
@@ -319,6 +322,13 @@ hr, .zk-rule { border: 0; border-top: var(--zk-rule); margin: var(--zk-space-8) 
 .zk-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--zk-space-2); }
 .zk-footer a { font-family: var(--zk-font-mono); text-transform: uppercase;
   letter-spacing: var(--zk-tracking-mono); font-size: var(--zk-text-xs); color: var(--zk-text); }
+
+/* ---------- logo (drop-in REAL mark; never redraw) ----------
+   .zk-logo = square logomark · .zk-logo--lockup = full ZK Nation wordmark lockup. Both paint the
+   original artwork from the inlined data-URI tokens, so they work in a single offline file. */
+.zk-logo { display:inline-block; width:40px; height:40px; vertical-align:middle;
+  background:var(--zk-logo-mark) center/contain no-repeat; }
+.zk-logo--lockup { width:auto; height:24px; aspect-ratio:213/36; background-image:var(--zk-logo-lockup); }
 
 /* ---------- layout helper ---------- */
 .zk-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--zk-space-8); }

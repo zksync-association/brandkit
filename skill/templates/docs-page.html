@@ -5,68 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>ZK Nation — Docs Page Template</title>
   <meta name="theme-color" content="#04085F" />
-  <!-- Brand styles. Hosted URL works anywhere (use this for a copied-out page). Inside the skill
-       tree you may instead link ../assets/tokens/brand.css, or ../assets/tokens/brand.inline.css
-       for a single self-contained file. brand.css does NOT include @font-face — ES Allianz +
-       Avenue Mono need fonts-licensed.css (your license) or fonts-demo.css (Archivo + Space Mono);
-       without one, display falls back to Inter. -->
+  <!-- Brand styles. Hosted URLs work anywhere (use these for a copied-out page). Inside the skill
+       tree you may instead link ../assets/tokens/brand.css + ../assets/tokens/brand-docs.css.
+       brand.css does NOT include @font-face — ES Allianz + Avenue Mono need fonts-licensed.css
+       (your license) or fonts-demo.css (Archivo + Space Mono); else display falls back to Inter. -->
   <link rel="stylesheet" href="https://npc.here.now/zknationbrand/brand/tokens/brand.css" />
+  <link rel="stylesheet" href="https://npc.here.now/zknationbrand/brand/tokens/brand-docs.css" />
   <link rel="icon" href="https://npc.here.now/zknationbrand/brand/logos/favicon/favicon.ico" sizes="any" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Docs / long-form layout — composed only from brand tokens + components (see
-       references/components-and-construction.md → "Docs / long-form layout"). */
-    .docs { display:grid; grid-template-columns: 240px minmax(0,1fr) 200px; gap:var(--zk-space-8);
-            max-width:1280px; margin:0 auto; padding:0 var(--zk-space-8); align-items:start; }
-    /* sidebar nav */
-    .side { position:sticky; top:var(--zk-space-8); border-right:var(--zk-rule); padding-right:var(--zk-space-6); }
-    .side h2 { font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:var(--zk-tracking-mono);
-               font-size:var(--zk-text-xs); color:var(--zk-text-muted); margin:var(--zk-space-6) 0 var(--zk-space-2); }
-    .side ul { list-style:none; margin:0; padding:0; display:grid; gap:2px; }
-    .side a { display:block; padding:6px 10px; color:var(--zk-text); font-size:var(--zk-text-sm); border-left:4px solid transparent; }
-    .side a:hover { background:var(--zk-brand-25); }
-    .side a[aria-current="page"] { background:var(--zk-brand-25); color:var(--zk-brand-700); border-left-color:var(--zk-brand-700); font-weight:600; }
-    /* breadcrumb */
-    .crumb { font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:var(--zk-tracking-mono);
-             font-size:var(--zk-text-xs); color:var(--zk-text-muted); margin:var(--zk-space-8) 0 var(--zk-space-4); }
-    .crumb a { color:var(--zk-text-muted); } .crumb a:hover { color:var(--zk-brand-700); }
-    .crumb b { color:var(--zk-ink); font-weight:400; }
-    /* content column */
-    .content { min-width:0; max-width:72ch; }
-    .content h1 { font-family:var(--zk-font-display); }
-    .content pre.code { background:var(--zk-brand-950); color:var(--zk-neutral-100); padding:var(--zk-space-5);
-      border:1px solid var(--zk-brand-900); overflow-x:auto; font-family:var(--zk-font-mono); font-size:var(--zk-text-sm);
-      line-height:1.6; border-radius:0; }
-    /* on-this-page TOC */
-    .toc { position:sticky; top:var(--zk-space-8); }
-    .toc p { font-family:var(--zk-font-mono); text-transform:uppercase; letter-spacing:var(--zk-tracking-mono);
-             font-size:var(--zk-text-xs); color:var(--zk-text-muted); margin:0 0 var(--zk-space-2); }
-    .toc ul { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
-    .toc a { color:var(--zk-text-muted); font-size:var(--zk-text-sm); }
-    .toc a:hover, .toc a.active { color:var(--zk-brand-700); }
-    /* prev / next */
-    .pager { display:grid; grid-template-columns:1fr 1fr; gap:var(--zk-space-4); margin:var(--zk-space-16) 0 var(--zk-space-12); }
-    .pager a { display:flex; flex-direction:column; gap:4px; }
-    .pager .next { text-align:right; }
-    .pager .zk-meta { color:var(--zk-text-muted); }
-    @media (max-width:900px){ .docs { grid-template-columns:1fr; } .side, .toc { position:static; border:0; padding:0; } .toc { display:none; } }
-  </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR — real lockup via the inlined mark (.zk-logo--lockup), never a redraw -->
   <nav class="zk-nav" style="position:sticky; top:0; z-index:50;">
     <a href="#" style="display:flex; align-items:center; gap:12px;" aria-label="ZK Nation Docs">
-      <img loading="lazy" decoding="async" src="https://npc.here.now/zknationbrand/brand/logos/svg/zk-nation-lockup-navy.svg" alt="ZK Nation" style="height:22px; width:auto; display:block;"/>
+      <span class="zk-logo--lockup" role="img" aria-label="ZK Nation"></span>
       <span class="zk-meta" style="color:var(--zk-text-muted); border-left:1px solid var(--zk-border-strong); padding-left:12px;">DOCS</span>
     </a>
     <a class="zk-btn zk-btn--ghost" href="#">Search</a>
   </nav>
 
-  <div class="docs">
+  <div class="zk-doc">
     <!-- SIDEBAR NAV -->
-    <aside class="side" aria-label="Documentation sections">
+    <aside class="zk-sidenav" aria-label="Documentation sections">
       <h2>Get started</h2>
       <ul>
         <li><a href="#" aria-current="page">Overview</a></li>
@@ -82,31 +44,50 @@
     </aside>
 
     <!-- CONTENT -->
-    <main class="content">
-      <p class="crumb"><a href="#">Docs</a> / <a href="#">Get started</a> / <b>Overview</b></p>
+    <main class="zk-doc__main">
+      <nav class="zk-breadcrumb" aria-label="Breadcrumb">
+        <a href="#">Docs</a> / <a href="#">Get started</a> / <b aria-current="page">Overview</b>
+      </nav>
       <h1>Overview</h1>
-      <p>Lead paragraph in Inter — plain, full statements in the brand voice. Set body at
-         16px / 1.55, navy ink on a light surface.</p>
+      <p>Lead paragraph in Inter — plain, full statements in the brand voice. Body at 16px / 1.55,
+         navy ink on a light surface.</p>
+
+      <div class="zk-callout zk-callout--info">
+        <span class="zk-callout__label">Note</span>
+        <p>Callouts/admonitions use <code>.zk-callout</code> (variants <code>--info</code>,
+           <code>--gov</code>) — outlined, 1px rule, Brand-700 tab. No ad-hoc card hacks.</p>
+      </div>
+
       <h2 id="concepts">Core concepts</h2>
-      <p>Section body. Use mono uppercase for any inline labels, 1px-outlined cards for callouts,
-         and Brand-700 for links and emphasis.</p>
+      <dl class="zk-dl">
+        <dt>Token Assembly</dt><dd>The body of delegates that votes on proposals.</dd>
+        <dt>Guardians</dt><dd>Safeguards the protocol within the bounds set by governance.</dd>
+      </dl>
+
+      <h2 id="links">See also</h2>
+      <ul class="zk-linklist">
+        <li><a href="#">Active governance votes</a></li>
+        <li><a href="#">ZK Nation brand assets</a></li>
+      </ul>
+
       <h2 id="example">Example</h2>
-      <pre class="code"># in Claude Code
+      <pre class="code" style="background:var(--zk-brand-950); color:var(--zk-neutral-100); padding:var(--zk-space-5); border:1px solid var(--zk-brand-900); font-family:var(--zk-font-mono); font-size:var(--zk-text-sm); overflow-x:auto;"># in Claude Code
 Apply the ZK Nation brand from
 https://github.com/zksync-association/brandkit</pre>
 
       <!-- PREV / NEXT -->
-      <nav class="pager" aria-label="Pagination">
-        <a class="prev" href="#"><span class="zk-meta">← Previous</span><span>Introduction</span></a>
-        <a class="next" href="#"><span class="zk-meta">Next →</span><span>Install</span></a>
+      <nav class="zk-pager" aria-label="Pagination">
+        <a href="#"><span class="zk-meta">← Previous</span><span>Introduction</span></a>
+        <a class="zk-pager__next" href="#"><span class="zk-meta">Next →</span><span>Install</span></a>
       </nav>
     </main>
 
     <!-- ON THIS PAGE -->
-    <nav class="toc" aria-label="On this page">
-      <p>On this page</p>
+    <nav class="zk-doc__toc zk-toc" aria-label="On this page">
+      <p class="zk-toc__title">On this page</p>
       <ul>
         <li><a href="#concepts">Core concepts</a></li>
+        <li><a href="#links">See also</a></li>
         <li><a href="#example">Example</a></li>
       </ul>
     </nav>

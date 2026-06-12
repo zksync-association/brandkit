@@ -29,6 +29,22 @@
 - **`favicon/favicon.ico`** — the official ZK Nation favicon (from zknation.io). Use for site
   tabs/bookmarks. `favicon/og-image.png` is the official 1200×630 social card.
 
+## Embedding the mark (offline / single-file — the compliant path)
+The #1 rule is **never reconstruct the mark.** So that "compliant" and "easy" coincide even with no
+network, the kit inlines the **real** artwork as data-URIs — use these, never redraw:
+- **CSS drop-in:** `<span class="zk-logo"></span>` (square logomark) or
+  `<span class="zk-logo--lockup"></span>` (full ZK Nation lockup). Both paint the original SVG from
+  `--zk-logo-mark` / `--zk-logo-lockup` (in `brand.css` / `brand.inline.css`) — zero fetch, one file.
+- **Direct:** `background: var(--zk-logo-mark)` on a sized box, or paste the real
+  `assets/logos/svg/logo_blue.svg` / `zk-nation-lockup-navy.svg` inline.
+- **If you truly cannot embed the asset,** the only sanctioned fallback is the **wordmark set in the
+  brand display font** — never a redraw of the mark:
+  ```html
+  <span style="font-family:var(--zk-font-display); font-weight:600; letter-spacing:-.02em;
+               color:var(--zk-ink)">ZK&nbsp;Nation</span>
+  ```
+  **Never** rebuild the logomark from shapes, pixels, or a flag/dot grid (asset gate in `dos-and-donts.md`).
+
 ## Choosing an asset
 | Need | Use |
 |---|---|

@@ -21,6 +21,11 @@
 `salmon-10 #F6B6A6 · salmon-50 #EA9682 · salmon-100 #EE6D50`. Use **sparingly** as a
 governance/community accent (a CTA underline, a tag, a single highlight). Never as a page fill.
 
+> **Scale note (avoid the wrong shade).** Salmon is a 3-step ramp, light → saturated: `10` is the
+> lightest tint, `100` is the **saturated accent**. Same direction as the brand ramp (higher = darker),
+> but note the contrast: brand-100 is a *light tint*, whereas **salmon-100 is the deep accent color**.
+> For the governance accent itself, use **salmon-100**; for a tinted chip fill, salmon-10.
+
 > **On salmon, text is navy ink — never white.** White on salmon-100 is only ≈3.0:1 and **fails
 > WCAG AA**. Navy Brand-900 `#04085F` on salmon-100 is ≈5.8:1 (passes) and is the on-brand ink.
 > Even Brand-700 dips below AA on salmon-100 (≈4.4:1) — so for salmon, use **Brand-900 only**.

@@ -22,12 +22,20 @@ sovereign onchain "nation."
 graphics, "nation" iconography, loading/empty states. Treat them as a kit you can arrange in
 grids, rows, or bunting — but keep each tile's internal geometry intact.
 
-## 2. ASCII flag fields (the signature hero texture)
+## 2. Flag-field textures (the signature hero texture) — these are IMAGES, not text
 
-The brand's hero/background texture is a **waving-flag field rendered in ASCII characters**
-(`z / x / k`, plus dots and small marks) on a regular grid, fading in density to suggest a flag
-in motion. **Real assets live in `assets/ascii/`** (12 fields: `group*.png`, `ascii-2-2.png`) —
-**use these, don't hand-roll dot patterns.**
+The hero/background texture is a **waving-flag field**: a dense lattice of tiny glyphs that fades in
+density to suggest a flag in motion. **It is a shipped raster image — load the file.** The character
+look is what the *rendered artwork* happens to show; it is **NOT a recipe and NOT something you type.**
+Typing a grid of `z` / `x` / `k` / `i` / dots to imitate it is the **#1 reconstruction mistake** (it's
+a redraw of brand artwork — see the asset gate in `dos-and-donts.md`). Always use the real file:
+
+- **The Flag banner** — the waving flag with the ASCII treatment: **`assets/flags/blue/main-flag-ascii_blue.png`**
+  (orange: `assets/flags/orange/main-flag-ascii_orange.png`). The clean (non-ASCII) flag is `main-flag_blue.png`.
+- **The background field textures** live in **`assets/ascii/`** (12 fields: `group*.png`, `ascii-2-2.png`) —
+  pick one by surface from the list below.
+- **Single-file / offline?** Base64-embed the real PNG (the light `group-3.png` is ~8 KB). Still the real
+  asset — never a typed character grid.
 
 **The fields by surface (verified against the actual files — match the field to your background):**
 - **Light field (navy chars on white) — use this for a light hero:** **`group-3.png`** is the only
@@ -38,16 +46,18 @@ in motion. **Real assets live in `assets/ascii/`** (12 fields: `group*.png`, `as
 - **Salmon fields (salmon chars on black) — sparing governance accents, on DARK surfaces:**
   `group-4.png` (landscape 1939×1336), `group-1.png`, `ascii-2-2.png` (portrait 1334×2000). These
   sit on **black**, not light — use them in a dark governance band, never as a light hero.
-- All dark/salmon fields are full-res (≈130–330 KB); for a light hero the right-sized `group-3.png`
-  (or the inline `--zk-texture-ascii` below) is the lighter choice.
+- All dark/salmon fields are full-res (≈130–330 KB); the light hero `group-3.png` is right-sized (≈8 KB).
 
-**Offline / single-file option.** The PNGs are the richer render, but they're heavy and need a
-fetch. For a self-contained or emailed page, use the inline token **`--zk-texture-ascii`** (a
-tileable faint ASCII field as an SVG data-URI, no asset request):
+**Offline / single-file?** Still use the **real** field — never synthesize one. Embed the actual
+`group-3.png` as a base64 data-URI, or link it from the hosted mirror:
 ```css
-.hero { position: relative; background: var(--zk-texture-ascii) repeat, var(--zk-gradient-hero); }
+/* base64-embed the real asset (no fetch, still the real field): */
+.hero { background: url('data:image/png;base64,<contents of assets/ascii/group-3.png>') center/cover, var(--zk-gradient-hero); }
+/* or link the hosted copy: */
+.hero { background: url('https://npc.here.now/zknationbrand/brand/ascii/group-3.png') center/cover, var(--zk-gradient-hero); }
 ```
-Layer it under foreground type and keep it quiet; raise/lower presence with the element's `opacity`.
+Keep it quiet behind foreground type. Do **not** hand-roll a CSS/Unicode texture in its place
+(see the Asset gate in `dos-and-donts.md`).
 
 Rules:
 - Pick the variant by surface (light vs dark) and reserve salmon for governance accents.

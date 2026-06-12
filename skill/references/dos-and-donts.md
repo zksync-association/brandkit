@@ -7,10 +7,12 @@
 > This is the failure a color/type review won't catch. **Never substitute CSS, Unicode, or
 > hand-drawn text for a shipped asset.** The ASCII hero fields, flags, icons, and the logomark must
 > be the **real files from `assets/`** (index: `assets/MANIFEST.md`; URLs: `asset-urls.json`).
-> **Detectable symptom — if any of these is true, you have a bug:** you drew a dot-grid or CSS-gradient
-> "flag"; you used a glyph/emoji/`◄►`/`←→` in place of an icon or the mark; you rebuilt the logo from
-> pixels or strokes. Swap in the real asset. *(Single self-contained file with no network? Use the
-> inline `--zk-texture-ascii` token or inline the real SVG marks — still never ad-hoc text.)*
+> **Detectable symptom — if any of these is true, you have a bug:** you typed a grid of `z`/`x`/`k`/`i`/dots
+> (or a dot-grid / CSS-gradient "flag") to imitate the ASCII flag texture; you used a glyph/emoji/`◄►`/`←→`
+> in place of an icon or the mark; you rebuilt the logo from pixels or strokes. Swap in the real asset. *(Single self-contained file with no network? Base64-embed
+> the real asset — e.g. `assets/ascii/group-3.png` for the hero — or inline the real SVG marks. Never ad-hoc text.)*
+> **Automate it:** for HTML/SVG/CSS output, run `python3 scripts/check-brand-assets.py <file>` — it
+> confirms every visual resolves to a kit asset and fails on emoji/external/synthesized stand-ins.
 
 ## Always do
 - ✅ **Light & airy.** Default to Neutral-50 / Brand-25 surfaces or a subtle gradient.
@@ -41,6 +43,21 @@
 - ❌ Use Avenue Mono for long body copy.
 - ❌ Mix multiple gradients in one viewport without a contrast element.
 - ❌ Low-contrast lockups or the mark on busy imagery.
+
+## Anti-pattern gallery (pattern-match these, then fix)
+The violations that slip past a color/type review — each with its tell and the fix:
+
+| Anti-pattern | What it looks like | Fix |
+|---|---|---|
+| **Rebuilt mark** | logomark drawn from a dot/pixel grid, boxes, or CSS; a "flag" made of gradients | Use the real asset — `.zk-logo` / `.zk-logo--lockup` or `assets/logos/svg/…`. Never redraw. |
+| **Faked ASCII field** | a **typed grid of `z`/`x`/`k`/`i`/dots**, or a CSS dot-grid / radial-gradient, standing in for the flag texture | Load the real image — `assets/ascii/group-3.png` or the Flag banner `assets/flags/blue/main-flag-ascii_blue.png`; base64-embed for offline. The character look is rendered artwork, not text you type. |
+| **Emoji / glyph icons** | 🔵 ▶ ★ or `◄►` used as icons or marks | Use the 5 duotone SVGs (`assets/icons/svg/icons-large_blue*.svg`). |
+| **Salmon overuse** | salmon as a large fill, or in several places | One band / accent, **once**, deliberately. |
+| **Salmon as body text** | salmon-colored paragraphs | Navy ink; salmon is an accent fill only. |
+| **White on salmon** | white text on a salmon fill (~3:1, fails AA) | Navy ink (Brand-900). |
+| **Full-bleed blue** | page flooded with bright/dark brand blue | Light surfaces; Brand-700 as the *accent*, not the background. |
+
+Run `scripts/check-brand-assets.py` on HTML/SVG/CSS output to catch the asset ones automatically.
 
 ## Voice gate (see voice-tone-vocabulary.md)
 - ❌ Hype, FOMO, price/return talk, emoji spam, "decentralized" without a mechanism.

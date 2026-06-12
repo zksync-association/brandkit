@@ -13,3 +13,7 @@ _licensed-fonts-DO-NOT-REDISTRIBUTE/
 .DS_Store
 *.log
 .herenow/
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+branch_structure.json
